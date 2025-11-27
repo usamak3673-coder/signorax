@@ -7,7 +7,7 @@
     { "src": "**/*.js", "use": "@vercel/static" },
     { "src": "assets/**/*", "use": "@vercel/static" },
     { "src": "product-images/**/*", "use": "@vercel/static" },
-    { "src": "sitemap.xml", "use": "@vercel/static" }  // ✅ Make sure sitemap.xml is here
+    { "src": "sitemap.xml", "use": "@vercel/static" }  
   ],
   "routes": [
     { "src": "/(.*)", "dest": "/$1" }
