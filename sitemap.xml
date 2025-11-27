@@ -14,24 +14,4 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://signorax.vercel.app/login.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://signorax.vercel.app/product-layout.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://signorax.vercel.app/dashboard.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://signorax.vercel.app/plans-and-pricings.html</loc>
-    <priority>0.8</priority>
-  </url>
-
 </urlset>
