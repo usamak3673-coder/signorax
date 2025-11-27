@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -425,3 +426,432 @@ searchInput.addEventListener('keypress', e => {
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Signs — SignStore</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<style>
+  /* === VARIABLES === */
+:root {
+  --bg: #F9FAFB;
+  --card-bg: #f9f9f9;
+  --text: #ffffff;
+  --muted: #faf5f5;
+  --accent: #D64228;
+  --accent-hover: #D64228;
+  --border: #e5e7eb;
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+  --max-width: 1200px;
+  --transition: 0.3s ease;
+}
+
+/* === GLOBAL STYLES === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:  "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === HERO SECTION === */
+.browse-hero {
+  text-align: center;
+  padding: 80px 20px 50px;
+ background: #0D0D0D ;
+}
+
+.browse-hero h1 {
+  font-size: 55px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #ebb70d;
+}
+
+.browse-hero p {
+  font-size: 19px;
+  color: var(--muted);
+  margin-bottom: 25px;
+  font-family:  "Inter", sans-serif;
+}
+
+/* Search Bar */
+.search-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 16px;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.search-bar input:focus {
+  border-color: var(--accent);
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  background: #f3f4f6;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.filter-btn:hover {
+  background-color: #000000;
+  color: #fff;
+  box-shadow: 0 4px 10px #2d22c4;}
+
+
+.filter-btn.active {
+  background-color: #2d22c4;
+  color: #fff;
+  border-color:rgb(0, 0, 0);
+}
+
+/* === GALLERY === */
+.gallery-wrapper {
+  padding: 50px 20px;
+}
+
+.signs-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.sign-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: #e9ecf1 solid 0.9px;
+}
+
+.sign-card img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  transition: transform var(--transition);
+}
+
+.sign-card:hover img {
+  transform: scale(1.05);
+}
+
+.sign-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-bg);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.sign-card:hover .overlay {
+  opacity: 1;
+}
+
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav a {
+    margin-left: 0;
+    display: inline-block;
+    margin: 5px 10px;
+  }
+
+  .browse-hero h1 {
+    font-size: 32px;
+  }
+
+  .browse-hero p {
+    font-size: 16px;
+  }
+}
+
+</style>
+<body>
+
+  <!-- LOAD HEADER -->
+<div id="header"></div>
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+</script>
+
+  <!-- HERO -->
+  <section class="browse-hero">
+    <h1>Browse Signs</h1>
+    <p>Explore our full collection of professional road, warning, prohibition, and information signs.</p>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search by keyword or category...">
+    </div>
+
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="road">Road Signs</button>
+      <button class="filter-btn" data-filter="warning">Warning Signs</button>
+      <button class="filter-btn" data-filter="prohibition">Prohibition Signs</button>
+      <button class="filter-btn" data-filter="information">Information Signs</button>
+      <button class="filter-btn" data-filter="safety">Safety Signs</button>
+      <button class="filter-btn" data-filter="industrial">Industrial Signs</button>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <main class="gallery-wrapper">
+    <div class="signs-gallery" id="signsGallery">
+
+      <!-- Example cards — duplicate for all your 500+ signs -->
+
+      <div class="sign-card" data-category="road" data-name="children crossing road sign red traingle">
+        <a href="give-way-sign.html">
+          <img src="assets/images/children crossing road sign red traingle.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="warning" data-name="Danger High Voltage Yellow Triangle Sign Electrical Hazard Warning.jpg">
+        <a href="give-way-sign.html">
+          <img src="assets/images/Danger High Voltage Yellow Triangle Sign Electrical Hazard Warning.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="road" data-name="Give Way Sign Vector download EPS, SVG, JPG and PNG">
+        <a href="give-way-sign.html">
+          <img src="assets/images/Give Way Sign.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="road" data-name="japanese traffic speed limit signs bundle 30 40 50 60 70 80">
+        <a href="give-way-sign.html">
+          <img src="assets/images/japanese traffic speed limit signs bundle 30 40 50 60 70 80.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="road" data-name="no left and no right turn red circle road signs without slash vector ">
+        <a href="give-way-sign.html">
+          <img src="assets/images/no left and no right turn red circle road signs without slash vector.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="industrial" data-name="biohazard authorized personnel only sign.jpg">
+        <a href="give-way-sign.html">
+          <img src="assets/images/biohazard authorized personnel only sign.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+       <div class="sign-card" data-category="safety" data-name="Wear Face Mask Sign Hospital Clinic Blue Circle">
+        <a href="give-way-sign.html">
+          <img src="/assets/images/Wear Face Mask Sign Hospital Clinic Blue Circle.jpg" alt="safety Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="prohibition" data-name="No Mobile Phone Sign Vertical and Square Prohibition Safety Notice.jpg">
+        <a href="give-way-sign.html">
+          <img src="assets/images/No Mobile Phone Sign Vertical and Square Prohibition Safety Notice.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+      <div class="sign-card" data-category="road" data-name="children crossing road sign red traingle">
+        <a href="give-way-sign.html">
+          <img src="assets/images/children crossing road sign red traingle.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="road" data-name="uae Arabic Road Narrows Warning Sign  Red Triangle Traffic Safety Symbol Vector">
+        <a href="/products/road-signs/arabic-road-narrows-warning-sign.html">
+          <img src="assets/images/arabic road narrows warning sign red triangle traffic safety symbol vector.jpg" alt="Arabic Road Narrows Sign " loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+
+      <div class="sign-card" data-category="road" data-name="Speed Limit Signs Set-30 40 50 60 70 80 km/h ">
+        <a href="/products/road-signs/speed-limit-signs.html">
+          <img src="assets/images/speed limits signs bundle.jpg" alt="Speed Limit Signs Set " loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+
+      <!-- Duplicate the sign-card divs for all your preview images -->
+    </div>
+  </main>
+
+  <!-- LOAD FOOTER -->
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+  
+<script>
+  // === ELEMENTS ===
+const galleryItems = document.querySelectorAll('.sign-card');
+const filterButtons = document.querySelectorAll('.filter-btn');
+const searchInput = document.getElementById('searchInput');
+
+// === URL PARAMETERS (from homepage) ===
+const params = new URLSearchParams(window.location.search);
+const searchParam = params.get('search') ? params.get('search').toLowerCase() : '';
+const categoryParam = params.get('category') ? params.get('category').toLowerCase() : 'all';
+
+// === INITIALIZE SEARCH FIELD ===
+if (searchParam) searchInput.value = searchParam;
+
+// === HELPER FUNCTION: singularize words for search ===
+function singularize(word) {
+  if (word.endsWith('s')) return word.slice(0, -1);
+  return word;
+}
+
+// === SMART FILTER FUNCTION ===
+function filterGallery(category, query) {
+  const searchWords = query
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    .map(word => singularize(word))
+    .filter(Boolean);
+
+  let visibleCount = 0;
+
+  galleryItems.forEach(item => {
+    const name = singularize(item.dataset.name.toLowerCase());
+    const itemCategory = singularize(item.dataset.category.toLowerCase());
+
+    // Category match
+    const categoryMatch = category === 'all' || itemCategory === category || itemCategory.includes(category);
+
+    // Search match
+    const searchMatch = searchWords.length === 0 || searchWords.every(word => name.includes(word) || itemCategory.includes(word));
+
+    if (categoryMatch && searchMatch) {
+      item.style.display = 'block';
+      visibleCount++;
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  // === No Results Message ===
+  let noResults = document.getElementById('noResults');
+  if (!noResults) {
+    noResults = document.createElement('p');
+    noResults.id = 'noResults';
+    noResults.textContent = 'No signs found matching your search.';
+    noResults.style.color = '#6b7280';
+    noResults.style.textAlign = 'center';
+    noResults.style.marginTop = '30px';
+    noResults.style.fontSize = '18px';
+    document.querySelector('.signs-gallery').after(noResults);
+  }
+  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+}
+
+// === HIGHLIGHT ACTIVE BUTTON ===
+function setActiveButton(category) {
+  filterButtons.forEach(btn => {
+    if (btn.dataset.filter.trim().toLowerCase() === category) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+}
+
+// === INITIAL LOAD ===
+setActiveButton(categoryParam);
+filterGallery(categoryParam, searchParam);
+
+// === EVENT LISTENERS ===
+
+// Filter buttons
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const category = btn.dataset.filter.toLowerCase().trim();
+    setActiveButton(category);
+    filterGallery(category, searchInput.value);
+  });
+});
+
+// Search input
+searchInput.addEventListener('input', () => {
+  const activeCategory = document.querySelector('.filter-btn.active').dataset.filter.toLowerCase().trim();
+  filterGallery(activeCategory, searchInput.value);
+});
+
+// ENTER KEY TRIGGER SEARCH
+searchInput.addEventListener('keypress', e => {
+  if (e.key === 'Enter') {
+    const activeCategory = document.querySelector('.filter-btn.active').dataset.filter.toLowerCase().trim();
+    filterGallery(activeCategory, searchInput.value);
+  }
+});
+</script>
+
+
+
+</body>
+</html>
+>>>>>>> 99590d77704b461883dedf2d06c7ce456c559539
