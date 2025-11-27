@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pakistan Signs – SignStore</title>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+<script>
+  fetch("../header.html").then(res => res.text()).then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+
+<!-- HERO -->
+<section class="browse-hero">
+  <h1>Pakistan Signs</h1>
+  <p>View all official Pakistan road and warning signs.</p>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search signs in Pakistan...">
+  </div>
+
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="pakistan">Pakistan</button>
+    <button class="filter-btn" data-filter="usa">USA</button>
+    <button class="filter-btn" data-filter="uk">UK</button>
+    <button class="filter-btn" data-filter="india">India</button>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<main class="gallery-wrapper">
+  <div class="signs-gallery" id="signsGallery"></div>
+</main>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+<script>
+  fetch("../footer.html").then(res => res.text()).then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+<script src="../assets/js/country-page.js"></script>
+<script>
+  loadCountryPage("pakistan");
+</script>
+
+</body>
+</html>

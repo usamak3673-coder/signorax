@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SignStore — Road & Safety Signs</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- PayPal & Stripe -->
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+<script>
+  fetch("./header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+</script>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="wrap hero-content">
+    <h1 class="hero-title">Discover Premium Signs & Symbols</h1>
+    <p class="hero-sub">Browse our extensive collection of high-quality signs for commercial and personal use.</p>
+
+    <!-- Search bar -->
+    <div class="hero-search">
+      <select class="hero-select">
+        <option value="Select Category">Select Category</option>
+        <option value="all">All Categories</option>
+        <option value="road">Road Signs</option>
+        <option value="warning">Warning Signs</option>
+        <option value="prohibition">Prohibition Signs</option>
+        <option value="information">Information Signs</option>
+        <option value="safety">Safety Signs</option>
+        <option value="industrial">Industrial Signs</option>
+      </select>
+      <input type="text" placeholder="Search for a sign..." class="hero-input" />
+      <button class="hero-btn">Search</button>
+    </div>
+
+    <!-- Categories -->
+    <div class="hero-categories">
+      <button class="category-btn">all</button>
+      <button class="category-btn">Road Signs</button>
+      <button class="category-btn">Warning Signs</button>
+      <button class="category-btn">Safety Signs</button>
+      <button class="category-btn">Informational Signs</button>
+      <button class="category-btn">Industrial Signs</button>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS SECTION -->
+<section class="plans-section">
+  <div class="wrap">
+    <h2 class="section-title">Plans & Pricing</h2>
+
+    <div class="plans-grid">
+
+      <!-- Single Sign -->
+      <div class="plan-card">
+        <h3>Single Sign</h3>
+        <p class="price">$1.65 <span>/ per sign</span></p>
+        <ul>
+          <li>Download individual signs</li>
+          <li>Personal & Commercial Use</li>
+          <li>Instant Access</li>
+        </ul>
+        <a  onclick="buyNow(1, 'Single Sign', 1.65)" class="btn btn-buy">Buy Sign</a>
+      </div>
+
+      <!-- Monthly -->
+      <div class="plan-card featured">
+        <h3>Monthly Subscription</h3>
+        <p class="price">$23.99</p>
+        <ul>
+          <li>20 Downloads</li>
+          <li>All Categories Included</li>
+          <li>Cancel Anytime</li>
+        </ul>
+        <a href="https://signorahub.lemonsqueezy.com/buy/774226ad-249e-4105-9087-a3c92a41b2fb">Buy Monthly</a>
+      </div>
+
+      <!-- Annual -->
+      <div class="plan-card">
+        <h3>Annual Subscription</h3>
+        <p class="price">$299</p>
+        <ul>
+          <li>Unlimited Downloads</li>
+          <li>Save 30% vs Monthly</li>
+          <li>Commercial License</li>
+        </ul>
+        <a href="https://signorahub.lemonsqueezy.com/buy/646b024f-a832-48c7-90ed-d83ba9d65c0b">Buy annual</a>
+      </div>
+
+      <!-- Credit Pack -->
+      <div class="plan-card">
+        <h3>Credit Pack</h3>
+        <p class="price">$10</p>
+        <ul>
+          <li>1 Credit = 1 Sign</li>
+          <li>No Expiry</li>
+        </ul>
+        <a onclick="buyNow(4, 'Credit Pack', 10)" class="btn btn-buy">Buy Credits</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+<script>
+  fetch("./footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  // === SEARCH + CATEGORY FUNCTIONALITY ===
+
+  const searchInput = document.querySelector(".hero-input");
+  const searchBtn = document.querySelector(".hero-btn");
+  const categoryButtons = document.querySelectorAll(".category-btn");
+  const selectCategory = document.querySelector(".hero-select");
+  const selectCountry = document.querySelector(".hero-select");
+
+  // Redirect function
+  function redirectToBrowse(query, category) {
+    const params = new URLSearchParams();
+    if (query) params.append("search", query);
+    if (category) params.append("category", category);
+    window.location.href = `browse-signs.html?${params.toString()}`;
+  }
+
+  // Search on click
+  searchBtn.addEventListener("click", () => {
+    const query = searchInput.value.trim();
+    const category = selectCategory.value;
+    redirectToBrowse(query, category);
+  });
+
+  // Search on Enter key
+  searchInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      const query = searchInput.value.trim();
+      const category = selectCategory.value;
+      redirectToBrowse(query, category);
+    }
+  });
+
+  // Category buttons
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.textContent.trim();
+      redirectToBrowse("", category);
+    });
+  });
+
+});
+</script>
+
+</body>
+</html>
