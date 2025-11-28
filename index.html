@@ -8,7 +8,33 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  !-- INLINE STYLE -->
+<style>
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.2;
+}
+
+/* Styling ONLY the word "Download" */
+.highlight-download {
+  color: #ff7a00; /* Change color here */
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+  font-weight: 800;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 32px;
+  }
+}
+</style>
 </head>
+  
   
 <body>
 <!-- HEADER -->
@@ -22,7 +48,11 @@
 <!-- HERO SECTION -->
 <section class="hero">
   <div class="wrap hero-content">
-    <h1 class="hero-title">Premium Sign Vectors for Instant Download</h1>
+    <!-- HERO TITLE -->
+<h1 class="hero-title">
+  Premium Sign Vectors for Instant 
+  <span class="highlight-download">Download</span>
+</h1>
     <p class="hero-sub">High-quality vectors for designers, businesses, and creators.
 Affordable prices. Instant access. Commercial-use ready.</p>
     
