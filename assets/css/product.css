@@ -569,3 +569,118 @@ img {
   color: #555;
   margin: 0;
 }
+/* =====================================
+   MOBILE FIXES (FULL RESPONSIVENESS)
+====================================== */
+
+/* ===== Tablet < 992px ===== */
+@media (max-width: 992px) {
+  .main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .buy-panel {
+    position: static;
+    top: unset;
+    width: 100%;
+  }
+
+  .image-wrap {
+    justify-content: center;
+  }
+
+  .lightbox-inner {
+    width: 90%;
+    height: auto;
+  }
+}
+
+/* ===== Mobile < 768px ===== */
+@media (max-width: 768px) {
+  .main {
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  .product-title {
+    font-size: 22px;
+  }
+
+  .product-sub {
+    font-size: 15px;
+  }
+
+  .image-wrap {
+    padding: 12px;
+  }
+
+  .lightbox-inner {
+    width: 95%;
+    height: auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ===== Small Phones < 500px ===== */
+@media (max-width: 500px) {
+  .header-wrapper {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 18px !important;
+  }
+
+  .image-wrap {
+    padding: 8px;
+  }
+
+  .product-title {
+    font-size: 20px;
+  }
+
+  .buy-panel {
+    padding: 18px;
+  }
+
+  .panel-btn {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 26px;
+  }
+
+  .lightbox-close {
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ===== Extra Small < 380px ===== */
+@media (max-width: 380px) {
+  .main {
+    padding: 0 10px;
+  }
+
+  .product-sub {
+    font-size: 14px;
+  }
+
+  .image-wrap {
+    padding: 5px;
+  }
+
+  .footer-input {
+    font-size: 14px;
+  }
+}
+
