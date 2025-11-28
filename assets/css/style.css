@@ -440,3 +440,118 @@ li{margin:8px 0;}
 }
 .btn:hover{background:#000000;}
 .btn.accent{background:#D64228;}
+/* ============================
+   HERO — MOBILE RESPONSIVE FIXES
+   ============================ */
+
+/* Base fixes */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
+
+.hero-sub {
+  max-width: 650px;
+  margin: 10px auto 25px;
+  font-size: 1.1rem;
+}
+
+/* Search bar layout */
+.hero-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-select,
+.hero-input,
+.hero-btn {
+  padding: 12px 14px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Categories */
+.hero-categories {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-btn {
+  padding: 10px 16px;
+  background: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* ============================
+   MOBILE (max 768px)
+   ============================ */
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  /* stack search into column */
+  .hero-search {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-select,
+  .hero-input,
+  .hero-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  /* category buttons enlarge on mobile */
+  .category-btn {
+    width: 48%;
+    font-size: 0.95rem;
+    padding: 12px 0;
+  }
+}
+
+/* ============================
+   MOBILE SMALL (max 480px)
+   ============================ */
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+  }
+
+  .category-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+}
