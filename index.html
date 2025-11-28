@@ -4,17 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>signorax — Road & Safety Signs</title>
-
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-
 </head>
-
+  
 <body>
-
 <!-- HEADER -->
 <div id="header"></div>
 <script>
@@ -22,17 +18,16 @@
     .then(res => res.text())
     .then(data => document.getElementById("header").innerHTML = data);
 </script>
-
+  
 <!-- HERO SECTION -->
 <section class="hero">
   <div class="wrap hero-content">
     <h1 class="hero-title">Discover Premium Signs & Symbols</h1>
     <p class="hero-sub">Browse our extensive collection of high-quality signs for commercial and personal use.</p>
-
+    
     <!-- Search bar -->
     <div class="hero-search">
       <select class="hero-select">
-        <option value="Select Category">Select Category</option>
         <option value="all">All Categories</option>
         <option value="road">Road Signs</option>
         <option value="warning">Warning Signs</option>
@@ -44,7 +39,7 @@
       <input type="text" placeholder="Search for a sign..." class="hero-input" />
       <button class="hero-btn">Search</button>
     </div>
-
+    
     <!-- Categories -->
     <div class="hero-categories">
       <button class="category-btn">all</button>
@@ -56,14 +51,12 @@
     </div>
   </div>
 </section>
-
+  
 <!-- PLANS SECTION -->
 <section class="plans-section">
   <div class="wrap">
     <h2 class="section-title">Plans & Pricing</h2>
-
     <div class="plans-grid">
-
       <!-- Single Sign -->
       <div class="plan-card">
         <h3>Single Sign</h3>
@@ -75,7 +68,6 @@
         </ul>
         <a  onclick="buyNow(1, 'Single Sign', 1.65)" class="btn btn-buy">Buy Sign</a>
       </div>
-
       <!-- Monthly -->
       <div class="plan-card featured">
         <h3>Monthly Subscription</h3>
@@ -87,7 +79,7 @@
         </ul>
         <a href="https://signorax.lemonsqueezy.com/buy/774226ad-249e-4105-9087-a3c92a41b2fb">Buy Monthly</a>
       </div>
-
+      
       <!-- Annual -->
       <div class="plan-card">
         <h3>Annual Subscription</h3>
@@ -99,7 +91,7 @@
         </ul>
         <a href="https://signoraX.lemonsqueezy.com/buy/646b024f-a832-48c7-90ed-d83ba9d65c0b">Buy annual</a>
       </div>
-
+      
       <!-- Credit Pack -->
       <div class="plan-card">
         <h3>Credit Pack</h3>
@@ -110,7 +102,6 @@
         </ul>
         <a onclick="buyNow(4, 'Credit Pack', 10)" class="btn btn-buy">Buy Credits</a>
       </div>
-
     </div>
   </div>
 </section>
