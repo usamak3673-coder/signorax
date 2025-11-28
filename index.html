@@ -10,6 +10,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- HEADER -->
+<div id="header"></div>
+<script>
+  fetch("./header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+</script>
 <!-- HERO SECTION -->
 <section class="hero">
   <div class="wrap hero-content">
