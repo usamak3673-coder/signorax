@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All Signs — Signorax</title>
+  <title>All Signs — SignStore</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <style>
@@ -48,29 +48,22 @@ a {
 /* === HERO SECTION === */
 .browse-hero {
   text-align: center;
-  padding: 80px 20px 50px;
- background: #0D0D0D ;
+  padding: 50px 20px 50px;
+ background: #ffffff ;
 }
 
 .browse-hero h1 {
-  font-size: 55px;
-  margin-bottom: 15px;
-  font-weight: 600;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #ebb70d;
-}
-
-.browse-hero p {
-  font-size: 19px;
-  color: var(--muted);
+  font-size: 45px;
+  color: rgb(73, 69, 64);
   margin-bottom: 25px;
-  font-family:  "Inter", sans-serif;
+  font-family:  Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
 }
 
 /* Search Bar */
 .search-bar input {
   width: 100%;
-  max-width: 400px;
+  max-width: 700px;
   padding: 12px 15px;
   border-radius: 8px;
   border: 1px solid var(--border);
@@ -105,13 +98,13 @@ a {
 .filter-btn:hover {
   background-color: #000000;
   color: #fff;
-  box-shadow: 0 4px 10px #2d22c4;}
+  box-shadow: 0 4px 10px #e97204;}
 
 
 .filter-btn.active {
-  background-color: #2d22c4;
+  background-color: #ec7709;
   color: #fff;
-  border-color:rgb(0, 0, 0);
+  border-color:rgb(236, 165, 9);
 }
 
 /* === GALLERY === */
@@ -180,7 +173,7 @@ a {
   }
 
   .browse-hero h1 {
-    font-size: 44px;
+    font-size: 32px;
   }
 
   .browse-hero p {
@@ -202,8 +195,6 @@ a {
   <!-- HERO -->
   <section class="browse-hero">
     <h1>Browse Signs</h1>
-    <p>Explore our full collection of professional road, warning, prohibition, and information signs.</p>
-
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Search by keyword or category...">
     </div>
@@ -235,6 +226,14 @@ a {
       <div class="sign-card" data-category="warning" data-name="Danger High Voltage Yellow Triangle Sign Electrical Hazard Warning.jpg">
         <a href="give-way-sign.html">
           <img src="assets/images/Danger High Voltage Yellow Triangle Sign Electrical Hazard Warning.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+
+      <div class="sign-card" data-category="road" data-category="warning" data-name="yellow diamond narrows warning sign set left side narrows both side narrows and right side narrows ">
+        <a href="/products/road-signs/yellow-diamond-narrows-sign-set.html">
+          <img src="assets/images/Yellow-diamond-road-narrows-sign-set.jpg" alt="yellow yellow diamond narrows sign set " loading="lazy">
           <div class="overlay">View Details</div>
         </a>
       </div>
@@ -420,6 +419,5 @@ searchInput.addEventListener('keypress', e => {
   }
 });
 </script>
-  
 </body>
 </html>
