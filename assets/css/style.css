@@ -478,14 +478,14 @@ li{margin:8px 0;}
 }
 
 .hero-title {
-  font-size: 3.7rem;
+  font-size: 2.7rem;
   line-height: 1.2;
 }
 
 .hero-sub {
   max-width: 770px;
-  margin: 10px auto 25px;
-  font-size: 1.2em;
+  margin: 10px auto 24px;
+  font-size: 1rem;
 }
 
 /* Search bar layout */
@@ -502,7 +502,7 @@ li{margin:8px 0;}
 .hero-btn {
   padding: 12px 14px;
   font-size: 1rem;
-  border-radius: 8px;
+  border-radius: 1px;
   border: 1px solid #ccc;
 }
 
@@ -518,7 +518,7 @@ li{margin:8px 0;}
   padding: 10px 16px;
   background: #f2f2f2;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 1px;
   font-size: 0.95rem;
   cursor: pointer;
 }
