@@ -410,7 +410,153 @@
 .hero-categories button:hover {
   background-color: #3d3737;
   color: #fff;}
-      
+
+/* CATEGORY SECTION */
+.category-section {
+  padding: 60px 0;
+  background: #ffffff;
+  color: #111;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.category-card {
+  background: #f9fafb;
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0px 4px 10px rgba(230, 152, 8, 0.3);
+  transition: 0.3s;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 14px rgba(230, 152, 8, 0.45);
+}
+
+.cat-icon {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.category-card h3 {
+  margin: 8px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.category-card p {
+  color: #5c5c5c;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+.cat-link {
+  font-weight: 600;
+  color: #e2720a;
+  font-size: 16px;
+}
+
+/* WHY CHOOSE US */
+.why-section {
+  padding: 70px 0;
+  background: #1f1d1d;
+  color: #fff;
+  text-align: center;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.why-card {
+  background: #2b2929;
+  border: 1px solid #3b3838;
+  padding: 28px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.why-card:hover {
+  background: #302d2d;
+  transform: translateY(-5px);
+}
+
+.why-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  color: #e2e2e2;
+  font-size: 15px;
+}
+
+
+/* BLOG SECTION */
+.blog-section {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.blog-card {
+  background: #fafafa;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0px 4px 10px rgba(230, 152, 8, 0.3);
+  transition: 0.3s;
+  text-decoration: none;
+  color: #111;
+  display: block;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 14px rgba(230, 152, 8, 0.45);
+}
+
+.blog-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.blog-card p {
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #5c5c5c;
+}
+
+.blog-read {
+  color: #e2720a;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+
+
+
 /* plan and pricing sextion*/
 .plans-section{padding:40px 0;text-align:center;}
 .plans-grid{
