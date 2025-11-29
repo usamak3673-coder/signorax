@@ -343,13 +343,14 @@
 }
 
 /* Search input */
+/* Search input */
 .hero-input {
   flex: 1; /* takes available space */
   min-width: 250px;
   height: 48px;
   padding: 0 15px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 1px;
   font-size: 16px;
   outline: none;
   transition: all 0.3s ease;
@@ -368,7 +369,7 @@
   margin:10px;
   padding:5px 5px;
   border: 2px solid #000000;
-  border-radius: 8px;
+  border-radius: 1px;
   font-size: 16px;
   outline: none;
   background-color: #ffffff;
@@ -387,10 +388,10 @@
 .hero-btn {
   height: 48px;
   padding: 0 25px;
-  background-color: #ff7a00;
+  background-color: #f57906;
   color: #ffffff;
   border: none;
-  border-radius: 5px;
+  border-radius: 1px;
   font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;
@@ -400,8 +401,8 @@
 }
 
 .hero-btn:hover {
-  background-color: #000000; /* slightly darker on hover */
-  box-shadow: 0 0 8px #e78f0a;
+  background-color: #3d3838; /* slightly darker on hover */
+  box-shadow: 0 0 8px #ee7605ef;
 }
 
 /* Category buttons below search */
@@ -415,10 +416,9 @@
 
 .hero-categories button {
   padding: 10px 20px;
-  border: 1px solid #ccc7c1;
-  background-color: #ffffff;
-  color: #474545;
-  border-radius: 20px;
+  border: 1px dashed #f37005;
+  background-color: #000000;
+  color: #ffffff;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -427,9 +427,9 @@
 }
 
 .hero-categories button:hover {
-  background-color: #000000;
+  background-color: #3d3737;
   color: #fff;
-  box-shadow: 0 4px 10px #ec6d04;}
+      
 /* plan and pricing sextion*/
 .plans-section{padding:40px 0;text-align:center;}
 .plans-grid{
