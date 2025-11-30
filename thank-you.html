@@ -12,7 +12,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
     }
     .container {
@@ -30,7 +30,7 @@
     }
     p {
       font-size: 16px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
     a.download-btn {
       display: inline-block;
@@ -45,10 +45,11 @@
     a.download-btn:hover {
       background-color: #2980b9;
     }
-    .support {
+    .info {
       margin-top: 25px;
       font-size: 14px;
       color: #666;
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -57,8 +58,12 @@
     <h1>Thank You for Purchasing {PRODUCTNAME}!</h1>
     <p>Your product is ready to download instantly:</p>
     <a href="{DOWNLOADLINK}" class="download-btn">Download Now</a>
-    <div class="support">
-      <p>Need help? Contact us at <a href="mailto:usamak3673@gmail.com">usamak3673@gmail.com</a></p>
+    
+    <div class="info">
+      <p>Order Number: {ORDERNUMBER}</p>
+      <p>Customer Email: {EMAIL}</p>
+      <p>Total Paid: {PRICE} {CURRENCY}</p>
+      <p>If you have any issues, contact us at <a href="mailto:usamak3673@gmail.com">usamak3673@gmail.com</a></p>
     </div>
   </div>
 </body>
