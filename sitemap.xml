@@ -17,4 +17,8 @@
     <loc>https://signorax.vercel.app/products/road-signs/speed-limit-signs.html</loc>
     <priority>0.9</priority>
   </url>
+       <url>
+    <loc>https://signorax.vercel.app/blog/why-don't-american-speed-limit-signs-have-unit.html</loc>
+    <priority>0.9</priority>
+  </url>
 </urlset>
