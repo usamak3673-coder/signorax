@@ -11,7 +11,7 @@
   <!-- Other Pages -->
   <url>
     <loc>https://signorax.vercel.app/browse-signs.html</loc>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
  <url>
     <loc>https://signorax.vercel.app/products/road-signs/speed-limit-signs.html</loc>
@@ -19,10 +19,10 @@
   </url>
   <url>
     <loc>https://signorax.vercel.app/blog/why-don't-american-speed-limit-signs-have-unit.html</loc>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
       <url>
     <loc>https://signorax.vercel.app/products/road-signs/Parking-Sign-Circular-Parking-Zone-Sign-White-P-on-Blue-Background.html</loc>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 </urlset>
