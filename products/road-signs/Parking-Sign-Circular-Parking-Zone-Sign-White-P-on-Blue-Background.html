@@ -22,7 +22,7 @@
   <meta property="og:url" content="https://signorax.vercel.app/products/road-signs/Parking-Sign-Circular-Parking-Zone-Sign-White-P-on-Blue-Background.html">
   <meta property="og:type" content="product">
 
-  <!-- PRODUCT SCHEMA -->
+<!-- PRODUCT SCHEMA -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
@@ -56,20 +56,38 @@
         "@type": "MonetaryAmount",
         "value": "0",
         "currency": "USD"
-      },
-      "shippingDestination": {
-        "@type": "DefinedRegion",
-        "addressCountry": "Worldwide"
       }
     },
 
     "hasMerchantReturnPolicy": {
       "@type": "MerchantReturnPolicy",
-      "returnPolicyCategory": "http://schema.org/NonRefundable"
+      "returnPolicyCategory": "NonRefundable",
+      "applicableCountry": [
+        { "@type": "Country", "name": "US" },
+        { "@type": "Country", "name": "UK" },
+        { "@type": "Country", "name": "CA" },
+        { "@type": "Country", "name": "AU" },
+        { "@type": "Country", "name": "IN" },
+        { "@type": "Country", "name": "PK" },
+        { "@type": "Country", "name": "DE" },
+        { "@type": "Country", "name": "FR" },
+        { "@type": "Country", "name": "AE" }
+      ]
+    },
+
+    "deliveryLeadTime": {
+      "@type": "ShippingDeliveryTime",
+      "handlingTime": {
+        "@type": "QuantitativeValue",
+        "minValue": 0,
+        "maxValue": 0,
+        "unitText": "Instant Download"
+      }
     }
   }
 }
 </script>
+
 
 </head>
 
@@ -300,6 +318,7 @@ lightbox.addEventListener("click", (e) => {
 </body>
 
 </html>
+
 
 
 
