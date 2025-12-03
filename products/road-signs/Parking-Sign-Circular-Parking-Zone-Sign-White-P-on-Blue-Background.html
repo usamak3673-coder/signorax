@@ -151,15 +151,13 @@ function toggleMenu() {
 
     <!-- MAIN IMAGE -->
     <div class="image-wrap">
-      <img
-        id="mainImage"
-        src="/assets/images/Circular Parking Zone Sign  White P on Blue Background.jpg"
-        alt="Parking Sign-Circular Parking Zone Sign White P on Blue Background"
-      />
-    </div>
-
+  <div class="watermark-wrapper">
+    <img id="mainImage"
+      src="/assets/images/Circular Parking Zone Sign White P on Blue Background.jpg"
+      alt="Parking Sign-Circular Parking Zone Sign White P on Blue Background" />
+    <div class="watermark-text">SIGNORAX</div>
   </div>
-
+</div>
   <aside class="right-col">
     <div class="buy-panel">
 
@@ -286,14 +284,15 @@ function toggleMenu() {
   <p class="footer-copy">© 2025 SignoraX. All rights reserved.</p>
 </footer>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-inner">
-    <button class="lightbox-close" id="closeBtn">✕</button>
-    <img id="lightboxImage" src="" alt="{{PRODUCT_TITLE}} large preview">
-  </div>
-</div>
+<div class="lightbox-inner">
+  <button class="lightbox-close" id="closeBtn">✕</button>
 
+  <div class="watermark-wrapper lightbox-watermark">
+    <img id="lightboxImage" src="" alt="">
+    <div class="watermark-text">SIGNORAX</div>
+  </div>
+
+</div>
 <script>
 const mainImage = document.getElementById("mainImage");
 const lightbox = document.getElementById("lightbox");
@@ -318,6 +317,7 @@ lightbox.addEventListener("click", (e) => {
 </body>
 
 </html>
+
 
 
 
