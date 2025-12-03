@@ -211,9 +211,8 @@ img {
   box-shadow: var(--shadow);
 }
 #mainImage{
-  height: 300px;
-  width: 300px;
-  background-size: cover;
+  height:500px;
+  width: 500px;
 }
 .faq{
   margin-top: 50px;
