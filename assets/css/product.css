@@ -678,6 +678,33 @@ img {
   .image-wrap {
     padding: 5px;
   }
+   /* WATERMARK WRAPPER */
+.watermark-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* WATERMARK TEXT */
+.watermark-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 65px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.25); /* Slight transparency */
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Larger watermark inside lightbox */
+.lightbox-watermark .watermark-text {
+  font-size: 120px;
+  color: rgba(255, 255, 255, 0.18);
+}
+
 
   .footer-input {
     font-size: 14px;
