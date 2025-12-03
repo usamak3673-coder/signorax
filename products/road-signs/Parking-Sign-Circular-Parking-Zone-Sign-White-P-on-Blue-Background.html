@@ -342,13 +342,22 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
  <script>
-function toggleMenu() {
-  document.getElementById("mobileNav").classList.toggle("open");
-}
+document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.querySelector(".mobile-menu-icon");
+  const mobileNav = document.querySelector(".mobile-nav");
+
+  if (menuIcon && mobileNav) {
+    menuIcon.addEventListener("click", () => {
+      mobileNav.style.display =
+        mobileNav.style.display === "flex" ? "none" : "flex";
+    });
+  }
+});
 </script>
 </body>
 
 </html>
+
 
 
 
