@@ -209,12 +209,12 @@ img {
   border-radius: var(--radius);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-   height:500px;
-  width: 500px;
+   height:600px;
+  width: 600px;
 }
 #mainImage{
-  height:500px;
-  width: 500px;
+  height:600px;
+  width: 600px;
 }
 .faq{
   margin-top: 50px;
