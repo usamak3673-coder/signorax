@@ -210,6 +210,11 @@ img {
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
+#mainImage{
+  height: 300px;
+  width: 300px;
+  background-size: cover;
+}
 .faq{
   margin-top: 50px;
 }
