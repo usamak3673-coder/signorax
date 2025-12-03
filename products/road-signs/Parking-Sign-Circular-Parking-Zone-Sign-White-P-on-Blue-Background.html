@@ -341,21 +341,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const menuIcon = document.querySelector(".mobile-menu-icon");
-  const mobileNav = document.querySelector(".mobile-nav");
-
-  if (menuIcon && mobileNav) {
-    menuIcon.addEventListener("click", function () {
-      mobileNav.classList.toggle("open");
-    });
-  }
-});
+ <script>
+function toggleMenu() {
+  document.getElementById("mobileNav").classList.toggle("open");
+}
 </script>
 </body>
 
 </html>
+
 
 
 
