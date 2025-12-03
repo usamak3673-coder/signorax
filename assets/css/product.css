@@ -578,4 +578,46 @@ img {
   color: #555;
   margin: 0;
 }
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+/* tablets */
+@media(max-width:1024px){
+  .main{grid-template-columns:1fr 320px;padding:0 18px;gap:28px}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
 
+/* stacked mobile */
+@media(max-width:992px){
+  .main{grid-template-columns:1fr;gap:24px;margin:24px auto}
+  .nav{display:none}
+  .mobile-menu-icon{display:block;margin-left:auto}
+  .search-box{display:none}
+  .container{padding:12px}
+  .image-wrap{padding:14px;max-width:100%}
+  .thumbs img{width:72px;height:54px}
+  .buy-panel{width:100%}
+  .lightbox-inner{max-width:95%}
+  .footer-grid{grid-template-columns:1fr}
+}
+
+/* small phones */
+@media(max-width:600px){
+  .product-title{font-size:22px}
+  .product-sub{font-size:15px}
+  .price{font-size:26px}
+  .thumbs{gap:8px}
+  .thumbs img{width:64px;height:48px}
+  .mobile-nav a{padding:12px 14px}
+  .container{padding:10px}
+  .image-wrap{padding:10px}
+}
+
+/* tiny screens */
+@media(max-width:380px){
+  .product-title{font-size:20px}
+  .product-sub{font-size:14px}
+  .thumbs img{width:56px;height:42px}
+  .footer-input{font-size:14px}
+}
+
+/* ---------- Accessibility focus ---------- */
+a:focus,button:focus,input:focus{outline:3px solid rgba(25,118,210,0.15);outline-offset:2px}
