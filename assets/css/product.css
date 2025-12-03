@@ -148,22 +148,95 @@ img{max-width:100%;height:auto;display:block}
 /* FAQ spacing */
 .faq{margin-top:50px}
 
-/* ---------- FILE INFO / FEATURES ---------- */
-.product-info{margin-top:18px;padding:16px;border-radius:8px;border:1px dashed var(--border);background:#fafbfc}
-.product-info h3{font-size:16px;margin-bottom:10px;font-weight:600}
-.product-info ul{list-style:none;color:var(--muted);font-size:14px}
-.product-info li{margin-bottom:6px}
+.buy-panel {
+  background: #fff;
+  padding: 25px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 80px;
+}
 
-/* thumbnails */
-.thumbs{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;justify-content:flex-start}
-.thumbs img{width:86px;height:64px;object-fit:cover;border-radius:6px;border:1px solid var(--border);cursor:pointer;transition:transform .15s, border-color .15s}
-.thumbs img:hover{transform:translateY(-4px);border-color:var(--primary)}
+.buy-panel h2 {
+  margin-top: 30px;
+}
 
-/* ---------- BUY PANEL (right column) ---------- */
-.buy-panel{
-  background:#fff;padding:22px;border-radius:var(--radius);border:1px solid var(--border);
-  box-shadow:var(--shadow);
-  position:relative;
+/* File Info List */
+.product-info ul,
+.buy-panel ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.buy-panel ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+}
+
+/* PRICE */
+
+.price {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 10px 0;
+  color: var(--primary);
+}
+
+.price small {
+  display: block;
+  font-size: 13px;
+  color: var(--text);
+  margin-top: 5px;
+}
+
+/* BUTTONS */
+
+.download-buttons {
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panel-btn {
+  text-align: center;
+  padding: 12px 18px;
+  font-size: 15px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  border: 1px solid transparent;
+}
+
+.panel-btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.panel-btn.primary:hover {
+  background: #0891b2;
+}
+
+.panel-btn.outline {
+  border-color: var(--border);
+  color: var(--dark);
+  background: #fff;
+}
+
+.panel-btn.outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Features Section */
+.product-features ul li {
+  padding: 7px 0;
+  font-size: 15px;
 }
 
 /* sticky only on desktop wide screens */
