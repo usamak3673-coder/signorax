@@ -213,6 +213,14 @@ function toggleMenu() {
   <p class="footer-copy">© 2025 SignoraX. All rights reserved.</p>
 </footer>
 
+  <!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="closeBtn">✕</button>
+    <img id="lightboxImage" src="" alt="{{PRODUCT_TITLE}} large preview">
+  </div>
+</div>
+
 <!-- LIGHTBOX SCRIPT -->
 <script>
 const mainImage = document.getElementById("mainImage");
@@ -276,3 +284,4 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+
