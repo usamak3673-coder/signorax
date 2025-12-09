@@ -216,18 +216,7 @@ function toggleMenu() {
 <!-- LIGHTBOX SCRIPT -->
 <script>
 const mainImage = document.getElementById("mainImage");
-const lightbox = document.createElement("div");
-lightbox.id = "lightbox";
-lightbox.style.display = "none";
-lightbox.style.position = "fixed";
-lightbox.style.top = "0"; lightbox.style.left = "0";
-lightbox.style.width = "100%"; lightbox.style.height = "100%";
-lightbox.style.background = "rgba(0,0,0,0.8)";
-lightbox.style.justifyContent = "center";
-lightbox.style.alignItems = "center";
-lightbox.innerHTML = '<img id="lightboxImage" src="" alt="Preview" style="max-width:90%;max-height:90%"><span id="closeBtn" style="position:absolute;top:20px;right:40px;font-size:2rem;color:#fff;cursor:pointer;">✕</span>';
-document.body.appendChild(lightbox);
-
+const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const closeBtn = document.getElementById("closeBtn");
 
@@ -236,6 +225,54 @@ mainImage.addEventListener("click", () => {
   lightbox.style.display = "flex";
 });
 
-closeBtn.addEventListener("click", () => lightbox.style.display = "none");
-lightbox.addEventListener("click", (e) => { if(e.target === lightbox) lightbox.style.display = "none"; });
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+});
+</script>
+  <!-- Watermark Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll(".image-wrap img, #lightboxImage");
+
+  images.forEach((img) => {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+    const text = "SIGNORAX";
+    const fontSize = canvas.width / 8;
+
+    ctx.font = `bold ${fontSize}px Helvetica`;
+    ctx.fillStyle = "rgba(0,0,0,0.15)";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+
+    img.src = canvas.toDataURL();
+  });
+});
+</script>
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.querySelector(".mobile-menu-icon");
+  const mobileNav = document.querySelector(".mobile-nav");
+
+  if (menuIcon && mobileNav) {
+    menuIcon.addEventListener("click", () => {
+      mobileNav.style.display =
+        mobileNav.style.display === "flex" ? "none" : "flex";
+    });
+  }
+});
 </script>
