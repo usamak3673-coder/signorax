@@ -489,6 +489,80 @@ searchInput.addEventListener('keypress', e => {
 function toggleMenu() {
   document.getElementById("mobileNav").classList.toggle("open");
 }
+
+// === TYPO-TOLERANT SEARCH + HIGHLIGHT ===
+function filterGallery(category, query) {
+  const searchWords = query
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    .map(word => singularize(word))
+    .filter(Boolean);
+
+  function fuzzyMatch(word, target) {
+    target = target.toLowerCase();
+    if (target.includes(word)) return true;
+    if (target.startsWith(word.slice(0, 2))) return true;
+    let diff = 0;
+    for (let i = 0; i < Math.max(word.length, target.length); i++) {
+      if (word[i] !== target[i]) diff++;
+      if (diff > 1) return false;
+    }
+    return diff <= 1;
+  }
+
+  let visibleCount = 0;
+
+  galleryItems.forEach(item => {
+    const name = singularize(item.dataset.name.toLowerCase());
+    const itemCategory = singularize(item.dataset.category.toLowerCase());
+
+    // Category match
+    const categoryMatch = category === 'all' || itemCategory === category || itemCategory.includes(category);
+
+    // Multi-word fuzzy search
+    const searchMatch = searchWords.length === 0 || searchWords.every(sw => {
+      const itemWords = (name + " " + itemCategory).split(/\s+/);
+      return itemWords.some(iw => fuzzyMatch(sw, iw));
+    });
+
+    // Show / Hide item
+    if (categoryMatch && searchMatch) {
+      item.style.display = 'block';
+      visibleCount++;
+
+      // === HIGHLIGHT MATCHING WORDS ===
+      let highlightedName = item.dataset.name;
+      searchWords.forEach(sw => {
+        const regex = new RegExp(sw, 'ig'); // case-insensitive
+        highlightedName = highlightedName.replace(regex, match => `<span style="background-color: #ffeb3b;">${match}</span>`);
+      });
+
+      // Add highlighted title overlay (optional)
+      const overlay = item.querySelector('.overlay');
+      overlay.innerHTML = `View Details<br><small style="color: #fff;">${highlightedName}</small>`;
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  // === No Results Message ===
+  let noResults = document.getElementById('noResults');
+  if (!noResults) {
+    noResults = document.createElement('p');
+    noResults.id = 'noResults';
+    noResults.textContent = 'No signs found matching your search.';
+    noResults.style.color = '#6b7280';
+    noResults.style.textAlign = 'center';
+    noResults.style.marginTop = '30px';
+    noResults.style.fontSize = '18px';
+    document.querySelector('.signs-gallery').after(noResults);
+  }
+  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+
+  // Update search title
+  updateSearchTitle(category, query.trim());
+}
 </script>
 </body>
 </html>
