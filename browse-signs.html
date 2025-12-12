@@ -60,6 +60,15 @@ a {
   text-transform: uppercase;
 }
 
+/* Search Title */
+#searchTitle {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 35px;
+  color: #333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 /* Search Bar */
 .search-bar input {
   width: 100%;
@@ -209,7 +218,19 @@ a {
       <button class="filter-btn" data-filter="safety">Safety Signs</button>
       <button class="filter-btn" data-filter="industrial">Industrial Signs</button>
     </div>
+
+     <!-- SEARCH TITLE -->
+    <h2 id="searchTitle"></h2>
+    
   </section>
+
+  <!-- If you have a cart panel / cart divs in your original file, paste them
+       below or replace the placeholder. This file DOES NOT remove your cart —
+       I couldn't see your cart markup in the snippet you sent, so I left a clear spot. -->
+  <!-- ========== CART / EXTRA MARKUP PLACEHOLDER ========== -->
+  <!-- Paste your cart / mini-cart / cart-panel HTML here (from your original file) -->
+  <!-- Example: <div id="cartPanel"> ... </div> -->
+  <!-- ==================================================== -->
 
   <!-- GALLERY -->
   <main class="gallery-wrapper">
@@ -350,6 +371,33 @@ function singularize(word) {
   return word;
 }
 
+/* ===== SEARCH TITLE FUNCTION ===== */
+function updateSearchTitle(category, query) {
+  const title = document.getElementById("searchTitle");
+  const catText = category !== 'all' ? category + " signs" : "";
+  const qText = query ? query : "";
+
+  if (!catText && !qText) {
+    title.textContent = "";
+    return;
+  }
+
+  if (catText && qText) {
+    title.textContent = `Showing results for "${qText}" in ${catText}`;
+    return;
+  }
+
+  if (catText && !qText) {
+    title.textContent = `Category: ${catText}`;
+    return;
+  }
+
+  if (!catText && qText) {
+    title.textContent = `Search results for "${qText}"`;
+    return;
+  }
+}
+
 // === SMART FILTER FUNCTION ===
 function filterGallery(category, query) {
   const searchWords = query
@@ -392,6 +440,9 @@ function filterGallery(category, query) {
     document.querySelector('.signs-gallery').after(noResults);
   }
   noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+
+  // update the search title whenever filtering finishes
+  updateSearchTitle(category, query.trim());
 }
 
 // === HIGHLIGHT ACTIVE BUTTON ===
