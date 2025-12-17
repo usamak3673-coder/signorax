@@ -80,10 +80,10 @@
   color: #fff;
   text-decoration: none;
   transition: 0.25s;
-    background-color: red;
+
       color: #ffffff;
-      height: 55px; 
-  width: 100px;  
+      height: 25px; 
+  width: 40px;  
 }
 
 .account-btn:hover {
