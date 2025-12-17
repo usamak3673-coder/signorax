@@ -143,7 +143,7 @@ a {
 .gallery-wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 56px 24px;
+  padding: 32px 24px; /* reduced for better above-the-fold UX */
 }
 
 /* =========================
@@ -151,8 +151,8 @@ a {
 ========================= */
 .signs-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* smaller cards */
+  gap: 20px; /* tighter spacing */
 }
 
 /* =========================
@@ -161,24 +161,23 @@ a {
 .sign-card {
   position: relative;
   background-color: #FFFFFF;
-  border-radius: 6px;
+  border-radius: 4px; /* cleaner, less bulky */
   overflow: hidden;
   border: 1px solid #E5E7EB;
   cursor: pointer;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow 0.2s ease;
 }
 
 .sign-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 /* =========================
-   IMAGE
+   IMAGE (KEY UX FIX)
 ========================= */
 .sign-card img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3; /* shorter cards = less scrolling */
   object-fit: contain;
   background-color: #F9FAFB;
   display: block;
@@ -211,7 +210,6 @@ a {
   font-weight: 600;
   letter-spacing: 0.3px;
 }
-
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
