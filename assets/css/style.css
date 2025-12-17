@@ -76,15 +76,16 @@
 
 /* Account Icon */
 .account-btn {
-  font-size: 19px;
+  font-size: 22px;
   color: #fff;
   text-decoration: none;
   transition: 0.25s;
-  color: #ffffff;
+}
+
 .account-btn:hover {
   color: #f30606;
   background: white;
-  border: 1px red;  
+  border: 1px red;
 }
 
 /* ===== MOBILE MENU ICON ===== */
@@ -311,7 +312,7 @@
 }
 
 .hero-sub {
-  font-size: 36px;  
+  font-size: 70px;  
   margin-bottom: 40px;
   margin-top: 20px;
   line-height: 1.6;
@@ -327,6 +328,7 @@
   gap: 12px; /* space between input, select, and button */
   flex-wrap: wrap; /* responsive for smaller screens */
   margin-top: 30px;
+
 }
 
 /* Search input */
