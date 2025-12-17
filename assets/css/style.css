@@ -287,7 +287,7 @@
 }
 
 .hero {
-  background: #1F1D1D;
+  background: #000000;
   padding: 100px 20px 60px;
   text-align: center;
   color: #ffffff;
@@ -465,8 +465,8 @@
 }
 
 .cat-link {
-  font-weight: 600;
-  color: #FF0101;
+  font-weight: 400;
+  color: #042ff1;
   font-size: 16px;
 }
 
@@ -551,8 +551,8 @@
 }
 
 .blog-read {
-  color: #FF0101;
-  font-weight: 600;
+  color: #042ff1;
+  font-weight: 400;
   font-size: 15px;
 }
 
