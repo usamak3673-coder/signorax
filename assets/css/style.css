@@ -85,8 +85,9 @@
 }
 
 .account-btn:hover {
-  color: #ffffff;
-   background-color: red;   
+  color: #f30606;
+  background: white;
+  border: 1px red;  
 }
 
 /* ===== MOBILE MENU ICON ===== */
