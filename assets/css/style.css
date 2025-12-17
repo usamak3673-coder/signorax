@@ -56,9 +56,10 @@
   margin-left: 28px;
   text-decoration: none;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 13px;
   transition: 0.25s;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .nav a:hover {
