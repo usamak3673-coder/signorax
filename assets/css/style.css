@@ -434,17 +434,17 @@
 }
 
 .category-card {
-  background: #f9fafb;
+  background: #fdfdfd;
   padding: 28px;
   border-radius: 12px;
-  border: 1px solid #e6e6e6;
-  box-shadow: 0px 4px 10px rgba(230, 152, 8, 0.3);
+  border: 1px solid #f1f1f1;
+  box-shadow: 0px 4px 10px rgb(255, 255, 255);
   transition: 0.3s;
 }
 
 .category-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 6px 14px rgba(230, 152, 8, 0.45);
+  box-shadow: 0px 6px 14px rgb(255, 255, 255);
 }
 
 .cat-icon {
@@ -526,7 +526,7 @@
   padding: 24px;
   border-radius: 12px;
   border: 1px solid #e6e6e6;
-  box-shadow: 0px 4px 10px rgba(230, 152, 8, 0.3);
+  box-shadow: 0px 4px 10px rgb(255, 255, 255);
   transition: 0.3s;
   text-decoration: none;
   color: #111;
@@ -535,7 +535,7 @@
 
 .blog-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 6px 14px rgba(230, 152, 8, 0.45);
+  box-shadow: 0px 6px 14px rgb(255, 255, 255);
 }
 
 .blog-card h3 {
