@@ -56,8 +56,8 @@
   margin-left: 28px;
   text-decoration: none;
   color: #ffffff;
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 13px;
   transition: 0.25s;
 }
 
@@ -75,14 +75,15 @@
 
 /* Account Icon */
 .account-btn {
-  font-size: 22px;
+  font-size: 19px;
   color: #fff;
   text-decoration: none;
   transition: 0.25s;
 }
 
 .account-btn:hover {
-  color: #FF0101;
+  color: #ffffff;
+   background-color: red;   
 }
 
 /* ===== MOBILE MENU ICON ===== */
