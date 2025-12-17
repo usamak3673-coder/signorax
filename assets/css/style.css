@@ -63,7 +63,7 @@
 }
 
 .nav a:hover {
-  color: #FF0101;
+  color: #111827;
   transform: translateY(-1px);
 }
 
@@ -83,9 +83,9 @@
 }
 
 .account-btn:hover {
-  color: #f30606;
+  color: #111827;
   background: white;
-  border: 1px red;
+  border: 1px #111827;
 }
 
 /* ===== MOBILE MENU ICON ===== */
@@ -215,7 +215,7 @@
 .footer-btn {
   margin-top: 10px;
   padding: 12px 16px;
-  background: #FF0101;
+  background: #111827;
   color: #fff;
   border-radius: 8px;
   border: none;
@@ -269,7 +269,7 @@
 
 .highlight-download {
   position: relative;
-  color: #f55f5f;
+  color: #111827;
 }
 
 .highlight-download::after {
@@ -279,7 +279,7 @@
   bottom: -3px;
   width: 100%;
   height: 3px;
-  background: #f55f5f;
+  background: #111827;
   transform: scaleX(0);
   transform-origin: left;
   transition: 0.3s ease;
@@ -375,7 +375,7 @@
 .hero-btn {
   height: 48px;
   padding: 0 25px;
-  background-color: #FF0101;
+  background-color: #111827;
   color: #ffffff;
   border: none;
   font-weight: 500;
