@@ -266,7 +266,7 @@
 
 .highlight-download {
   position: relative;
-  color: #5515e9;
+  color: #f55f5f;
 }
 
 .highlight-download::after {
@@ -276,7 +276,7 @@
   bottom: -3px;
   width: 100%;
   height: 3px;
-  background: #FF0101;
+  background: #f55f5f;
   transform: scaleX(0);
   transform-origin: left;
   transition: 0.3s ease;
