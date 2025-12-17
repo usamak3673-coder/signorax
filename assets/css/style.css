@@ -82,6 +82,8 @@
   transition: 0.25s;
     background-color: red;
       color: #ffffff;
+      height: 55px; 
+  width: 100px;  
 }
 
 .account-btn:hover {
