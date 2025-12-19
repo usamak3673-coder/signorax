@@ -119,7 +119,13 @@ a { text-decoration: none; color: inherit; }
 </style>
 </head>
 <body>
-
+ <!-- HEADER -->
+<div id="header"></div>
+<script>
+  fetch("./header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+</script>
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
