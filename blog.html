@@ -6,7 +6,6 @@
 <title>Sign Design Blog | Tips, Guides & Resources</title>
 <meta name="description" content="Explore our professional sign design blog. Get tips, tutorials, and resources for road, safety, warning, and industrial signs.">
 <!-- Google Fonts -->
-<link rel="stylesheet" href="assets/css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 <style>
 /* ===== GLOBAL STYLES ===== */
@@ -16,7 +15,19 @@ body {
   background: #f9fafb;
   color: #111827;
 }
+a { text-decoration: none; color: inherit; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
+/* ===== HEADER ===== */
+header {
+  background: #1F2937;
+  color: #fff;
+  padding: 20px 0;
+}
+header .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+header h1 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 24px; margin:0; }
+header nav a { margin: 0 12px; font-weight: 500; color: #fff; transition: color 0.2s ease; }
+header nav a:hover { color: #2563EB; }
 
 /* ===== HERO SECTION ===== */
 .hero {
@@ -110,56 +121,38 @@ body {
   color: #fff;
   border-color: #2563EB;
 }
+
+/* ===== FOOTER ===== */
+footer {
+  background: #111827;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+footer p { margin: 0; font-size: 14px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:768px){
+  .hero-title { font-size: 32px; }
+  .hero-sub { font-size: 16px; }
+  header .wrap { flex-direction: column; gap:10px; }
+}
 </style>
 </head>
 <body>
 
-<header class="pro-header">
-  <div class="container header-wrapper">
-
-    <!-- Logo -->
-    <a href="index.html" class="logo">
-      <span>Signora</span>X
-    </a>
-
-    <!-- Navigation -->
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="browse-signs.html">Browse Signs</a>
-      <a href="about/">About</a>
-      <a href="contact/">Contact</a>
-      <a href="blog.html/">Blog</a>
+<!-- HEADER -->
+<header>
+  <div class="wrap">
+    <h1>Signorax</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/browse-signs.html">Browse Signs</a>
+      <a href="/contact.html">Contact</a>
     </nav>
-
-    <!-- Right side -->
-    <div class="header-actions">
-      <a href="account.html" class="account-btn">
-        <span class="material-icons">Login IN</span>
-      </a>
-    </div>
-
-    <!-- Mobile Menu Icon -->
-    <div class="mobile-menu-icon" onclick="toggleMenu()">
-      ☰
-    </div>
-
-  </div>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">Home</a>
-      <a href="browse-signs.html">Browse Signs</a>
-      <a href="about/">About</a>
-      <a href="contact/">Contact</a>
-      <a href="blog/">Blog</a>
   </div>
 </header>
-
-<script>
-function toggleMenu() {
-  document.getElementById("mobileNav").classList.toggle("open");
-}
-</script>
 
 <!-- HERO -->
 <section class="hero">
@@ -175,7 +168,7 @@ function toggleMenu() {
     <h2 class="section-title">Latest Articles</h2>
 
     <div class="blog-grid">
-      <a href="/blog/why-don't-american-speed-limit-signs-have-unit.html" class="blog-card">
+      <a href="/blog/why-american-speed-limit-signs.html" class="blog-card">
         <img src="/assets/images/blog-speed-limit.jpg" alt="American Speed Limit Signs" loading="lazy">
         <h3>Why Don't American Speed Limit Signs Have Unit?</h3>
         <p>Complete guide covering regulatory, warning, and information signs.</p>
@@ -205,37 +198,11 @@ function toggleMenu() {
   </div>
 </section>
 
-<footer class="pro-footer">
-  <div class="container footer-grid">
-
-    <!-- Column 1 -->
-    <div class="footer-col">
-      <h3 class="footer-logo">SignoraX</h3>
-      <p>Premium signs, symbols, icons & warning graphics for professionals.</p>
-    </div>
-
-    <!-- Column 2 -->
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <a href="browse-signs.html">Browse All Signs</a>
-      <a href="about/">About</a>
-      <a href="contact/">Contact</a>
-      <a href="categories/">Categories</a>
-    </div>
-
-    <!-- Column 3 -->
-    <div class="footer-col">
-      <h4>Stay Updated</h4>
-      <p>Get updates on new sign collections.</p>
-      <input type="email" placeholder="Enter your email" class="footer-input">
-      <button class="footer-btn">Subscribe</button>
-    </div>
-
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <p>© 2025 Signorax. All Rights Reserved.</p>
   </div>
-
-  <p class="footer-copy">
-    © 2025 SignoraX. All rights reserved.
-  </p>
 </footer>
 
 </body>
