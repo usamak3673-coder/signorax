@@ -141,18 +141,52 @@ footer p { margin: 0; font-size: 14px; }
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="wrap">
-    <h1>Signorax</h1>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/blog.html">Blog</a>
-      <a href="/browse-signs.html">Browse Signs</a>
-      <a href="/contact.html">Contact</a>
+<header class="pro-header">
+  <div class="container header-wrapper">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <span>Signora</span>X
+    </a>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="browse-signs.html">Browse Signs</a>
+      <a href="about/">About</a>
+      <a href="contact/">Contact</a>
+      <a href="blog.html/">Blog</a>
     </nav>
+
+    <!-- Right side -->
+    <div class="header-actions">
+      <a href="account.html" class="account-btn">
+        <span class="material-icons">Login IN</span>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Icon -->
+    <div class="mobile-menu-icon" onclick="toggleMenu()">
+      ☰
+    </div>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+      <a href="browse-signs.html">Browse Signs</a>
+      <a href="about/">About</a>
+      <a href="contact/">Contact</a>
+      <a href="blog/">Blog</a>
   </div>
 </header>
+
+<script>
+function toggleMenu() {
+  document.getElementById("mobileNav").classList.toggle("open");
+}
+</script>
 
 <!-- HERO -->
 <section class="hero">
