@@ -7,7 +7,6 @@
 <meta name="description" content="Explore our professional sign design blog. Get tips, tutorials, and resources for road, safety, warning, and industrial signs.">
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="assets/css/style.css">
 <style>
 /* ===== GLOBAL STYLES ===== */
 body {
@@ -19,24 +18,29 @@ body {
 a { text-decoration: none; color: inherit; }
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* ===== HEADER/FOOTER PLACEHOLDER ===== */
-#header, #footer {
-  width: 100%;
+/* ===== HEADER ===== */
+header {
+  background: #1F2937;
+  color: #fff;
+  padding: 20px 0;
 }
+header .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+header h1 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 24px; margin:0; }
+header nav a { margin: 0 12px; font-weight: 500; color: #fff; transition: color 0.2s ease; }
+header nav a:hover { color: #2563EB; }
 
 /* ===== HERO SECTION ===== */
 .hero {
   text-align: center;
-  padding: 80px 20px 50px;
+  padding: 60px 20px 40px;
   background: #ffffff;
 }
 .hero-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 38px;
   color: #1F2937;
-  margin-bottom: 14px;
-  line-height: 1.2;
+  margin-bottom: 12px;
 }
 .hero-sub {
   font-weight: 400;
@@ -44,65 +48,56 @@ a { text-decoration: none; color: inherit; }
   color: #4B5563;
   max-width: 800px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* ===== BLOG GRID ===== */
-.blog-section { padding: 50px 0; }
+.blog-section { padding: 40px 0; }
 .section-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 28px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   color: #1F2937;
 }
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 28px;
+  gap: 24px;
 }
 .blog-card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   border: 1px solid #E5E7EB;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 .blog-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  display: block;
 }
 .blog-card h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 20px;
-  margin: 16px;
+  margin: 12px 16px 6px;
 }
 .blog-card p {
   font-size: 15px;
   color: #4B5563;
-  margin: 0 16px 16px;
-  flex-grow: 1;
+  margin: 0 16px 12px;
 }
 .blog-read {
   display: inline-block;
   margin: 0 16px 16px;
   font-weight: 600;
   color: #2563EB;
-  transition: color 0.2s ease;
-}
-.blog-read:hover {
-  color: #1D4ED8;
-  text-decoration: underline;
 }
 
 /* ===== PAGINATION ===== */
@@ -110,16 +105,16 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin: 50px 0;
+  margin: 40px 0;
 }
 .page-btn {
-  padding: 10px 20px;
+  padding: 8px 18px;
   border: 1px solid #D1D5DB;
   background: #fff;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   font-weight: 500;
-  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 .page-btn:hover {
   background: #2563EB;
@@ -127,23 +122,37 @@ a { text-decoration: none; color: inherit; }
   border-color: #2563EB;
 }
 
+/* ===== FOOTER ===== */
+footer {
+  background: #111827;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+footer p { margin: 0; font-size: 14px; }
+
 /* ===== RESPONSIVE ===== */
 @media (max-width:768px){
   .hero-title { font-size: 32px; }
   .hero-sub { font-size: 16px; }
-  .blog-card img { height: 160px; }
+  header .wrap { flex-direction: column; gap:10px; }
 }
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
-<div id="header"></div>
-<script>
-fetch("./header.html")
-  .then(res => res.text())
-  .then(data => document.getElementById("header").innerHTML = data);
-</script>
+<header>
+  <div class="wrap">
+    <h1>Signorax</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/browse-signs.html">Browse Signs</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
 <!-- HERO -->
 <section class="hero">
@@ -157,29 +166,28 @@ fetch("./header.html")
 <section class="blog-section">
   <div class="wrap">
     <h2 class="section-title">Latest Articles</h2>
-    <div class="blog-grid">
 
-      <a href="blog/why-american-speed-limit-signs.html" class="blog-card">
-        <img src="assets/images/blog-speed-limit.jpg" alt="American Speed Limit Signs" loading="lazy">
+    <div class="blog-grid">
+      <a href="/blog/why-american-speed-limit-signs.html" class="blog-card">
+        <img src="/assets/images/blog-speed-limit.jpg" alt="American Speed Limit Signs" loading="lazy">
         <h3>Why Don't American Speed Limit Signs Have Unit?</h3>
         <p>Complete guide covering regulatory, warning, and information signs.</p>
         <span class="blog-read">Read Article →</span>
       </a>
 
-      <a href="blog/construction-safety-checklist.html" class="blog-card">
-        <img src="assets/images/blog-construction-safety.jpg" alt="Construction Safety Checklist" loading="lazy">
+      <a href="/blog/construction-safety-checklist.html" class="blog-card">
+        <img src="/assets/images/blog-construction-safety.jpg" alt="Construction Safety Checklist" loading="lazy">
         <h3>Construction Safety Signs Checklist</h3>
         <p>The essential signs required for every site in 2025.</p>
         <span class="blog-read">Read Article →</span>
       </a>
 
-      <a href="blog/vector-file-formats.html" class="blog-card">
-        <img src="assets/images/blog-vector-formats.jpg" alt="EPS vs SVG File Formats" loading="lazy">
+      <a href="/blog/vector-file-formats.html" class="blog-card">
+        <img src="/assets/images/blog-vector-formats.jpg" alt="EPS vs SVG File Formats" loading="lazy">
         <h3>EPS vs SVG — Which Should You Use?</h3>
         <p>Understand file formats to pick the best one for your project.</p>
         <span class="blog-read">Read Article →</span>
       </a>
-
     </div>
 
     <!-- PAGINATION -->
@@ -191,12 +199,11 @@ fetch("./header.html")
 </section>
 
 <!-- FOOTER -->
-<div id="footer"></div>
-<script>
-fetch("./footer.html")
-  .then(res => res.text())
-  .then(data => document.getElementById("footer").innerHTML = data);
-</script>
+<footer>
+  <div class="wrap">
+    <p>© 2025 Signorax. All Rights Reserved.</p>
+  </div>
+</footer>
 
 </body>
 </html>
