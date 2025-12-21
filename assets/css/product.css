@@ -115,8 +115,8 @@ img{max-width:100%;height:auto;display:block}
 }
 
 /* Title & subtitle */
-.product-title{font-size:28px;font-weight:700;line-height:1.25;margin-bottom:8px}
-.product-sub{font-size:17px;color:var(--text);margin-bottom:20px}
+.product-title{font-size:24px;font-weight:700;line-height:1.25;margin-bottom:8px}
+.product-sub{font-size:15px;color:var(--text);margin-bottom:20px}
 
 /* IMAGE WRAPPER (responsive, watermark preserved) */
 .image-wrap{
