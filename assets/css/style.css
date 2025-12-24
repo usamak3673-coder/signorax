@@ -69,7 +69,7 @@
  margin: 0 14px;
   text-decoration: none;
   color: #111;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .header-actions {
@@ -82,6 +82,7 @@
   text-decoration: none;
   color: #111;
   font-weight: 500;
+  background:#F3F4F5;
 }
 
 .signup {
