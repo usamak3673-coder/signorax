@@ -202,12 +202,12 @@ img{max-width:100%;height:auto;display:block}
 .related-blogs h2{font-size:26px;margin-bottom:20px;text-align:center;color:#E96729}
 .blog-titles{display:flex;flex-direction:column;gap:15px;max-width:800px;margin:0 auto}
 .blog-link{display:block;font-size:18px;padding:12px 15px;background:#fff;border-left:4px solid #0a74da;border-radius:5px;color:#333;text-decoration:none;transition:all .25s}
-.blog-link:hover{background:#E96729;padding-left:20px;color:#0a74da}
+.blog-link:hover{background:#191919;padding-left:20px;color:#191919}
 
 .faq{margin-top:50px;padding:30px 20px;background:#f9f9f9;border-top:2px solid #E96729;border-radius:8px;max-width:900px;margin-left:auto;margin-right:auto}
 .faq h2{font-size:22px;color:#E96729;text-align:center;margin-bottom:25px}
 .faq-item{background:#fff;padding:15px 20px;margin-bottom:15px;border-left:4px solid #0a74da;border-radius:5px;transition:all .2s}
-.faq-item:hover{background:#E96729;border-left-color:#191919}
+.faq-item:hover{background:#191919;border-left-color:#191919}
 .faq-item h3{font-size:18px;margin-bottom:8px;color:#333}
 .faq-item p{font-size:15px;line-height:1.6;color:#555}
 
