@@ -13,79 +13,57 @@
     .wrap{max-width:var(--max-width);margin:0 auto;padding:0 28px;}
 
    /* ===== PRO HEADER ===== */
-.pro-header {
-  position: sticky;
-  top: 0;
-  background: #0D0D0D;
-  border-bottom: 0.25px solid #4e4848;
-  z-index: 999;
-  width: 100%;
-  backdrop-filter: blur(10px);
+/* ===== HEADER ===== */
+.top-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
 }
 
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 14px 20px;
-}
-
-/* Header layout */
-.header-wrapper {
+.header-inner {
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Logo */
 .logo {
-  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  background: #ff6a00;
+  color: #fff;
   font-weight: 800;
-  text-decoration: none;
-  color: #ffffff;
-  letter-spacing: 0.5px;
-  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
-.logo:hover {
-  opacity: 0.85;
-}
-
-/* Desktop Navigation */
 .nav a {
-  margin-left: 28px;
+  margin: 0 14px;
   text-decoration: none;
-  color: #ffffff;
+  color: #111;
   font-weight: 500;
-  font-size: 13px;
-  transition: 0.25s;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.nav a:hover {
-  color: #3663EB;
-  transform: translateY(-1px);
-}
-
-/* Header Actions */
 .header-actions {
   display: flex;
   align-items: center;
   gap: 18px;
 }
 
-/* Account Icon */
-.account-btn {
-  font-size: 22px;
-  color: #fff;
+.plans, .login {
   text-decoration: none;
-  transition: 0.25s;
+  color: #111;
+  font-weight: 500;
 }
 
-.account-btn:hover {
-  color: #3663EB;
-  background: white;
-  border: 1px #111827;
+.signup {
+  background: #ff6a00;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 /* ===== MOBILE MENU ICON ===== */
