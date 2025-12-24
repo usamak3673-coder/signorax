@@ -249,157 +249,84 @@
     margin-bottom: 20px;
   }
 }
-/* === HERO SECTION === */
-
-.highlight-download {
-  position: relative;
-  color: #3663EB;
-}
-
-.highlight-download::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 3px;
-  background: #3663EB;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: 0.3s ease;
-}
-
-.highlight-download:hover::after {
-  transform: scaleX(1);
-}
-
+/* ===== HERO ===== */
 .hero {
-  background: #000000;
-  padding: 100px 20px 60px;
-  text-align: center;
-  color: #ffffff;
-  height: 549px;
-}
-
-.hero-content {
-  max-width:1200px;
-  margin: 0 auto;
-}
-
-.hero-title {
-  margin-top: 100px;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.hero-sub {
-  font-size: 70px;  
-  margin-bottom: 40px;
-  margin-top: 20px;
-  line-height: 1.6;
-  color: #ecebea;
- font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-/* Flex search bar */
-.hero-search {
+  min-height: 520px;
+  background: linear-gradient(135deg, #ff9a6c, #ff6fb1);
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 12px; /* space between input, select, and button */
-  flex-wrap: wrap; /* responsive for smaller screens */
-  margin-top: 30px;
-
+  text-align: center;
 }
 
-/* Search input */
-/* Search input */
-.hero-input {
-  flex: 1; /* takes available space */
-  min-width: 250px;
-  height: 48px;
-  padding: 0 15px;
-  border: 1px solid #ccc;
+.hero-content h1 {
+  font-size: 44px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.hero-content p {
+  color: rgba(255,255,255,0.9);
+  margin: 18px 0 32px;
   font-size: 16px;
-  outline: none;
-  transition: all 0.3s ease;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.hero-input:focus {
-  border-color: #5515e9; /* accent color */
- box-shadow: 0 0 8px rgb(11, 8, 206);
-}
-
-/* Select dropdown */
-.hero-select {
-  width: 180px;
-  height: 48px;
-  margin:10px;
-  padding:5px 5px;
-  border: 2px solid #000000;
-  font-size: 16px;
-  outline: none;
-  background-color: #ffffff;
-  transition: all 0.3s ease;
-  color: rgb(34, 31, 31);
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 600;
-}
-
-.hero-select:focus {
-  border-color: #5515e9;
-  box-shadow: 0 0 8px rgb(11, 8, 206);
-}
-
-/* Search button */
-.hero-btn {
-  height: 48px;
-  padding: 0 25px;
-  background-color: #3663EB;
-  color: #ffffff;
-  border: none;
-  font-weight: 500;
-  font-size: 20px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.hero-btn:hover {
-  background-color: #000000; /* slightly darker on hover */
-  box-shadow: 0 0 8px #FF0101;
-  color:#ffffff;
-}
-
-/* Category buttons below search */
-.hero-categories {
-  margin-top: 25px;
+/* ===== SEARCH ===== */
+.search-box {
+  background: #fff;
+  border-radius: 12px;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  align-items: center;
+  padding: 8px;
+  max-width: 720px;
+  margin: auto;
 }
 
-.hero-categories button {
-  padding: 10px 20px;
-  border: 1px dashed #3663EB;
-  background-color: #000000;
-  color: #ffffff;
-  font-size: 14px;
+.search-box select {
+  border: none;
+  font-weight: 600;
+  padding: 12px;
+  outline: none;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  padding: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
 }
 
-.hero-categories button:hover {
-  background-color: #ffffff;
-  color: #3663EB}
+/* ===== POPULAR ===== */
+.popular {
+  margin-top: 22px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.popular span {
+  margin-right: 8px;
+  opacity: 0.9;
+}
+
+.popular a {
+  background: rgba(255,255,255,0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 0 4px;
+  display: inline-block;
+  color: #fff;
+  font-size: 13px;
+}
+
 
 /* CATEGORY SECTION */
 .category-section {
