@@ -134,6 +134,7 @@ img{max-width:100%;height:auto;display:block}
   display: flex;
   flex-direction: column;
   gap: 12px;
+   
 }
 
 .panel-btn {
@@ -149,7 +150,7 @@ img{max-width:100%;height:auto;display:block}
 }
 
 .panel-btn.primary {
-  background: #E96729;
+  background:#E96729;
   color: #fff;
 }
 
@@ -179,22 +180,6 @@ img{max-width:100%;height:auto;display:block}
 @media(min-width:1000px){
   .right-col{position:sticky;top:20px}
 }
-
-.price{font-size:32px;font-weight:700;color:var(--primary);margin:8px 0}
-.price small{display:block;font-size:13px;color:var(--text);margin-top:6px}
-
-.panel-btn{
-  display:inline-block;text-align:center;padding:12px 18px;border-radius:var(--radius);font-weight:600;cursor:pointer;text-decoration:none;border:1px solid transparent;
-  width:100%;
-}
-.panel-btn.primary{background:var(--primary);color:#fff}
-.panel-btn.primary:hover{opacity:.95}
-.panel-btn.outline{background:#fff;border-color:var(--border);color:var(--dark)}
-.panel-btn.outline:hover{border-color:var(--primary);color:var(--primary)}
-
-.download-buttons{margin:20px 0;display:flex;flex-direction:column;gap:12px}
-.download-buttons a{display:inline-block;padding:12px 16px;border-radius:8px;background:#06b6d4;color:#fff;text-decoration:none;font-weight:600;transition:background .18s}
-.download-buttons a:hover{background:#000}
 
 /* meta info */
 .meta{margin-top:12px;color:var(--muted);font-size:13px;border-top:1px dashed var(--border);padding-top:12px;line-height:1.5}
