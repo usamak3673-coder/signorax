@@ -8,7 +8,7 @@
       --max-width:1200px;
     }
     *{box-sizing:border-box;}
-    body{font-family:arial,system-ui,Arial,sans-serif;background:var(--bg);color:#111827;margin:0;padding:0;}
+    body{ font-family: 'Lato', sans-serif; background:var(--bg);color:#111827;margin:0;padding:0;}
     a{text-decoration:none;color:inherit;}
     .wrap{max-width:var(--max-width);margin:0 auto;padding:0 28px;}
 
@@ -37,7 +37,8 @@
   align-items: center;
   gap: 4px;
   font-size: 22px;
-  font-weight: 800;
+  font-family: 'Montserrat', 'Poppins', sans-serif;    
+  font-weight: 700;
   letter-spacing: -0.5px;
   text-decoration: none;
 }
@@ -70,6 +71,7 @@
   text-decoration: none;
   color: #111;
   font-weight: 500;
+  font-family:'Poppins', sans-serif;
 }
 
 .header-actions {
@@ -83,6 +85,7 @@
   color: #111;
   font-weight: 500;
   background:#F3F4F5;
+  font-family: 'Montserrat', 'Poppins', sans-serif;
 }
 
 .signup {
@@ -92,6 +95,7 @@
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
+  font-family: 'Montserrat', 'Poppins', sans-serif;
 }
 
 /* ===== MOBILE MENU ICON ===== */
@@ -150,7 +154,7 @@
 
 
 .pro-footer {
-   background: radial-gradient(
+    background: radial-gradient(
     ellipse at top,
     #262626 0%,
     #0f0f0f 40%,
@@ -160,7 +164,8 @@
   padding: 60px 0;
   margin-top: 60px;
   border-top: 1px solid #222;
-  font-family: "Inter", sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400; /* normal for body */
 }
 
 /* Grid layout */
@@ -284,7 +289,7 @@
   text-align: center;
 }
 .hero {
-  background: radial-gradient(
+    background: radial-gradient(
     circle at top,
     #1f2933 0%,
     #0b0b0b 45%,
@@ -293,15 +298,19 @@
 }
 .hero-content h1 {
   font-size: 44px;
-  font-weight: 800;
   color: #fff;
   line-height: 1.25;
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-weight: 700; /* bold for headings */
+}
 }
 
 .hero-content p {
   color: rgba(255,255,255,0.9);
   margin: 18px 0 32px;
   font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400; /* normal for body */
 }
 
 /* ===== SEARCH ===== */
@@ -320,6 +329,7 @@
   font-weight: 600;
   padding: 12px;
   outline: none;
+  font-family: 'Montserrat', 'Poppins', sans-serif;
 }
 
 .search-box input {
