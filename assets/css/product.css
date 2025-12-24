@@ -161,12 +161,12 @@ img{max-width:100%;height:auto;display:block}
 .panel-btn.outline {
   border-color:#E96729;
   color: var(--dark);
-  background:#EA7726;
+  background:#E96729;
 }
 
 .panel-btn.outline:hover {
   border-color: var(--primary);
-  color:#EA7726;
+  color:#E96729;
 }
 
 /* Features Section */
