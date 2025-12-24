@@ -400,7 +400,7 @@
 }
 
 .why-card {
-  background: #0E2332;
+  background: #F7F9FA;
   border: 1px solid #3b3838;
   padding: 28px;
   border-radius: 12px;
@@ -408,17 +408,18 @@
 }
 
 .why-card:hover {
-  background: #F7F9FA;
+  background: #EE9A77;
   transform: translateY(-5px);
 }
 
 .why-card h3 {
   font-size: 20px;
   margin-bottom: 10px;
+ color: #0E2332;
 }
 
 .why-card p {
-  color: #e2e2e2;
+  color: #0E2332;
   font-size: 15px;
 }
 
