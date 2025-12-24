@@ -252,7 +252,11 @@
 /* ===== HERO ===== */
 .hero {
   min-height: 520px;
-  background: linear-gradient(135deg, #0E2332, #ff6fb1);
+   background: radial-gradient(
+    circle at top,
+    #1f2933 0%,
+    #0b0b0b 45%,
+    #000000 100%
   display: flex;
   align-items: center;
   text-align: center;
