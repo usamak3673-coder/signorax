@@ -128,7 +128,12 @@
 
 
 .pro-footer {
-  background: #0E2332;
+   background: radial-gradient(
+    ellipse at top,
+    #262626 0%,
+    #0f0f0f 40%,
+    #000000 100%
+  );
   color: #bfbfbf;
   padding: 60px 0;
   margin-top: 60px;
@@ -393,7 +398,12 @@
 /* WHY CHOOSE US */
 .why-section {
   padding: 70px 0;
-  background: #0E2332;
+   background: radial-gradient(
+    ellipse at top,
+    #262626 0%,
+    #0f0f0f 40%,
+    #000000 100%
+  );
   color: #fff;
   text-align: center;
 }
@@ -413,10 +423,10 @@
 }
 .why-card {
   background: radial-gradient(
-    ellipse at top,
-    #262626 0%,
-    #0f0f0f 40%,
-    #000000 100%
+    circle at center,
+    #2a2a2a 0%,
+    #121212 50%,
+    #050505 100%
   );
 }
 
@@ -428,11 +438,11 @@
 .why-card h3 {
   font-size: 20px;
   margin-bottom: 10px;
- color: #0E2332;
+ color: #FFFFFF;
 }
 
 .why-card p {
-  color: #0E2332;
+  color: #FFFFFF;
   font-size: 15px;
 }
 
