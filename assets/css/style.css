@@ -50,11 +50,12 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 22px;
-  font-family: 'Montserrat', 'Poppins', sans-serif;    
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #222;
 }
 
 .logo-main {
