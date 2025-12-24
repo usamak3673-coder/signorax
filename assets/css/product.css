@@ -117,13 +117,13 @@ img{max-width:100%;height:auto;display:block}
   font-size: 32px;
   font-weight: 700;
   margin: 10px 0;
-  color: #EA7726;
+  color: #E96729;
 }
 
 .price small {
   display: block;
   font-size: 13px;
-  color:#EA7726;
+  color:#E96729;
   margin-top: 5px;
 }
 
@@ -149,7 +149,7 @@ img{max-width:100%;height:auto;display:block}
 }
 
 .panel-btn.primary {
-  background: var(--primary);
+  background: #E96729;
   color: #fff;
 }
 
@@ -158,7 +158,7 @@ img{max-width:100%;height:auto;display:block}
 }
 
 .panel-btn.outline {
-  border-color: var(--border);
+  border-color:#E96729;
   color: var(--dark);
   background:#EA7726;
 }
@@ -214,7 +214,7 @@ img{max-width:100%;height:auto;display:block}
 .related-blogs h2{font-size:26px;margin-bottom:20px;text-align:center;color:#0a74da}
 .blog-titles{display:flex;flex-direction:column;gap:15px;max-width:800px;margin:0 auto}
 .blog-link{display:block;font-size:18px;padding:12px 15px;background:#fff;border-left:4px solid #0a74da;border-radius:5px;color:#333;text-decoration:none;transition:all .25s}
-.blog-link:hover{background:#EA7726;padding-left:20px;color:#0a74da}
+.blog-link:hover{background:#E96729;padding-left:20px;color:#0a74da}
 
 .faq{margin-top:50px;padding:30px 20px;background:#f9f9f9;border-top:2px solid #0a74da;border-radius:8px;max-width:900px;margin-left:auto;margin-right:auto}
 .faq h2{font-size:26px;color:#0a74da;text-align:center;margin-bottom:25px}
