@@ -33,15 +33,36 @@
 }
 
 .logo {
-  width: 200px;
-  height: 55px;
-  background: #ff6a00;
-  color: #fff;
-  font-weight: 800;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 50%;
+  gap: 4px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+.logo-main {
+  color: #111; /* black for professionalism */
+}
+
+.logo-accent {
+  color: #ff6a00; /* your brand orange */
+}
+.logo-accent {
+  position: relative;
+  padding-left: 6px;
+}
+
+.logo-accent::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 60%;
+  background: #e5e7eb;
+  transform: translateY(-50%);
 }
 
 .nav a {
