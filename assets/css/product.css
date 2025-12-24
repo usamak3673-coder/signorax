@@ -46,8 +46,8 @@ img{max-width:100%;height:auto;display:block}
 }
 
 /* Title & subtitle */
-.product-title{font-size:28px;font-weight:600;line-height:1.25;margin-bottom:8px font-family: 'Montserrat', 'Poppins', sans-serif;}
-.product-sub{font-size:16px;color:var(--text);margin-bottom:20px font-family: 'Montserrat', 'Poppins', sans-serif;}
+.product-title{font-size:22px;font-weight:600;line-height:1.25;margin-bottom:8px font-family: 'Montserrat', 'Poppins', sans-serif;}
+.product-sub{font-size:15px;color:var(--text);margin-bottom:20px font-family: 'Montserrat', 'Poppins', sans-serif;}
 
 /* IMAGE WRAPPER (responsive, watermark preserved) */
 .image-wrap{
@@ -108,22 +108,22 @@ img{max-width:100%;height:auto;display:block}
 .buy-panel ul li {
   padding: 8px 0;
   border-bottom: 1px solid var(--border);
-  font-size: 16px;
+  font-size: 13px;
 }
 
 /* PRICE */
 
 .price {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 700;
   margin: 10px 0;
-  color: #E96729;
+  color: #3C813A;
   font-family: 'Lato', sans-serif;
 }
 
 .price small {
   display: block;
-  font-size: 15px;
+  font-size: 13px;
   color:#E96729;
   margin-top: 5px;
  font-family: 'Lato', sans-serif;
@@ -153,7 +153,7 @@ img{max-width:100%;height:auto;display:block}
 }
 
 .panel-btn.primary {
-  background:#E6E9EA;
+  background:#3C813A;
   color: #fff;
 }
 
