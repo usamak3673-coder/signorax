@@ -16,6 +16,7 @@
       color: #222;
       line-height: 1.6;
     }
+a{text-decoration: none;
     .wrap{max-width:var(--max-width);margin:0 auto;padding:0 28px;}
 
   h1, h2, h3, h4, h5, h6,{
