@@ -198,6 +198,7 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   margin-bottom: 12px;
+  font-family: 'Montserrat', 'Poppins', sans-serif;
 }
 
 /* Column headings */
@@ -206,6 +207,7 @@
   margin-bottom: 15px;
   font-size: 18px;
   font-weight: 600;
+  font-family: 'Montserrat', 'Poppins', sans-serif;
 }
 
 /* Links */
@@ -216,6 +218,7 @@
   font-size: 15px;
   transition: 0.25s ease;
   text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .footer-col a:hover {
@@ -233,6 +236,7 @@
   color: #fff;
   margin-top: 10px;
   font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .footer-input:focus {
@@ -325,9 +329,10 @@
 .hero-content p {
   color: rgba(255,255,255,0.9);
   margin: 18px 0 32px;
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'Lato', sans-serif;
   font-weight: 400; /* normal for body */
+  color: #fff;
 }
 
 /* ===== SEARCH ===== */
@@ -384,7 +389,7 @@
   margin: 0 4px;
   display: inline-block;
   color: #fff;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 
@@ -393,11 +398,11 @@
   padding: 60px 0;
   background: #ffffff;
   color: #111;
-   text-align: center;
+  text-align: center;
 }
 
 .section-title {
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 700;
   margin-bottom: 40px;
 }
@@ -445,19 +450,19 @@
   object-fit: cover;
 }
 .category-card h3 {
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 600;
   color: #111;
   margin: 6px 0 4px;
 }
 .category-card p {
-  font-size: 14px;
+  font-size: 16px;
   color: #6b7280;
   margin-bottom: 10px;
 }
 .cat-link {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   color: #ff6a00; /* matches your orange buttons */
   text-decoration: none;
 }
@@ -508,14 +513,14 @@
 }
 
 .why-card h3 {
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 10px;
  color: #FFFFFF;
 }
 
 .why-card p {
   color: #FFFFFF;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 
@@ -548,13 +553,13 @@
 }
 
 .blog-card h3 {
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 8px;
   font-weight: 700;
 }
 
 .blog-card p {
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 12px;
   color: #5c5c5c;
 }
