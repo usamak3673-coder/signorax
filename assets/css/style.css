@@ -19,6 +19,13 @@
     a{text-decoration:none;color:inherit;}
     .wrap{max-width:var(--max-width);margin:0 auto;padding:0 28px;}
 
+  h1, h2, h3, h4, h5, h6,{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #111;
+}
    /* ===== PRO HEADER ===== */
 /* ===== CONTAINER ===== */
 .container {
