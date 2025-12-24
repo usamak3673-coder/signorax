@@ -194,13 +194,10 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
 
-  // === SEARCH + CATEGORY FUNCTIONALITY ===
-
-  const searchInput = document.querySelector(".hero-input");
-  const searchBtn = document.querySelector(".hero-btn");
-  const categoryButtons = document.querySelectorAll(".category-btn");
-  const selectCategory = document.querySelector(".hero-select");
-  const selectCountry = document.querySelector(".hero-select");
+  // Select the search input, button, and category dropdown
+  const searchInput = document.querySelector(".search-box input");
+  const searchBtn = document.querySelector(".search-btn");
+  const selectCategory = document.querySelector(".search-box select");
 
   // Redirect function
   function redirectToBrowse(query, category) {
@@ -226,20 +223,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // Category buttons
-  categoryButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const category = btn.textContent.trim();
-      redirectToBrowse("", category);
-    });
-  });
-
 });
-</script>
-<script>
-function toggleMenu() {
-  document.getElementById("mobileNav").classList.toggle("open");
-}
 </script>
 </body>
 </html>
