@@ -17,20 +17,23 @@
     .then(res => res.text())
     .then(data => document.getElementById("header").innerHTML = data);
 </script>
-<!-- HERO SECTION -->
+  
+   <!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="wrap hero-content">
-    <!-- HERO TITLE -->
-<h1 class="hero-title">
-  Premium Sign Vectors for Instant 
-  <span class="highlight-download">Download</span>
-</h1>
-    <p class="hero-sub">High-Quality Vectors For Designers, Businesses, and Creators.
-</p>
-    
+  <div class="container hero-content">
+
+    <h1>
+      Premium Sign Vectors for Instant 
+      <span class="highlight-download">Download</span>
+    </h1>
+
+    <p>
+      High-Quality Vectors For Designers, Businesses, and Creators.
+    </p>
+
     <!-- Search bar -->
-    <div class="hero-search">
-      <select class="hero-select">
+    <div class="search-box">
+      <select>
         <option value="all">All Categories</option>
         <option value="road">Road Signs</option>
         <option value="warning">Warning Signs</option>
@@ -39,14 +42,22 @@
         <option value="safety">Safety Signs</option>
         <option value="industrial">Industrial Signs</option>
       </select>
-      <input type="text" placeholder="Search for a sign..." class="hero-input" />
-      <button class="hero-btn">Search</button>
+
+      <input type="text" placeholder="Search for a sign..." />
+
+      <button class="search-btn">🔍</button>
     </div>
-    <!-- Categories -->
-    <div class="hero-categories">
-      <button class="category-btn">BROWSE SIGNS</button>
-      <button class="category-btn">CONTACT US</button>
+
+    <!-- Popular tags (NEW – no search logic touched) -->
+    <div class="popular">
+      <span>Popular:</span>
+      <a href="#">Parking</a>
+      <a href="#">No Entry</a>
+      <a href="#">Road Narrow</a>
+      <a href="#">Speed Limit</a>
+      <a href="#">Warning</a>
     </div>
+
   </div>
 </section>
   <!-- CATEGORY SECTION -->
