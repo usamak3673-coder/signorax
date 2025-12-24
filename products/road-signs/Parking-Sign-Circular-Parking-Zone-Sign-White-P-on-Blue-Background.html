@@ -330,9 +330,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+  <!-- FOOTER -->
+<div id="footer"></div>
+<script>
+  fetch("/footer.html")
+    .then(res => {
+      if (!res.ok) throw new Error("Footer not found at /footer.html");
+      return res.text();
+    })
+    .then(data => document.getElementById("footer").innerHTML = data)
+    .catch(err => {
+      console.error(err);
+      document.getElementById("footer").innerHTML = "<p>Footer could not load.</p>";
+    });
+</script>
 </body>
 
 </html>
+
 
 
 
