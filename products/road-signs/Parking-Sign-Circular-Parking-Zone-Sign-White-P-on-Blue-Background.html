@@ -90,13 +90,27 @@
 </script>
 </head>
 <body>
-<!-- HEADER -->
 <div id="header"></div>
+
 <script>
-  fetch("./header.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("header").innerHTML = data);
+  (function() {
+    // Base URL for shared components
+    const baseURL = '/header.html';
+
+    fetch(baseURL)
+      .then(res => {
+        if (!res.ok) throw new Error('Header not found at ' + baseURL);
+        return res.text();
+      })
+      .then(data => document.getElementById('header').innerHTML = data)
+      .catch(err => {
+        console.error(err);
+        // Optional: fallback text if header fails to load
+        document.getElementById('header').innerHTML = '<p>Header could not load.</p>';
+      });
+  })();
 </script>
+
 
 
 <!-- MAIN PRODUCT SECTION -->
@@ -319,6 +333,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
+
 
 
 
