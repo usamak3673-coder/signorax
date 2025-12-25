@@ -43,6 +43,9 @@ h1,h2,h3,h4,h5,h6 {
   align-items: center;
   gap: 4px;
   font-size: 22px;
+  font-weight:600;
+  font-family:'Montserrat','Poppins',sans-serif;
+  
 }
 .logo-main { color:#111; }
 .logo-accent {
