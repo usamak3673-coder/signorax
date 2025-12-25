@@ -146,31 +146,42 @@
 </head>
 
 <body>
-<!-- HEADER -->
-<header class="pro-header">
-  <div class="container header-wrapper">
-    <a href="/index.html" class="logo"><span>Signora</span>X</a>
+<!-- ================= HEADER ================= -->
+<header class="top-header">
+  <div class="container header-inner">
+    <div <a href="/" class="logo">
+  <span class="logo-main">Signora</span>
+  <span class="logo-accent">X</span>
+</a></div>
+
     <nav class="nav">
       <a href="/index.html">Home</a>
       <a href="/browse-signs.html">Browse Signs</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact</a>
-      <a href="/blog/">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html/">Contact</a>
+      <a href="/blog.html">Blog</a>
     </nav>
+
     <div class="header-actions">
-      <input type="text" placeholder="Search signs..." class="search-box">
-      <a href="/account.html" class="account-btn">
-        <span class="material-icons">account_circle</span>
-      </a>
+      <a href="#" class="plans">Plans</a>
+      <a href="#" class="btn signup">Sign Up</a>
+      <a href="#" class="login">Log In</a>
     </div>
-    <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
   </div>
+</header>
+    <!-- Mobile Menu Icon -->
+    <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
+
+  </div>
+
+  <!-- Mobile Menu -->
   <div class="mobile-nav" id="mobileNav">
     <a href="/index.html">Home</a>
     <a href="/browse-signs.html">Browse Signs</a>
     <a href="/about/">About</a>
     <a href="/contact/">Contact</a>
     <a href="/blog/">Blog</a>
+    <a href="/account.html">Log In</a>
   </div>
 </header>
 
@@ -179,7 +190,6 @@ function toggleMenu() {
   document.getElementById("mobileNav").classList.toggle("open");
 }
 </script>
-
 <!-- MAIN PRODUCT SECTION -->
 <main class="main">
   <div class="left-col">
@@ -345,6 +355,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
+
 
 
 
