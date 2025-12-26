@@ -163,66 +163,218 @@ fetch("footer.html")
   .then(data => document.getElementById("footer").innerHTML = data);
 </script>
 
-<!-- FILTER + SEARCH -->
 <script>
+  // === ELEMENTS ===
 const galleryItems = document.querySelectorAll('.sign-card');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const searchInput = document.getElementById('searchInput');
 
-function singularize(word){ return word.endsWith('s') ? word.slice(0,-1) : word; }
+// === URL PARAMETERS (from homepage) ===
+const params = new URLSearchParams(window.location.search);
+const searchParam = params.get('search') ? params.get('search').toLowerCase() : '';
+const categoryParam = params.get('category') ? params.get('category').toLowerCase() : 'all';
 
-function updateSearchTitle(category, query){
-  const title = document.getElementById("searchTitle");
-  const catText = category !== 'all' ? category + " signs" : "";
-  const qText = query || "";
-  if(!catText && !qText) title.textContent="";
-  else if(catText && qText) title.textContent=`Showing results for "${qText}" in ${catText}`;
-  else if(catText) title.textContent=`Category: ${catText}`;
-  else title.textContent=`Search results for "${qText}"`;
+// === INITIALIZE SEARCH FIELD ===
+if (searchParam) searchInput.value = searchParam;
+
+// === HELPER FUNCTION: singularize words for search ===
+function singularize(word) {
+  if (word.endsWith('s')) return word.slice(0, -1);
+  return word;
 }
 
-function filterGallery(category, query){
-  const searchWords=query.trim().toLowerCase().split(/\s+/).map(singularize).filter(Boolean);
-  let visibleCount=0;
-  function fuzzyMatch(word,target){
-    target=target.toLowerCase();
-    if(target.includes(word)) return true;
-    if(target.startsWith(word.slice(0,2))) return true;
-    let diff=0;
-    for(let i=0;i<Math.max(word.length,target.length);i++){
-      if(word[i]!==target[i]) diff++;
-      if(diff>1) return false;
-    }
-    return diff<=1;
+/* ===== SEARCH TITLE FUNCTION ===== */
+function updateSearchTitle(category, query) {
+  const title = document.getElementById("searchTitle");
+  const catText = category !== 'all' ? category + " signs" : "";
+  const qText = query ? query : "";
+
+  if (!catText && !qText) {
+    title.textContent = "";
+    return;
   }
-  galleryItems.forEach(item=>{
-    const name=singularize(item.dataset.name.toLowerCase());
-    const itemCategory=singularize(item.dataset.category.toLowerCase());
-    const categoryMatch=category==='all'||itemCategory===category||itemCategory.includes(category);
-    const searchMatch=searchWords.length===0||searchWords.every(sw=>{const iw=(name+" "+itemCategory).split(/\s+/);return iw.some(w=>fuzzyMatch(sw,w))});
-    if(categoryMatch && searchMatch){
-      item.style.display='block'; visibleCount++;
-      let highlightedName=item.dataset.name;
-      searchWords.forEach(sw=>{const regex=new RegExp(sw,'ig'); highlightedName=highlightedName.replace(regex,match=>`<span style="background-color:#ffeb3b;">${match}</span>`);});
-      item.querySelector('.overlay').innerHTML=`View Details<br><small style="color:#fff;">${highlightedName}</small>`;
-    }else item.style.display='none';
+
+  if (catText && qText) {
+    title.textContent = `Showing results for "${qText}" in ${catText}`;
+    return;
+  }
+
+  if (catText && !qText) {
+    title.textContent = `Category: ${catText}`;
+    return;
+  }
+
+  if (!catText && qText) {
+    title.textContent = `Search results for "${qText}"`;
+    return;
+  }
+}
+
+// === SMART FILTER FUNCTION ===
+function filterGallery(category, query) {
+  const searchWords = query
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    .map(word => singularize(word))
+    .filter(Boolean);
+
+  let visibleCount = 0;
+
+  galleryItems.forEach(item => {
+    const name = singularize(item.dataset.name.toLowerCase());
+    const itemCategory = singularize(item.dataset.category.toLowerCase());
+
+    // Category match
+    const categoryMatch = category === 'all' || itemCategory === category || itemCategory.includes(category);
+
+    // Search match
+    const searchMatch = searchWords.length === 0 || searchWords.every(word => name.includes(word) || itemCategory.includes(word));
+
+    if (categoryMatch && searchMatch) {
+      item.style.display = 'block';
+      visibleCount++;
+    } else {
+      item.style.display = 'none';
+    }
   });
-  document.getElementById('noResults').style.display = visibleCount===0 ? 'block':'none';
+
+  // === No Results Message ===
+  let noResults = document.getElementById('noResults');
+  if (!noResults) {
+    noResults = document.createElement('p');
+    noResults.id = 'noResults';
+    noResults.textContent = 'No signs found matching your search.';
+    noResults.style.color = '#6b7280';
+    noResults.style.textAlign = 'center';
+    noResults.style.marginTop = '30px';
+    noResults.style.fontSize = '18px';
+    document.querySelector('.signs-gallery').after(noResults);
+  }
+  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+
+  // update the search title whenever filtering finishes
   updateSearchTitle(category, query.trim());
 }
 
-function setActiveButton(category){ filterButtons.forEach(btn=>{ btn.dataset.filter.trim().toLowerCase()===category?btn.classList.add('active'):btn.classList.remove('active'); }); }
+// === HIGHLIGHT ACTIVE BUTTON ===
+function setActiveButton(category) {
+  filterButtons.forEach(btn => {
+    if (btn.dataset.filter.trim().toLowerCase() === category) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+}
 
-const params=new URLSearchParams(window.location.search);
-const searchParam=params.get('search')?.toLowerCase()||'';
-const categoryParam=params.get('category')?.toLowerCase()||'all';
-if(searchParam) searchInput.value=searchParam;
+// === INITIAL LOAD ===
 setActiveButton(categoryParam);
 filterGallery(categoryParam, searchParam);
 
-filterButtons.forEach(btn=>btn.addEventListener('click',()=>{const category=btn.dataset.filter.toLowerCase().trim(); setActiveButton(category); filterGallery(category, searchInput.value);}));
-searchInput.addEventListener('input',()=>{const category=document.querySelector('.filter-btn.active').dataset.filter.toLowerCase().trim(); filterGallery(category, searchInput.value);});
-searchInput.addEventListener('keypress',e=>{if(e.key==='Enter'){const category=document.querySelector('.filter-btn.active').dataset.filter.toLowerCase().trim(); filterGallery(category, searchInput.value);}});
+// === EVENT LISTENERS ===
+
+// Filter buttons
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const category = btn.dataset.filter.toLowerCase().trim();
+    setActiveButton(category);
+    filterGallery(category, searchInput.value);
+  });
+});
+
+// Search input
+searchInput.addEventListener('input', () => {
+  const activeCategory = document.querySelector('.filter-btn.active').dataset.filter.toLowerCase().trim();
+  filterGallery(activeCategory, searchInput.value);
+});
+
+// ENTER KEY TRIGGER SEARCH
+searchInput.addEventListener('keypress', e => {
+  if (e.key === 'Enter') {
+    const activeCategory = document.querySelector('.filter-btn.active').dataset.filter.toLowerCase().trim();
+    filterGallery(activeCategory, searchInput.value);
+  }
+});
+</script>
+  <script>
+function toggleMenu() {
+  document.getElementById("mobileNav").classList.toggle("open");
+}
+
+// === TYPO-TOLERANT SEARCH + HIGHLIGHT ===
+function filterGallery(category, query) {
+  const searchWords = query
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    .map(word => singularize(word))
+    .filter(Boolean);
+
+  function fuzzyMatch(word, target) {
+    target = target.toLowerCase();
+    if (target.includes(word)) return true;
+    if (target.startsWith(word.slice(0, 2))) return true;
+    let diff = 0;
+    for (let i = 0; i < Math.max(word.length, target.length); i++) {
+      if (word[i] !== target[i]) diff++;
+      if (diff > 1) return false;
+    }
+    return diff <= 1;
+  }
+
+  let visibleCount = 0;
+
+  galleryItems.forEach(item => {
+    const name = singularize(item.dataset.name.toLowerCase());
+    const itemCategory = singularize(item.dataset.category.toLowerCase());
+
+    // Category match
+    const categoryMatch = category === 'all' || itemCategory === category || itemCategory.includes(category);
+
+    // Multi-word fuzzy search
+    const searchMatch = searchWords.length === 0 || searchWords.every(sw => {
+      const itemWords = (name + " " + itemCategory).split(/\s+/);
+      return itemWords.some(iw => fuzzyMatch(sw, iw));
+    });
+
+    // Show / Hide item
+    if (categoryMatch && searchMatch) {
+      item.style.display = 'block';
+      visibleCount++;
+
+      // === HIGHLIGHT MATCHING WORDS ===
+      let highlightedName = item.dataset.name;
+      searchWords.forEach(sw => {
+        const regex = new RegExp(sw, 'ig'); // case-insensitive
+        highlightedName = highlightedName.replace(regex, match => `<span style="background-color: #ffeb3b;">${match}</span>`);
+      });
+
+      // Add highlighted title overlay (optional)
+      const overlay = item.querySelector('.overlay');
+      overlay.innerHTML = `View Details<br><small style="color: #fff;">${highlightedName}</small>`;
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  // === No Results Message ===
+  let noResults = document.getElementById('noResults');
+  if (!noResults) {
+    noResults = document.createElement('p');
+    noResults.id = 'noResults';
+    noResults.textContent = 'No signs found matching your search.';
+    noResults.style.color = '#6b7280';
+    noResults.style.textAlign = 'center';
+    noResults.style.marginTop = '30px';
+    noResults.style.fontSize = '18px';
+    document.querySelector('.signs-gallery').after(noResults);
+  }
+  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+
+  // Update search title
+  updateSearchTitle(category, query.trim());
+}
 </script>
 </body>
 </html>
