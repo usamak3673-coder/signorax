@@ -218,7 +218,7 @@ h1,h2,h3,h4,h5,h6 {
 /* ===== RESPONSIVE ===== */
 @media (max-width:900px) { .footer-grid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width:768px) {
-  .nav, .search-box { display:none; }
+  .nav { display:none; }
   .mobile-menu-icon { display:block; }
   .hero-content h1 { font-size:28px; }
   .hero-content p { font-size:16px; }
