@@ -110,7 +110,28 @@ h1,h2,h3,h4,h5,h6 {
   .mobile-menu-icon { display: block; }   /* Show mobile icon */
   .header-inner { justify-content: space-between; }
 }
-
+@media (max-width:768px) {
+  .search-box {
+    flex-direction: column; /* stack select + input + button */
+    align-items: stretch;
+    max-width: 90%;
+    margin: 15px auto;
+    padding: 6px;
+  }
+  .search-box select,
+  .search-box input,
+  .search-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin: 4px 0;
+  }
+  .search-btn {
+    background:#ff6a00;
+    color:#fff;
+    border-radius:6px;
+  }
+}
 /* ===== HERO ===== */
 .hero {
   min-height:520px;
