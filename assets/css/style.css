@@ -104,7 +104,98 @@ h1,h2,h3,h4,h5,h6 {
 .mobile-nav a:hover { color:#3663EB; }
 .mobile-nav.open { display:flex; }
 @keyframes dropdown { from{opacity:0; transform:translateY(-10px);} to{opacity:1; transform:translateY(0);} }
+ffffgggg
+.top-header {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+}
+
+/* Logo */
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #111827;
+}
+
+.logo-accent {
+  color: #f97316;
+}
+
+/* Toggle button */
+.menu-btn {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Sign up button */
+.signup {
+  background: #f97316;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Desktop nav */
+.nav,
+.header-actions {
+  display: flex;
+  gap: 16px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .nav,
+  .header-actions {
+    display: none;
+  }
+
+  .mobile-signup {
+    display: inline-block;
+  }
+}
+
+/* ================= MOBILE DRAWER ================= */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 4px 0 20px rgba(0,0,0,.1);
+  transition: left .3s ease;
+  z-index: 2000;
+}
+
+.mobile-nav.open {
+  left: 0;
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 12px 0;
+  color: #111827;
+  text-decoration: none;
+  font-weight: 500;
+}
+ffffffff
 /* ===== HERO ===== */
 .hero {
   min-height:520px;
