@@ -104,6 +104,12 @@ h1,h2,h3,h4,h5,h6 {
 .mobile-nav a:hover { color:#3663EB; }
 .mobile-nav.open { display:flex; }
 @keyframes dropdown { from{opacity:0; transform:translateY(-10px);} to{opacity:1; transform:translateY(0);} }
+/* ===== MOBILE ===== */
+@media (max-width: 992px) {
+  .nav, .header-actions { display: none; } /* Hide desktop nav */
+  .mobile-menu-icon { display: block; }   /* Show mobile icon */
+  .header-inner { justify-content: space-between; }
+}
 
 /* ===== HERO ===== */
 .hero {
