@@ -137,86 +137,6 @@ h1,h2,h3,h4,h5,h6 {
   display: flex;
   gap: 16px;
 }
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-
-  .nav,
-  .header-actions {
-    display: none;
-  }
-
-  .menu-btn {
-    display: block;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .mobile-signup {
-    display: inline-block;
-    font-size: 14px;
-    padding: 8px 14px;
-    border-radius: 8px;
-  }
-
-  .logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-  }
-
-  .header-inner {
-    height: 60px;
-    padding: 0 14px;
-  }
-}
-
-/* ================= MOBILE DRAWER ================= */
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 260px;
-  height: 100%;
-  background: #fff;
-  padding: 24px 20px;
-  box-shadow: 4px 0 20px rgba(0,0,0,0.12);
-  transition: left 0.3s ease;
-  z-index: 2000;
-}
-
-.mobile-nav.open {
-  left: 0;
-}
-
-.mobile-nav a {
-  display: block;
-  padding: 14px 0;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  color: #111;
-}
-
-.mobile-nav hr {
-  border: none;
-  border-top: 1px solid #e5e7eb;
-  margin: 16px 0;
-}
-.mobile-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 1500;
-}
-
-.mobile-overlay.show {
-  display: block;
-}
-
-
 /* ===== HERO ===== */
 .hero {
   min-height:520px;
@@ -349,27 +269,4 @@ h1,h2,h3,h4,h5,h6 {
   .blog-card h3 { font-size:18px; }
   .blog-card p { font-size:14px; }
 }
-/* ===== FIX MOBILE HEADER SHOWING ON DESKTOP ===== */
-@media (min-width: 769px) {
-  .menu-btn,
-  .mobile-nav,
-  .mobile-overlay {
-    display: none !important;
-  }
 
-  .nav,
-  .header-actions {
-    display: flex !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav,
-  .header-actions {
-    display: none !important;
-  }
-
-  .menu-btn {
-    display: block !important;
-  }
-}
