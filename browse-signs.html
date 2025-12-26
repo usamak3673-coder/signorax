@@ -241,21 +241,18 @@ a { text-decoration: none; color: inherit; }
     <h1 style="font-size:32px; margin-bottom:10px; color:#FFFFFF; text-align:center;">
   Browse All Professional Signs
 </h1>
-     <!-- Search bar -->
-    <div class="search-box">
-      <select>
-        <option value="all">All Categories</option>
-        <option value="road">Road Signs</option>
-        <option value="warning">Warning Signs</option>
-        <option value="prohibition">Prohibition Signs</option>
-        <option value="information">Information Signs</option>
-        <option value="safety">Safety Signs</option>
-        <option value="industrial">Industrial Signs</option>
-      </select>
-
+   <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Search by keyword or category...">
+    </div>
 
-      <button class="search-btn">🔍</button>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="road">Road Signs</button>
+      <button class="filter-btn" data-filter="warning">Warning Signs</button>
+      <button class="filter-btn" data-filter="prohibition">Prohibition Signs</button>
+      <button class="filter-btn" data-filter="information">Information Signs</button>
+      <button class="filter-btn" data-filter="safety">Safety Signs</button>
+      <button class="filter-btn" data-filter="industrial">Industrial Signs</button>
     </div>
 
      <!-- SEARCH TITLE -->
