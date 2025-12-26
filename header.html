@@ -1,11 +1,20 @@
 <!-- ================= HEADER ================= -->
 <header class="top-header">
-  <div class="container header-inner">
-    <div <a href="/" class="logo">
-  <span class="logo-main">Signora</span>
-  <span class="logo-accent">X</span>
-</a></div>
+  <div class="header-inner">
 
+    <!-- Mobile Toggle -->
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <!-- Logo -->
+    <a href="/" class="logo">
+      <span class="logo-main">Signora</span>
+      <span class="logo-accent">X</span>
+    </a>
+
+    <!-- Sign Up Button -->
+    <a href="#" class="btn signup mobile-signup">Sign Up</a>
+
+    <!-- Desktop Nav -->
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="browse-signs.html">Browse Signs</a>
@@ -14,32 +23,30 @@
       <a href="blog/">Blog</a>
     </nav>
 
+    <!-- Desktop Actions -->
     <div class="header-actions">
       <a href="#" class="plans">Plans</a>
       <a href="#" class="btn signup">Sign Up</a>
       <a href="#" class="login">Log In</a>
     </div>
-  </div>
-</header>
-    <!-- Mobile Menu Icon -->
-    <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
 
   </div>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">Home</a>
-    <a href="browse-signs.html">Browse Signs</a>
-    <a href="about/">About</a>
-    <a href="contact/">Contact</a>
-    <a href="blog/">Blog</a>
-    <a href="account.html">Log In</a>
-  </div>
 </header>
+
+<!-- ================= MOBILE MENU ================= -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="browse-signs.html">Browse Signs</a>
+  <a href="about/">About</a>
+  <a href="contact/">Contact</a>
+  <a href="blog/">Blog</a>
+  <hr>
+  <a href="#">Plans</a>
+  <a href="#">Log In</a>
+</div>
 
 <script>
 function toggleMenu() {
   document.getElementById("mobileNav").classList.toggle("open");
 }
 </script>
-
