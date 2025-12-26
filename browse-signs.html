@@ -1,168 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Browse All Signs | Road, Warning, Prohibition, Safety & Industrial</title>
-<link rel="stylesheet" href="assets/css/style.css" />
-<meta name="description" content="Browse professional road, warning, prohibition, safety and industrial signs. Download print-ready EPS and JPG files for commercial use." />
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse All Signs | Road, Warning, Prohibition, Safety & Industrial</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="description" content="Browse professional road, warning, prohibition, safety and industrial signs. Download print-ready EPS and JPG files for commercial use." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
 <style>
+  /* === VARIABLES === */
 :root {
   --bg: #F9FAFB;
   --card-bg: #f1f1f1;
-  --text: #111827;
-  --muted: #6b7280;
+  --text: #ffffff;
+  --muted: #faf5f5;
   --accent: #D64228;
   --accent-hover: #D64228;
-  --border: #E5E7EB;
-  --overlay-bg: rgba(0,0,0,0.6);
+  --border: #e5e7eb;
+  --overlay-bg: rgba(0, 0, 0, 0.6);
   --max-width: 1200px;
   --transition: 0.3s ease;
 }
 
-* { box-sizing: border-box; margin:0; padding:0; }
-body { font-family: 'Open Sans', sans-serif; background: var(--bg); }
-
-a { text-decoration: none; color: inherit; }
-.wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
-
-/* HEADER */
-.top-header { background: #fff; border-bottom: 1px solid #eee; }
-.header-inner { display: flex; justify-content: space-between; align-items: center; max-width: var(--max-width); margin: 0 auto; padding: 10px 20px; flex-wrap: wrap; }
-.logo { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 22px; }
-.nav a { margin-left: 20px; font-weight: 500; }
-.mobile-menu-icon { display: none; cursor: pointer; font-size: 28px; }
-.mobile-nav { display: none; flex-direction: column; gap: 12px; overflow: hidden; max-height: 0; transition: max-height 0.4s ease; }
-
-/* HERO */
-.browse-hero { text-align: center; padding: 50px 20px; background: radial-gradient(circle at top, #1f2933 0%, #0b0b0b 45%, #000 100%); color:#fff; }
-.browse-hero-title { font-family:'Montserrat', sans-serif; font-size:34px; font-weight:600; margin-bottom:12px; }
-.browse-hero-subtitle { font-family:'Lato', sans-serif; font-size:18px; font-weight:400; max-width:800px; margin:0 auto; line-height:1.5; }
-
-/* SEARCH */
-.search-bar { display:flex; justify-content:center; margin-top:20px; }
-.search-bar input { width:100%; max-width:900px; padding:14px 18px; border-radius:4px; border:1px solid #D1D5DB; font-size:16px; outline:none; transition:border-color 0.2s; }
-.search-bar input:focus { border-color:#2563EB; box-shadow:0 0 0 3px rgba(37,99,235,0.12); }
-
-/* FILTER */
-.filter-buttons { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:28px; }
-.filter-btn { padding:10px 22px; background:#F9FAFB; border:1px solid #D1D5DB; border-radius:4px; cursor:pointer; font-size:14px; font-weight:500; transition:all 0.2s; }
-.filter-btn:hover { background:#111827; color:#fff; border-color:#111827; }
-.filter-btn.active { background:#2563EB; color:#fff; border-color:#2563EB; }
-
-/* GALLERY */
-.gallery-wrapper { max-width:1440px; margin:0 auto; padding:32px 24px; }
-.signs-gallery { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:20px; }
-.sign-card { position:relative; background:#fff; border-radius:4px; overflow:hidden; border:1px solid var(--border); cursor:pointer; transition:0.2s; }
-.sign-card:hover { box-shadow:0 6px 16px rgba(0,0,0,0.08); }
-.sign-card img { width:100%; aspect-ratio:4/3; object-fit:contain; display:block; background:#F9FAFB; }
-.sign-card .overlay { position:absolute; inset:0; background:var(--overlay-bg); display:flex; justify-content:center; align-items:center; opacity:0; transition:0.2s; color:#fff; text-align:center; padding:10px; }
-.sign-card:hover .overlay { opacity:1; }
-.sign-card .overlay small { display:block; margin-top:5px; font-size:12px; line-height:1.2; }
-
-/* RESPONSIVE */
-@media(max-width:1024px) { .gallery-wrapper{padding:24px 16px;} }
-@media(max-width:768px) {
-  .nav{display:none;} 
-  .mobile-menu-icon{display:block;}
-  .mobile-nav.open{display:flex; max-height:500px;}
-  .browse-hero{padding:40px 16px 30px;}
-  .browse-hero-title{font-size:28px;}
-  .browse-hero-subtitle{font-size:16px; max-width:95%;}
-  .search-bar{flex-direction:column; align-items:stretch;}
-  .filter-buttons{flex-wrap:nowrap; overflow-x:auto; padding:8px 0;}
-  .filter-btn{flex:0 0 auto; margin-right:8px;}
-  .signs-gallery{grid-template-columns:repeat(auto-fill, minmax(180px,1fr)); gap:16px;}
-  .sign-card img{aspect-ratio:1;}
-  .sign-card .overlay span{font-size:12px;}
+/* === GLOBAL STYLES === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-@media(max-width:480px){
-  .browse-hero-title{font-size:24px;}
-  .browse-hero-subtitle{font-size:14px;}
-  .filter-btn{font-size:12px; padding:8px 14px;}
-  .signs-gallery{grid-template-columns:1fr; gap:12px;}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  background: var(--bg);
+
 }
-#noResults { text-align:center; margin-top:30px; font-size:18px; color:var(--muted); display:none; }
+
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === HERO SECTION === */
+.browse-hero {
+  text-align: center;
+  padding: 50px 20px 50px;
+  background: radial-gradient(
+    circle at top,
+    #1f2933 0%,
+    #0b0b0b 45%,
+    #000000 100%
+  );
+}
+  /* === HERO HEADINGS === */
+.browse-hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 34px; /* slightly bigger for hero section */
+  color:#FFFFFF;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.browse-hero-subtitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400; /* normal for body */
+  font-size: 18px; /* readable size */
+  color:#FFFFFF;
+  text-align: center;
+  max-width: 800px; /* keeps lines short for better readability */
+  margin: 0 auto; /* center */
+  line-height: 1.5;
+}
+
+/* =========================
+   SEARCH TITLE
+========================= */
+#searchTitle {
+  text-align: center;
+  font-size: 26px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color:#FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 900px;
+  padding: 14px 18px;
+  border-radius: 4px;
+  border: 1px solid #D1D5DB;
+  font-size: 16px;
+  font-family: inherit;
+  background-color: #FFFFFF;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-bar input::placeholder {
+  color: #9CA3AF;
+}
+
+.search-bar input:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* =========================
+   FILTER BUTTONS
+========================= */
+.filter-buttons {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.filter-btn {
+  padding: 10px 22px;
+  background-color: #F9FAFB;
+  border: 1px solid #D1D5DB;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  color: #374151;
+  transition: background-color 0.2s ease, 
+              color 0.2s ease, 
+              border-color 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: #111827;
+  color: #FFFFFF;
+  border-color: #111827;
+}
+
+/* Active Filter */
+.filter-btn.active {
+  background-color: #2563EB;
+  color: #FFFFFF;
+  border-color: #2563EB;
+}
+
+
+/* =========================
+   GALLERY CONTAINER
+========================= */
+.gallery-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px 24px; /* reduced for better above-the-fold UX */
+}
+
+/* =========================
+   GRID SYSTEM
+========================= */
+.signs-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* smaller cards */
+  gap: 20px; /* tighter spacing */
+}
+
+/* =========================
+   CARD
+========================= */
+.sign-card {
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: 4px; /* cleaner, less bulky */
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.sign-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   IMAGE (KEY UX FIX)
+========================= */
+.sign-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* shorter cards = less scrolling */
+  object-fit: contain;
+  background-color: #F9FAFB;
+  display: block;
+}
+
+/* =========================
+   HOVER OVERLAY
+========================= */
+.sign-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sign-card:hover .overlay {
+  opacity: 1;
+}
+
+/* =========================
+   OVERLAY TEXT
+========================= */
+.sign-card .overlay span {
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav a {
+    margin-left: 0;
+    display: inline-block;
+    margin: 5px 10px;
+  }
+
+  .browse-hero h1 {
+    font-size: 32px;
+  }
+
+  .browse-hero p {
+    font-size: 16px;
+  }
+}
+
 </style>
-</head>
 <body>
 
-<!-- HEADER -->
-<header class="top-header">
-  <div class="container header-inner">
-    <a href="/" class="logo"><span class="logo-main">Signora</span><span class="logo-accent">X</span></a>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="browse-signs.html">Browse Signs</a>
-      <a href="about/">About</a>
-      <a href="contact/">Contact</a>
-      <a href="blog/">Blog</a>
-    </nav>
-    <div class="header-actions">
-      <a href="#" class="plans">Plans</a>
-      <a href="#" class="signup">Sign Up</a>
-      <a href="#" class="login">Log In</a>
-    </div>
-    <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
-  </div>
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">Home</a>
-    <a href="browse-signs.html">Browse Signs</a>
-    <a href="about/">About</a>
-    <a href="contact/">Contact</a>
-    <a href="blog/">Blog</a>
-    <a href="account.html">Log In</a>
-  </div>
-</header>
-
+  <!-- LOAD HEADER -->
+<div id="header"></div>
 <script>
-function toggleMenu(){ document.getElementById("mobileNav").classList.toggle("open"); }
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
 </script>
 
-<!-- HERO -->
-<section class="browse-hero">
-  <h1 class="browse-hero-title">Browse All Professional Signs</h1>
-  <p class="browse-hero-subtitle">Road, warning, prohibition, safety and industrial signs. Print-ready EPS & JPG files for professional use.</p>
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Search by keyword or category...">
-  </div>
-  <div class="filter-buttons">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="road">Road Signs</button>
-    <button class="filter-btn" data-filter="warning">Warning Signs</button>
-    <button class="filter-btn" data-filter="prohibition">Prohibition Signs</button>
-    <button class="filter-btn" data-filter="information">Information Signs</button>
-    <button class="filter-btn" data-filter="safety">Safety Signs</button>
-    <button class="filter-btn" data-filter="industrial">Industrial Signs</button>
-  </div>
-  <h2 id="searchTitle"></h2>
-</section>
-
-<!-- GALLERY -->
-<main class="gallery-wrapper">
-  <div class="signs-gallery" id="signsGallery">
-    <div class="sign-card" data-category="road" data-name="Road Narrow Sign Set Left, Right and Both Side Road Warning Signs">
-      <a href="/products/road-signs/road-narrows-sign-set-download.html">
-        <img src="assets/images/road narrows sign warning traffic symbol.jpg" alt="Road Narrows Sign" loading="lazy">
-        <div class="overlay">View Details</div>
-      </a>
+  <!-- HERO -->
+  <section class="browse-hero">
+    <h1 style="font-size:32px; margin-bottom:10px; color:#FFFFFF; text-align:center;">
+  Browse All Professional Signs
+</h1>
+<p style="margin-top:5px; color:#FFFFFF; text-align:center;">
+  Road, warning, prohibition, safety and industrial signs. Print-ready EPS & JPG files for professional use.
+</p>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search by keyword or category...">
     </div>
-    <!-- Add your remaining .sign-card items here, no duplicate data-category -->
-  </div>
-  <p id="noResults">No signs found matching your search.</p>
-</main>
 
-<!-- FOOTER -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="road">Road Signs</button>
+      <button class="filter-btn" data-filter="warning">Warning Signs</button>
+      <button class="filter-btn" data-filter="prohibition">Prohibition Signs</button>
+      <button class="filter-btn" data-filter="information">Information Signs</button>
+      <button class="filter-btn" data-filter="safety">Safety Signs</button>
+      <button class="filter-btn" data-filter="industrial">Industrial Signs</button>
+    </div>
+
+     <!-- SEARCH TITLE -->
+    <h2 id="searchTitle"></h2>
+    
+  </section>
+
+  <!-- If you have a cart panel / cart divs in your original file, paste them
+       below or replace the placeholder. This file DOES NOT remove your cart —
+       I couldn't see your cart markup in the snippet you sent, so I left a clear spot. -->
+  <!-- ========== CART / EXTRA MARKUP PLACEHOLDER ========== -->
+  <!-- Paste your cart / mini-cart / cart-panel HTML here (from your original file) -->
+  <!-- Example: <div id="cartPanel"> ... </div> -->
+  <!-- ==================================================== -->
+
+  <!-- GALLERY -->
+  <main class="gallery-wrapper">
+    <div class="signs-gallery" id="signsGallery">
+
+      <!-- Example cards — duplicate for all your 500+ signs -->
+
+      <div class="sign-card" data-category="road" data-name="Road Narrow Sign Set Left, Right and Both Side Road Warning Signs ">
+        <a href="/products/road-signs/road-narrows-sign-set-download.html">
+          <img src="assets/images/road narrows sign warning traffic symbol.jpg" alt="Road Narrows Sign Set" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="road" data-name="children crossing road sign red traingle">
+        <a href="give-way-sign.html">
+          <img src="assets/images/children crossing road sign red traingle.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="warning" data-name="Danger High Voltage Yellow Triangle Sign Electrical Hazard Warning.jpg">
+        <a href="give-way-sign.html">
+          <img src="assets/images/Danger High Voltage Yellow Triangle Sign Electrical Hazard Warning.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+
+      <div class="sign-card" data-category="road" data-category="warning" data-name="yellow diamond narrows warning sign set left side narrows both side narrows and right side narrows ">
+        <a href="/products/road-signs/yellow-diamond-narrows-sign-set.html">
+          <img src="assets/images/yellow diamond road narrows.jpg" alt="yellow yellow diamond narrows sign set " loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="road" data-category="warning" data-name="dead end road sign yellow diamond warning sign">
+        <a href="/products/road-signs/dead-end-road-sign.html">
+          <img src="assets/images/dead end road sign.jpg" alt="dead end road sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="road" data-name="Give Way Sign Vector download EPS, SVG, JPG and PNG">
+        <a href="give-way-sign.html">
+          <img src="assets/images/Give Way Sign.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="road" data-name="japanese traffic speed limit signs bundle 30 40 50 60 70 80">
+        <a href="give-way-sign.html">
+          <img src="assets/images/japanese traffic speed limit signs bundle 30 40 50 60 70 80.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="road" data-name="circular parking zone sign  white p on blue background">
+        <a href="products/road-signs/Parking-Sign-Circular-Parking-Zone-Sign-White-P-on-Blue-Background.html">
+          <img src="assets/images/Circular Parking Zone Sign  White P on Blue Background.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="road" data-name="no left and no right turn red circle road signs without slash vector ">
+        <a href="give-way-sign.html">
+          <img src="assets/images/no left and no right turn red circle road signs without slash vector.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="industrial" data-name="biohazard authorized personnel only sign.jpg">
+        <a href="give-way-sign.html">
+          <img src="assets/images/biohazard authorized personnel only sign.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+       <div class="sign-card" data-category="safety" data-name="Wear Face Mask Sign Hospital Clinic Blue Circle">
+        <a href="give-way-sign.html">
+          <img src="/assets/images/Wear Face Mask Sign Hospital Clinic Blue Circle.jpg" alt="safety Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="prohibition" data-name="No Mobile Phone Sign Vertical and Square Prohibition Safety Notice.jpg">
+        <a href="give-way-sign.html">
+          <img src="assets/images/No Mobile Phone Sign Vertical and Square Prohibition Safety Notice.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+      <div class="sign-card" data-category="road" data-name="children crossing road sign red traingle">
+        <a href="give-way-sign.html">
+          <img src="assets/images/children crossing road sign red traingle.jpg" alt="road Sign" loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+      <div class="sign-card" data-category="road" data-name="uae Arabic Road Narrows Warning Sign  Red Triangle Traffic Safety Symbol Vector">
+        <a href="/products/road-signs/arabic-road-narrows-warning-sign.html">
+          <img src="assets/images/arabic road narrows warning sign red triangle traffic safety symbol vector.jpg" alt="Arabic Road Narrows Sign " loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+
+      <div class="sign-card" data-category="road" data-name="Speed Limit Signs Set-30 40 50 60 70 80 km/h ">
+        <a href="/products/road-signs/speed-limit-signs.html">
+          <img src="assets/images/speed limits signs bundle.jpg" alt="Speed Limit Signs Set " loading="lazy">
+          <div class="overlay">View Details</div>
+        </a>
+      </div>
+
+
+      <!-- Duplicate the sign-card divs for all your preview images -->
+    </div>
+  </main>
+
+  <!-- LOAD FOOTER -->
 <div id="footer"></div>
 <script>
-fetch("footer.html")
-  .then(res => res.text())
-  .then(data => document.getElementById("footer").innerHTML = data);
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
 </script>
 
+  
 <script>
   // === ELEMENTS ===
 const galleryItems = document.querySelectorAll('.sign-card');
