@@ -137,12 +137,96 @@ h1,h2,h3,h4,h5,h6 {
   display: flex;
   gap: 16px;
 }
-@media (max-width: 768px) {
-  .desktop-header {
-    display: none;
+/* ================= MOBILE HEADER STYLES ================= */
+.mobile-header {
+  display: none; /* hidden on desktop */
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #000;
+}
+
+.logo-accent {
+  color: #5515e9;
+}
+
+.menu-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header-actions a {
+  margin-left: 12px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+}
+
+.header-actions .btn.signup {
+  background: #5515e9;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+/* ================= MOBILE NAV ================= */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 60px; /* height of header */
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #eee;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  flex-direction: column;
+  padding: 12px 16px;
+  z-index: 998;
+}
+
+.mobile-nav a {
+  padding: 10px 0;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.mobile-nav hr {
+  margin: 8px 0;
+  border: 0.5px solid #eee;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .mobile-header {
+    display: flex;
   }
 }
 
+@media (min-width: 993px) {
+  .mobile-header,
+  .mobile-nav {
+    display: none !important;
+  }
+}
 /* ===== HERO ===== */
 .hero {
   min-height:520px;
