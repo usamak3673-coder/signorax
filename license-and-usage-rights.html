@@ -64,6 +64,113 @@
       color: #666;
       text-align: center;
     }
+    .container {
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 24px;
+}
+/* ===== HEADER ===== */
+.top-header { background: #fff; border-bottom: 1px solid #eee; }
+.header-inner {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 22px;
+  font-weight:600;
+  font-family:'Montserrat','Poppins',sans-serif;
+  
+}
+.logo-main { color:#111; }
+.logo-accent {
+  color:#ff6a00;
+  position: relative;
+  padding-left:6px;
+}
+.logo-accent::before {
+  content:"";
+  position:absolute;
+  left:0; top:50%;
+  width:1px; height:60%;
+  background:#e5e7eb;
+  transform: translateY(-50%);
+}
+.nav a {
+  margin:0 14px;
+  font-family:'Montserrat',sans-serif;
+  font-weight:500;
+  font-size:15px;
+  color:#222;
+}
+.header-actions { display:flex; align-items:center; gap:18px; }
+.plans,.login {
+  text-decoration:none;
+  color:#111;
+  font-weight:500;
+  background:#F3F4F5;
+  font-family:'Montserrat','Poppins',sans-serif;
+}
+.signup {
+  background:#ff6a00;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:8px;
+  font-weight:600;
+  font-family:'Montserrat','Poppins',sans-serif;
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu-icon { display:none; font-size:28px; cursor:pointer; }
+.mobile-nav {
+  display:none;
+  flex-direction:column;
+  background:#0d0d0d;
+  border-bottom:1px solid #222;
+  animation:dropdown 0.3s ease forwards;
+}
+.mobile-nav a {
+  padding:14px 20px;
+  border-top:1px solid #1c1c1c;
+  color:#e6e6e6;
+  font-size:16px;
+  transition:0.2s;
+}
+.mobile-nav a:hover { color:#3663EB; }
+.mobile-nav.open { display:flex; }
+@keyframes dropdown { from{opacity:0; transform:translateY(-10px);} to{opacity:1; transform:translateY(0);} }
+/* ===== MOBILE ===== */
+@media (max-width: 992px) {
+  .nav, .header-actions { display: none; } /* Hide desktop nav */
+  .mobile-menu-icon { display: block; }   /* Show mobile icon */
+  .header-inner { justify-content: space-between; }
+}
+@media (max-width:768px) {
+  .search-box {
+    flex-direction: column; /* stack select + input + button */
+    align-items: stretch;
+    max-width: 90%;
+    margin: 15px auto;
+    padding: 6px;
+  }
+  .search-box select,
+  .search-box input,
+  .search-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin: 4px 0;
+  }
+  .search-btn {
+    background:#ff6a00;
+    color:#fff;
+    border-radius:6px;
+  }
+}
   </style>
 </head>
 
