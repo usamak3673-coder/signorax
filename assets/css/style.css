@@ -137,33 +137,29 @@ h1,h2,h3,h4,h5,h6 {
   display: flex;
   gap: 16px;
 }
-/* ================= MOBILE HEADER ================= */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
-  /* Header height & spacing */
-  .header-inner {
-    height: 60px;
-    padding: 0 14px;
-    position: relative;
-  }
-
-  /* Hide desktop items */
   .nav,
   .header-actions {
     display: none;
   }
 
-  /* Show menu icon */
   .menu-btn {
     display: block;
     font-size: 24px;
-    padding: 6px;
     background: none;
     border: none;
     cursor: pointer;
   }
 
-  /* Center logo perfectly */
+  .mobile-signup {
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 8px;
+  }
+
   .logo {
     position: absolute;
     left: 50%;
@@ -171,27 +167,24 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 20px;
   }
 
-  /* Mobile Sign Up */
-  .mobile-signup {
-    display: inline-block;
-    padding: 8px 14px;
-    font-size: 14px;
-    border-radius: 8px;
+  .header-inner {
+    height: 60px;
+    padding: 0 14px;
   }
 }
-/* ================= MOBILE NAV DRAWER ================= */
+
+/* ================= MOBILE DRAWER ================= */
 .mobile-nav {
   position: fixed;
   top: 0;
   left: -100%;
   width: 260px;
   height: 100%;
-  background: #ffffff;
+  background: #fff;
   padding: 24px 20px;
   box-shadow: 4px 0 20px rgba(0,0,0,0.12);
   transition: left 0.3s ease;
   z-index: 2000;
-  display: block; /* allow sliding */
 }
 
 .mobile-nav.open {
@@ -201,11 +194,10 @@ h1,h2,h3,h4,h5,h6 {
 .mobile-nav a {
   display: block;
   padding: 14px 0;
-  font-family: 'Montserrat','Poppins',sans-serif;
   font-size: 15px;
-  color: #111;
-  text-decoration: none;
   font-weight: 500;
+  text-decoration: none;
+  color: #111;
 }
 
 .mobile-nav hr {
