@@ -144,6 +144,7 @@ h1,h2,h3,h4,h5,h6 {
   .header-inner {
     height: 60px;
     padding: 0 14px;
+    position: relative;
   }
 
   /* Hide desktop items */
@@ -157,6 +158,9 @@ h1,h2,h3,h4,h5,h6 {
     display: block;
     font-size: 24px;
     padding: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
   /* Center logo perfectly */
@@ -187,6 +191,7 @@ h1,h2,h3,h4,h5,h6 {
   box-shadow: 4px 0 20px rgba(0,0,0,0.12);
   transition: left 0.3s ease;
   z-index: 2000;
+  display: block; /* allow sliding */
 }
 
 .mobile-nav.open {
@@ -212,7 +217,6 @@ h1,h2,h3,h4,h5,h6 {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.4);
-  display: none;
   z-index: 1500;
 }
 
