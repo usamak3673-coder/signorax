@@ -1,76 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>License & Usage Rights | SignoraX</title>
-  <meta name="description" content="License and usage rights for standard-based traffic, safety, industrial, and informational signs.">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Open Sans', Arial, sans-serif;
-      background: #ffffff;
-      color: #222;
-      line-height: 1.7;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>License & Usage Rights | SignoraX</title>
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
+<meta name="description" content="License and usage rights for traffic, safety, industrial, and informational signs based on international standards.">
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-    h2 {
-      font-size: 22px;
-      margin-top: 40px;
-      margin-bottom: 10px;
-      color: #ff7a00;
-    }
+<style>
+/* ===== GLOBAL ===== */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #222;
+  background: #f7f7f8;
+  line-height: 1.7;
+}
+a { text-decoration: none; }
 
-    p {
-      font-size: 16px;
-      margin-bottom: 14px;
-    }
-
-    ul {
-      margin-left: 20px;
-      margin-bottom: 20px;
-    }
-
-    ul li {
-      margin-bottom: 8px;
-    }
-
-    .note {
-      background: #fff6ee;
-      border-left: 4px solid #ff7a00;
-      padding: 16px;
-      margin: 30px 0;
-      font-size: 15px;
-    }
-
-    footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #eee;
-      font-size: 14px;
-      color: #666;
-      text-align: center;
-    }
-    .container {
-  max-width: 1250px;
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1200px;
   margin: auto;
   padding: 0 24px;
 }
+
 /* ===== HEADER ===== */
-.top-header { background: #fff; border-bottom: 1px solid #eee; }
+.top-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
 .header-inner {
   height: 72px;
   display: flex;
@@ -78,153 +40,147 @@
   justify-content: space-between;
 }
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  font-family: 'Montserrat', sans-serif;
   font-size: 22px;
-  font-weight:600;
-  font-family:'Montserrat','Poppins',sans-serif;
-  
+  font-weight: 700;
+  color: #111;
 }
-.logo-main { color:#111; }
-.logo-accent {
-  color:#ff6a00;
-  position: relative;
-  padding-left:6px;
-}
-.logo-accent::before {
-  content:"";
-  position:absolute;
-  left:0; top:50%;
-  width:1px; height:60%;
-  background:#e5e7eb;
-  transform: translateY(-50%);
+.logo span:last-child {
+  color: #ff6a00;
+  margin-left: 4px;
 }
 .nav a {
-  margin:0 14px;
-  font-family:'Montserrat',sans-serif;
-  font-weight:500;
-  font-size:15px;
-  color:#222;
+  margin: 0 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
 }
-.header-actions { display:flex; align-items:center; gap:18px; }
-.plans,.login {
-  text-decoration:none;
-  color:#111;
-  font-weight:500;
-  background:#F3F4F5;
-  font-family:'Montserrat','Poppins',sans-serif;
+.header-actions a {
+  margin-left: 14px;
+  font-size: 14px;
+  font-weight: 500;
 }
 .signup {
-  background:#ff6a00;
-  color:#fff;
-  padding:10px 18px;
-  border-radius:8px;
-  font-weight:600;
-  font-family:'Montserrat','Poppins',sans-serif;
+  background: #ff6a00;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
 }
-
-/* ===== MOBILE MENU ===== */
-.mobile-menu-icon { display:none; font-size:28px; cursor:pointer; }
+.mobile-menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
 .mobile-nav {
-  display:none;
-  flex-direction:column;
-  background:#0d0d0d;
-  border-bottom:1px solid #222;
-  animation:dropdown 0.3s ease forwards;
+  display: none;
+  flex-direction: column;
+  background: #111;
 }
 .mobile-nav a {
-  padding:14px 20px;
-  border-top:1px solid #1c1c1c;
-  color:#e6e6e6;
-  font-size:16px;
-  transition:0.2s;
+  padding: 14px 20px;
+  color: #eee;
+  border-top: 1px solid #222;
 }
-.mobile-nav a:hover { color:#3663EB; }
-.mobile-nav.open { display:flex; }
-@keyframes dropdown { from{opacity:0; transform:translateY(-10px);} to{opacity:1; transform:translateY(0);} }
-/* ===== MOBILE ===== */
-@media (max-width: 992px) {
-  .nav, .header-actions { display: none; } /* Hide desktop nav */
-  .mobile-menu-icon { display: block; }   /* Show mobile icon */
-  .header-inner { justify-content: space-between; }
+.mobile-nav.open { display: flex; }
+
+/* ===== LICENSE WRAPPER ===== */
+.license-wrapper {
+  background: #fff;
+  max-width: 880px;
+  margin: 70px auto;
+  padding: 56px;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
 }
-@media (max-width:768px) {
-  .search-box {
-    flex-direction: column; /* stack select + input + button */
-    align-items: stretch;
-    max-width: 90%;
-    margin: 15px auto;
-    padding: 6px;
-  }
-  .search-box select,
-  .search-box input,
-  .search-btn {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    margin: 4px 0;
-  }
-  .search-btn {
-    background:#ff6a00;
-    color:#fff;
-    border-radius:6px;
-  }
+
+.license-wrapper h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
-    /* ===== FOOTER ===== */
-.pro-footer { padding:60px 20px; border-top:1px solid #222; background:radial-gradient(ellipse at top,#262626 0%,#0f0f0f 40%,#000 100%); color:#bfbfbf; }
-.footer-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; max-width:1200px; margin: auto; }
-.footer-logo { color:#fff; font-size:28px; font-weight:700; margin-bottom:12px; }
-.footer-col h4 { font-size:18px; font-weight:600; margin-bottom:15px; color:#fff; }
-.footer-col a { display:block; margin:6px 0; font-size:15px; color:#bfbfbf; transition:0.25s; }
-.footer-col a:hover { color:#fff; transform:translateX(4px); }
-.footer-input { width:100%; padding:12px; border-radius:8px; border:1px solid #333; background:#FDFDFD; margin-top:10px; font-size:15px; }
-.footer-btn { margin-top:10px; padding:12px 16px; background:#E96729; color:#fff; border-radius:8px; border:none; cursor:pointer; font-size:15px; width:100%; font-weight:500; text-transform:uppercase; letter-spacing:0.5px; }
-.footer-btn:hover { background:#000; }
-.footer-copy { text-align:center; margin-top:40px; font-size:14px; color:#777; }
+.license-wrapper h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  margin-top: 42px;
+  color: #ff6a00;
+}
+.license-wrapper p,
+.license-wrapper li {
+  font-size: 16px;
+  color: #444;
+}
+.license-wrapper ul {
+  padding-left: 22px;
+}
+
+.note {
+  background: #fff3ea;
+  border-left: 5px solid #ff6a00;
+  padding: 18px;
+  border-radius: 10px;
+  margin: 36px 0;
+}
+
+/* ===== FOOTER ===== */
+.pro-footer {
+  padding: 60px 20px;
+  background: radial-gradient(ellipse at top, #262626 0%, #0f0f0f 40%, #000 100%);
+  color: #bbb;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+.footer-logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+}
+.footer-col h4 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.footer-col a {
+  display: block;
+  margin: 8px 0;
+  color: #bbb;
+}
+.footer-copy {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+}
 
 /* ===== RESPONSIVE ===== */
-@media (max-width:900px) { .footer-grid { grid-template-columns:repeat(2,1fr); } }
-@media (max-width:768px) {
-  .nav { display:none; }
-  .mobile-menu-icon { display:block; }
-  .hero-content h1 { font-size:28px; }
-  .hero-content p { font-size:16px; }
+@media (max-width: 992px) {
+  .nav, .header-actions { display: none; }
+  .mobile-menu-icon { display: block; }
 }
-@media (max-width:600px) {
-  .footer-grid { grid-template-columns:1fr; text-align:center; }
-  .footer-col a:hover { transform:none; }
-  .footer-btn { width:100%; }
-  .footer-logo { margin-bottom:20px; }
-  .category-grid { grid-auto-columns:180px; gap:16px; }
-  .category-card h3 { font-size:18px; }
-  .category-card p { font-size:14px; }
+@media (max-width: 768px) {
+  .license-wrapper {
+    padding: 32px 22px;
+    margin: 40px auto;
+  }
+  .license-wrapper h1 { font-size: 28px; }
+  .license-wrapper h2 { font-size: 20px; }
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
 }
-@media (max-width:480px) {
-  .logo { font-size:20px; }
-  .header-actions { flex-direction:column; gap:8px; }
-  .hero-content h1 { font-size:22px; }
-  .hero-content p { font-size:14px; }
-  .category-grid { grid-auto-columns:150px; }
-  .why-card h3 { font-size:18px; }
-  .why-card p { font-size:14px; }
-  .blog-card h3 { font-size:18px; }
-  .blog-card p { font-size:14px; }
-}
-  </style>
+</style>
 </head>
 
 <body>
-  <!-- ================= HEADER ================= -->
+
+<!-- ===== HEADER ===== -->
 <header class="top-header">
   <div class="container header-inner">
-    <!-- Logo -->
-    <a href="/" class="logo">
-      <span class="logo-main">Signora</span>
-      <span class="logo-accent">X</span>
-    </a>
+    <a href="/" class="logo">Signora<span>X</span></a>
 
-    <!-- Desktop Navigation -->
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="browse-signs.html">Browse Signs</a>
@@ -233,25 +189,20 @@
       <a href="blog/">Blog</a>
     </nav>
 
-    <!-- Header Actions -->
     <div class="header-actions">
-      <a href="#" class="plans">Plans</a>
+      <a href="#">Plans</a>
       <a href="#" class="signup">Sign Up</a>
-      <a href="#" class="login">Log In</a>
     </div>
 
-    <!-- Mobile Menu Icon -->
     <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
   </div>
 
-  <!-- Mobile Menu -->
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html">Home</a>
     <a href="browse-signs.html">Browse Signs</a>
     <a href="about/">About</a>
     <a href="contact/">Contact</a>
     <a href="blog/">Blog</a>
-    <a href="account.html">Log In</a>
   </div>
 </header>
 
@@ -260,118 +211,74 @@ function toggleMenu() {
   document.getElementById("mobileNav").classList.toggle("open");
 }
 </script>
-  <div class="container">
 
-    <h1>License & Usage Rights</h1>
-    <p>
-      This License page explains how you may use the signs, symbols, icons, and graphical assets available on
-      <strong>SignoraX</strong>.
-    </p>
+<!-- ===== LICENSE CONTENT ===== -->
+<div class="container">
+  <div class="license-wrapper">
 
-    <h2>1. Overview</h2>
-    <p>
-      All signs provided on this website are visual representations inspired by internationally recognized standards,
-      including but not limited to ISO, OSHA, MUTCD, ANSI, and EU safety sign standards.
-    </p>
-    <p>
-      We are not a certifying authority and do not claim official approval from any governing body.
-    </p>
+<h1>License & Usage Rights</h1>
+<p>This page explains how signs, symbols, and graphical assets on <strong>SignoraX</strong> may be used.</p>
 
-    <h2>2. Permitted Use</h2>
-    <p>You may use our signs for:</p>
-    <ul>
-      <li>Educational and training materials</li>
-      <li>Websites, blogs, and digital platforms</li>
-      <li>UI/UX designs and mockups</li>
-      <li>Presentations and documentation</li>
-      <li>Commercial and non-commercial projects</li>
-    </ul>
-    <p>Attribution is appreciated but not mandatory unless otherwise stated.</p>
+<h2>1. Overview</h2>
+<p>All signs are visual representations inspired by international standards including ISO, OSHA, MUTCD, ANSI, and EU regulations. We are not a certifying authority.</p>
 
-    <h2>3. Restricted Use</h2>
-    <p>You may <strong>not</strong>:</p>
-    <ul>
-      <li>Present the signs as officially certified or government-approved</li>
-      <li>Resell or redistribute the signs as standalone assets</li>
-      <li>Use the signs in regulated environments without verification</li>
-      <li>Register the designs as trademarks or official logos</li>
-    </ul>
+<h2>2. Permitted Use</h2>
+<ul>
+<li>Educational & training materials</li>
+<li>Websites & applications</li>
+<li>UI/UX mockups</li>
+<li>Commercial & non-commercial projects</li>
+</ul>
 
-    <h2>4. Commercial Use Disclaimer</h2>
-    <p>
-      Real-world implementation of traffic, safety, or industrial signs must comply with local laws and regulations.
-      Specifications such as size, color, reflectivity, materials, and placement vary by region.
-    </p>
-    <p>
-      Always consult local authorities before physical deployment.
-    </p>
+<h2>3. Restricted Use</h2>
+<ul>
+<li>No resale or redistribution as standalone files</li>
+<li>No claim of official certification</li>
+<li>No use as legally required signage without verification</li>
+</ul>
 
-    <h2>5. Copyright & Ownership</h2>
-    <p>
-      All original illustrations and layouts are the intellectual property of <strong>SignoraX</strong>.
-      Referenced standards remain the property of their respective organizations.
-    </p>
-    <p>
-      This website operates independently and is not affiliated with any regulatory authority.
-    </p>
+<h2>4. Commercial Disclaimer</h2>
+<p>Always verify local regulations before real-world implementation.</p>
 
-    <h2>6. Modification Rights</h2>
-    <p>
-      You may resize, recolor, or adapt the signs for design purposes, provided they are not presented as official
-      certified signage.
-    </p>
+<h2>5. Copyright</h2>
+<p>All illustrations © SignoraX. Referenced standards belong to their respective organizations.</p>
 
-    <h2>7. Liability Limitation</h2>
-    <p>
-      All content is provided “as is” without warranties of any kind. We are not liable for damages, legal issues,
-      or compliance failures resulting from the use of our content.
-    </p>
+<h2>6. Modifications</h2>
+<p>You may resize or recolor designs for layout purposes only.</p>
 
-    <div class="note">
-      <strong>Important:</strong> These signs are for reference and design use only.
-      Always follow local regulations for real-world implementation.
-    </div>
+<h2>7. Liability</h2>
+<p>Content is provided “as is” without warranties.</p>
 
-    <h2>8. Contact & Licensing Requests</h2>
-    <p>
-      For extended licenses, bulk usage, white-label solutions, or custom sign systems, please contact us:
-    </p>
-    <p>
-      📧 <strong>contact@signorax.com</strong>
-    </p>
+<div class="note">
+<strong>Important:</strong> These signs are for reference and design use only.
+</div>
+
+<h2>8. Contact</h2>
+<p>📧 <strong>contact@signorax.com</strong></p>
+
   </div>
-  <footer class="pro-footer">
-  <div class="container footer-grid">
+</div>
 
-    <!-- Column 1 -->
+<!-- ===== FOOTER ===== -->
+<footer class="pro-footer">
+  <div class="footer-grid">
     <div class="footer-col">
-      <h3 class="footer-logo">SignoraX</h3>
-      <p>Disclaimer: All road sign vectors are original artwork by recreated by the author based on publicly available standards (e.g.,MUTCD) these files are not officia government publications</p>
+      <div class="footer-logo">SignoraX</div>
+      <p>All sign vectors are original artworks recreated from publicly available standards. Not official government publications.</p>
     </div>
-
-    <!-- Column 2 -->
     <div class="footer-col">
       <h4>Explore</h4>
-      <a href="browse-signs.html">Browse All Signs</a>
-      <a href="license-and-usage-rights.html/">License & Usage Rights</a>
+      <a href="browse-signs.html">Browse Signs</a>
+      <a href="license-and-usage-rights.html">License</a>
       <a href="contact/">Contact</a>
-      <a href="categories/">Categories</a>
-      
     </div>
-
-    <!-- Column 3 -->
     <div class="footer-col">
-      <h4>Stay Updated</h4>
-      <p>Get updates on new sign collections.</p>
-      <input type="email" placeholder="Enter your email" class="footer-input">
-      <button class="footer-btn">Subscribe</button>
+      <h4>Updates</h4>
+      <p>New sign collections & updates.</p>
     </div>
-
   </div>
 
-  <p class="footer-copy">
-    © 2025 SignoraX. All rights reserved.
-  </p>
+  <p class="footer-copy">© 2025 SignoraX. All rights reserved.</p>
 </footer>
 
 </body>
