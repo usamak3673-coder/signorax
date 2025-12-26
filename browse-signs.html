@@ -21,14 +21,14 @@
 </head>
 <style>
 :root {
-  --bg: #FDF7F0; /* professional soft background */
+  --bg: #FFF7F2; /* soft background matching orange theme */
   --card-bg: #FFFFFF;
   --text: #1F2937;
   --muted: #6B7280;
   --accent: #D64228; /* primary orange */
   --accent-hover: #FF5722;
   --border: #E5E7EB;
-  --overlay-bg: rgba(0,0,0,0.5);
+  --overlay-bg: rgba(0,0,0,0.4);
   --max-width: 1200px;
   --transition: 0.3s ease;
   --shadow: rgba(0,0,0,0.08);
@@ -41,12 +41,13 @@ body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(-
 a { text-decoration: none; color: inherit; }
 .wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
 
-/* HERO + SEARCH SECTION */
+/* HERO SECTION */
 .browse-hero {
   text-align: center;
-  padding: 80px 20px 50px;
-  background: linear-gradient(135deg, #FFF1E6, #FFE4CC);
+  padding: 80px 20px 40px;
+  background: linear-gradient(135deg, #FFD9C1, #FFE4CC); /* soft professional gradient */
   border-bottom: 1px solid #F1F1F1;
+  border-radius: var(--radius);
 }
 
 .browse-hero-title {
@@ -68,15 +69,19 @@ a { text-decoration: none; color: inherit; }
   color: var(--muted);
 }
 
-/* SEARCH BAR WITH ICON */
-.search-bar {
+/* SEARCH + CATEGORY SELECT */
+.search-bar-wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.search-bar {
   position: relative;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  flex: 1;
+  min-width: 220px;
 }
 
 .search-bar input {
@@ -91,9 +96,7 @@ a { text-decoration: none; color: inherit; }
   box-shadow: 0 2px 6px var(--shadow);
 }
 
-.search-bar input::placeholder {
-  color: var(--muted);
-}
+.search-bar input::placeholder { color: var(--muted); }
 
 .search-bar input:focus {
   border-color: var(--accent);
@@ -113,17 +116,15 @@ a { text-decoration: none; color: inherit; }
 
 /* CATEGORY DROPDOWN */
 .category-select {
-  display: block;
-  width: 200px;
-  margin: 0 auto 30px;
-  padding: 12px 16px;
+  padding: 14px 16px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  font-size: 15px;
   background-color: #fff;
   color: var(--text);
+  font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
+  min-width: 180px;
 }
 
 .category-select:hover {
@@ -134,9 +135,8 @@ a { text-decoration: none; color: inherit; }
 /* SEARCH TITLE */
 #searchTitle {
   text-align: center;
-  font-size: 26px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 30px;
   color: var(--text);
   font-weight: 600;
 }
@@ -145,7 +145,7 @@ a { text-decoration: none; color: inherit; }
 .gallery-wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 20px;
 }
 
 .signs-gallery {
@@ -188,9 +188,7 @@ a { text-decoration: none; color: inherit; }
   transition: opacity 0.3s ease;
 }
 
-.sign-card:hover .overlay {
-  opacity: 1;
-}
+.sign-card:hover .overlay { opacity: 1; }
 
 .sign-card .overlay span {
   color: #fff;
@@ -201,7 +199,7 @@ a { text-decoration: none; color: inherit; }
 
 /* RESPONSIVE */
 @media (max-width: 640px) {
-  .browse-hero { padding: 50px 15px 40px; }
+  .browse-hero { padding: 50px 15px 30px; }
   .browse-hero-title { font-size: 28px; }
   .browse-hero-subtitle { font-size: 15px; max-width: 100%; }
   .search-bar input { padding: 12px 14px 12px 38px; font-size: 14px; }
