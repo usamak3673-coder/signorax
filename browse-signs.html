@@ -272,6 +272,122 @@ a {
     font-size: 16px;
   }
 }
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .gallery-wrapper {
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header */
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .mobile-nav.open {
+    max-height: 500px; /* adjust as needed */
+  }
+
+  /* Hero Section */
+  .browse-hero {
+    padding: 40px 16px 30px;
+  }
+
+  .browse-hero-title {
+    font-size: 28px;
+  }
+
+  .browse-hero-subtitle {
+    font-size: 16px;
+    max-width: 95%;
+  }
+
+  /* Search bar */
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar input {
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  /* Filter buttons wrap & scroll */
+  .filter-buttons {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 8px 0;
+  }
+
+  .filter-btn {
+    flex: 0 0 auto;
+    margin-right: 8px;
+  }
+
+  /* Gallery */
+  .signs-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+
+  .sign-card img {
+    aspect-ratio: 1; /* make images roughly square for mobile */
+  }
+
+  .sign-card .overlay span {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  /* No results */
+  #noResults {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .browse-hero-title {
+    font-size: 24px;
+  }
+
+  .browse-hero-subtitle {
+    font-size: 14px;
+  }
+
+  .filter-btn {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .signs-gallery {
+    grid-template-columns: 1fr; /* single column for smallest screens */
+    gap: 12px;
+  }
+}
 
 </style>
 <body>
