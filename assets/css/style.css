@@ -138,49 +138,7 @@ h1,h2,h3,h4,h5,h6 {
   gap: 16px;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
 
-  .nav,
-  .header-actions {
-    display: none;
-  }
-
-  .mobile-signup {
-    display: inline-block;
-  }
-}
-
-/* ================= MOBILE DRAWER ================= */
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 260px;
-  height: 100%;
-  background: #fff;
-  padding: 20px;
-  box-shadow: 4px 0 20px rgba(0,0,0,.1);
-  transition: left .3s ease;
-  z-index: 2000;
-}
-
-.mobile-nav.open {
-  left: 0;
-}
-
-.mobile-nav a {
-  display: block;
-  padding: 12px 0;
-  color: #111827;
-  text-decoration: none;
-  font-weight: 500;
-}
-@media (max-width: 768px) {
-  .desktop-header {
-    display: none;
-  }
-}
 /* ===== HERO ===== */
 .hero {
   min-height:520px;
