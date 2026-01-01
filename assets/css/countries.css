@@ -89,63 +89,46 @@ a { text-decoration: none; color: inherit; }
 }
 .search-icon:hover { background: #e05500; }
 
-* ============================= */
-/* ===== MOBILE RESPONSIVE ===== */
-/* ============================= */
 
 @media (max-width: 768px) {
 
   /* HERO */
   .usa-hero {
+    padding: 40px 16px;
     min-height: auto;
-    padding: 50px 16px;
   }
 
   .usa-hero h1 {
-    font-size: 26px;
-    line-height: 1.3;
+    font-size: 24px;
+    line-height: 1.25;
   }
 
   .usa-hero p {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.6;
   }
 
-  /* SEARCH FILTER STACK */
+  /* SEARCH STACK */
   .search-filter {
     flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
+    gap: 8px;
   }
 
   .search-filter input,
   .search-filter select,
   .search-icon {
     width: 100%;
-    min-width: 100%;
+    border-radius: 6px;
+    border: 1px solid #fff;
   }
 
+  .search-filter input,
   .search-filter select {
-    flex: none;
+    border-right: 1px solid #fff;
   }
 
   .search-icon {
-    padding: 14px;
-    font-size: 16px;
-  }
-}
-
-/* EXTRA SMALL DEVICES */
-@media (max-width: 480px) {
-  .usa-hero h1 {
-    font-size: 22px;
-  }
-
-  .usa-hero p {
-    font-size: 14px;
+    height: 46px;
   }
 }
 
@@ -238,3 +221,4 @@ a { text-decoration: none; color: inherit; }
   font-weight: 600;
 
 }
+
