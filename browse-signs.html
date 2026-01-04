@@ -1,775 +1,767 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Browse All Signs | Road, Warning, Prohibition, Safety & Industrial</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <meta name="description" content="Browse professional road, warning, prohibition, safety and industrial signs. Download print-ready EPS and JPG files for commercial use." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Professional Signs</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
+/* =====================
+   VARIABLES
+===================== */
 :root {
-  --bg: #f9f9fc; /* professional soft background */
-  --card-bg: #FFFFFF;
-  --text: #1F2937;
-  --muted: #6B7280;
-  --accent: #D64228; /* primary orange */
-  --accent-hover: #FF5722;
-  --border: #E5E7EB;
-  --overlay-bg: rgba(0,0,0,0.5);
-  --max-width: 1200px;
-  --transition: 0.3s ease;
-  --shadow: rgba(0,0,0,0.08);
-  --radius: 12px;
+  --dark: #0b0b0b;
+  --dark-2: #111827;
+  --light: #ffffff;
+  --muted: #9ca3af;
+  --border: #e5e7eb;
+  --accent: #d64228;
 }
 
-/* GLOBAL */
-* { box-sizing: border-box; margin:0; padding:0; }
-body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--text);}
+/* =====================
+   GLOBAL
+===================== */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f9fafb;
+  color: #111;
+}
 a { text-decoration: none; color: inherit; }
-.wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
-
-/* HERO + SEARCH SECTION */
-.browse-hero {
-   text-align: center;
-  padding: 80px 20px 40px;
- background: radial-gradient(circle at top, #1f2933 0%, #0b0b0b 45%, #000 100%);
-  border-bottom: 1px solid #222;
-  color: #ffffff;
+.container {
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 24px;
+}
+/* ===== HEADER ===== */
+.top-header { background: #fff; border-bottom: 1px solid #eee; }
+.header-inner {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 22px;
+  font-weight:600;
+  font-family:'Montserrat','Poppins',sans-serif;
+  
+}
+.logo-main { color:#111; }
+.logo-accent {
+  color:#ff6a00;
+  position: relative;
+  padding-left:6px;
+}
+.logo-accent::before {
+  content:"";
+  position:absolute;
+  left:0; top:50%;
+  width:1px; height:60%;
+  background:#e5e7eb;
+  transform: translateY(-50%);
+}
+.nav a {
+  margin:0 14px;
+  font-family:'Montserrat',sans-serif;
+  font-weight:500;
+  font-size:15px;
+  color:#222;
+}
+.header-actions { display:flex; align-items:center; gap:18px; }
+.plans,.login {
+  text-decoration:none;
+  color:#111;
+  font-weight:500;
+  background:#F3F4F5;
+  font-family:'Montserrat','Poppins',sans-serif;
+}
+.signup {
+  background:#ff6a00;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:8px;
+  font-weight:600;
+  font-family:'Montserrat','Poppins',sans-serif;
 }
 
-.browse-hero-title {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 1.2;
-  color: var(--text);
-  margin-bottom: 16px;
+/* ===== MOBILE MENU ===== */
+.mobile-menu-icon { display:none; font-size:28px; cursor:pointer; }
+.mobile-nav {
+  display:none;
+  flex-direction:column;
+  background:#0d0d0d;
+  border-bottom:1px solid #222;
+  animation:dropdown 0.3s ease forwards;
+}
+.mobile-nav a {
+  padding:14px 20px;
+  border-top:1px solid #1c1c1c;
+  color:#e6e6e6;
+  font-size:16px;
+  transition:0.2s;
+}
+.mobile-nav a:hover { color:#3663EB; }
+.mobile-nav.open { display:flex; }
+@keyframes dropdown { from{opacity:0; transform:translateY(-10px);} to{opacity:1; transform:translateY(0);} }
+/* ===== MOBILE ===== */
+@media (max-width: 992px) {
+  .nav, .header-actions { display: none; } /* Hide desktop nav */
+  .mobile-menu-icon { display: block; }   /* Show mobile icon */
+  .header-inner { justify-content: space-between; }
+}
+@media (max-width:768px) {
+  .search-box {
+    flex-direction: column; /* stack select + input + button */
+    align-items: stretch;
+    max-width: 90%;
+    margin: 15px auto;
+    padding: 6px;
+  }
+  .search-box select,
+  .search-box input,
+  .search-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin: 4px 0;
+  }
+  .search-btn {
+    background:#ff6a00;
+    color:#fff;
+    border-radius:6px;
+  }
+}
+/* HERO */
+.hero {
+  padding: 40px 20px 20px;
+  max-width: 1250px;
+  margin: auto;
 }
 
-.browse-hero-subtitle {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  max-width: 700px;
-  margin: 0 auto 30px;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
-/* SEARCH BAR WITH ICON */
-.search-bar {
+/* SEARCH CONTAINER */
+.search-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-  position: relative;
-  max-width:720px;
-  margin-left: auto;
-  margin-right: auto;
-  
-  
-
 }
 
-.search-bar input {
+/* SEARCH BOX */
+.search-box {
+  display: flex;
   width: 100%;
-  padding: 14px 16px 14px 42px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  font-size: 16px;
-  background-color: #fff;
-  outline: none;
-  transition: 0.3s;
-  box-shadow: 0 2px 6px var(--shadow);
+  max-width: 1100px;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
 }
 
-.search-bar input::placeholder {
-  color: var(--muted);
+/* CATEGORY */
+.category {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-right: 1px solid #d1d1d1;
+  background: #fff;
 }
 
-.search-bar input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-}
-  /* Active Filter */
-.filter-btn.active {
-  background-color: #2563EB;
-  color: #FFFFFF;
-  border-color: #2563EB;
-}
-
-
-/* SEARCH ICON */
-.search-bar::before {
-  content: "🔍";
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
+.category .icon {
+  margin-right: 6px;
   font-size: 18px;
-  color: var(--muted);
 }
 
-/* CATEGORY DROPDOWN */
-.category-select {
-  display: block;
-  width: 200px;
-  margin: 0 auto 30px;
-  padding: 12px 16px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  font-size: 15px;
-  background-color: #fff;
-  color: var(--text);
+.category select {
+  border: none;
+  outline: none;
+  font-size: 14px;
   cursor: pointer;
-  transition: 0.3s;
+  background: transparent;
 }
 
-.category-select:hover {
-  border-color: var(--accent);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+/* SEARCH INPUT */
+.search-box input {
+  flex: 1;
+  border: none;
+  padding: 16px;
+  font-size: 15px;
+  outline: none;
 }
 
-/* SEARCH TITLE */
-#searchTitle {
-  text-align: center;
-  font-size: 26px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+/* SEARCH BUTTON */
+.search-btn {
+  width: 56px;
+  background: #e4002b;
   color: #fff;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background: #c30025;
+}
+
+/* HERO TEXT */
+.hero-text {
+  margin-top: 28px;
+}
+
+.hero-text h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.hero-text p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* =====================
+   RESULTS TITLE
+===================== */
+.results-title {
+  text-align: center;
+  font-size: 24px;
+  margin: 40px 0 20px;
   font-weight: 600;
 }
 
-/* GALLERY */
+/* =====================
+   MASONRY GRID
+===================== */
 .gallery-wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  max-width: 1500px;
+  margin: auto;
+  padding: 0 20px 60px;
 }
 
 .signs-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
-  gap: 24px;
+  column-count: 5;
+  column-gap: 20px;
 }
 
 .sign-card {
-  position: relative;
-  background-color: var(--card-bg);
-  border-radius: var(--radius);
-  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 20px;
+  border-radius: 4px;
   border: 1px solid var(--border);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  break-inside: avoid;
+  transition: box-shadow .2s ease;
 }
 
 .sign-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 20px rgba(0,0,0,.08);
 }
 
 .sign-card img {
   width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: contain;
+  height: auto;
   display: block;
+  background: #f3f4f6;
 }
 
-.sign-card .overlay {
-  position: absolute;
-  inset: 0;
-  background: var(--overlay-bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.sign-card:hover .overlay {
-  opacity: 1;
-}
-
-.sign-card .overlay span {
-  color: #fff;
+.sign-card span {
+  display: block;
+  padding: 10px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
 }
 
-/* RESPONSIVE */
-@media (max-width: 640px) {
-  .browse-hero { padding: 50px 15px 40px; }
-  .browse-hero-title { font-size: 28px; }
-  .browse-hero-subtitle { font-size: 15px; max-width: 100%; }
-  .search-bar input { padding: 12px 14px 12px 38px; font-size: 14px; }
-  .category-select { width: 90%; font-size: 14px; }
-  .signs-gallery { grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 16px; }
+/* =====================
+   HOVER OVERLAY
+===================== */
+.thumb {
+  position: relative;
 }
 
-@media (min-width: 641px) and (max-width:1024px) {
-  .browse-hero-title { font-size: 32px; }
-  .browse-hero-subtitle { font-size: 16px; }
-  .search-bar input { font-size: 15px; }
-  .category-select { width: 250px; font-size: 15px; }
-  .signs-gallery { grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 20px; }
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  opacity: 0;
+  transition: .2s;
 }
 
-@media (min-width:1025px) {
-  .browse-hero-title { font-size: 40px; }
-  .browse-hero-subtitle { font-size: 18px; }
-  .search-bar input { font-size: 16px; }
-  .category-select { width: 250px; font-size: 16px; }
+.thumb:hover .overlay {
+  opacity: 1;
 }
 
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .search-box {
+    flex-direction: column;
+    border-radius: 8px;
+  }
+
+  .category {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #d1d1d1;
+    padding: 12px;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .search-btn {
+    width: 100%;
+    height: 48px;
+    border-radius: 0;
+  }
+
+  .signs-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .signs-gallery {
+    column-count: 1;
+  }
+}
 </style>
+</head>
+
 <body>
 
-  <!-- LOAD HEADER -->
-<div id="header"></div>
-<script>
-  fetch("header.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("header").innerHTML = data);
-</script>
+  <!-- ================= HEADER ================= -->
+<header class="top-header">
+  <div class="container header-inner">
+    <!-- Logo -->
+    <a href="/" class="logo">
+      <span class="logo-main">Signora</span>
+      <span class="logo-accent">X</span>
+    </a>
 
-  <!-- HERO -->
-  <section class="browse-hero">
-    <h1 style="font-size:32px; margin-bottom:10px; color:#FFFFFF; text-align:center;">
-  Browse All Professional Signs
-</h1>
-   <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search by keyword or category...">
+    <!-- Desktop Navigation -->
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="browse-signs.html">Browse Signs</a>
+      <a href="road-signs/usa.html">Countries</a>
+      <a href="contact-us.html">Contact</a>
+      <a href="blog/">Blog</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <a href="#" class="plans">Plans</a>
+      <a href="#" class="signup">Sign Up</a>
+      <a href="#" class="login">Log In</a>
     </div>
-  <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="road">Road Signs</button>
-      <button class="filter-btn" data-filter="warning">Warning Signs</button>
-      <button class="filter-btn" data-filter="prohibition">Prohibition Signs</button>
-      <button class="filter-btn" data-filter="information">Information Signs</button>
-      <button class="filter-btn" data-filter="safety">Safety Signs</button>
-      <button class="filter-btn" data-filter="industrial">Industrial Signs</button>
-    </div>
-     <!-- SEARCH TITLE -->
-    <h2 id="searchTitle"></h2>
-    
-  </section>
 
-  <!-- If you have a cart panel / cart divs in your original file, paste them
-       below or replace the placeholder. This file DOES NOT remove your cart —
-       I couldn't see your cart markup in the snippet you sent, so I left a clear spot. -->
-  <!-- ========== CART / EXTRA MARKUP PLACEHOLDER ========== -->
-  <!-- Paste your cart / mini-cart / cart-panel HTML here (from your original file) -->
-  <!-- Example: <div id="cartPanel"> ... </div> -->
-  <!-- ==================================================== -->
+    <!-- Mobile Menu Icon -->
+    <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
+  </div>
 
-  <!-- GALLERY -->
-  <main class="gallery-wrapper">
-    <div class="signs-gallery" id="signsGallery">
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="browse-signs.html">Browse Signs</a>
+    <a href="about/">About</a>
+    <a href="contact/">Contact</a>
+    <a href="blog/">Blog</a>
+    <a href="account.html">Log In</a>
+  </div>
+</header>
 
-      <!-- Example cards — duplicate for all your 500+ signs -->
-
-      <div class="sign-card" data-category="road" data-name="Road Narrow Sign Set Left, Right and Both Side Road Warning Signs ">
-        <a href="/products/road-signs/road-narrows-sign-set-download.html">
-          <img src="assets/images/road narrows sign warning traffic symbol.jpg" alt="Road Narrows Sign Set" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-      
-      <div class="sign-card" data-category="road" data-name="usa speed limit sign set ">
-        <a href="/products/road-signs/usa-speed-limit-sign-set-download.html">
-          <img src="assets/images/usa speed limit sign set.jpg" alt="usa speed limit sign set" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-      <div class="sign-card" data-category="road" data-name="usa stop sign red octogon ">
-       <a href="/products/road-signs/speed-limit-signs.html">
-          <img src="assets/images/stop sign usa.jpg" alt="usa stop sign red octogon  " loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-       <div class="sign-card" data-category="road" data-name="yield sign usa ">
-        <a href="/products/road-signs/road-narrows-sign-set-download.html">
-          <img src="assets/images/yield sign usa.jpg" alt="yield sign usa" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-      <div class="sign-card" data-category="road" data-name="wrong way usa sign">
-        <a href="/products/road-signs/road-narrows-sign-set-download.html">
-          <img src="assets/images/wrong way usa sign.jpg" alt="wrong way" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-       <div class="sign-card" data-category="road" data-name="one wau usa road sign horizontol ">
-        <a href="/products/road-signs/road-narrows-sign-set-download.html">
-          <img src="assets/images/one way usa sign horizontol.jpg" alt="one way" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-        <div class="sign-card" data-category="road" data-name="one way usa road sign vertical ">
-        <a href="/products/road-signs/road-narrows-sign-set-download.html">
-          <img src="assets/images/usa one way vertical.jpg" alt="one way" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-        <div class="sign-card" data-category="road" data-name="no left turn ">
-        <a href="/products/road-signs/road-narrows-sign-set-download.html">
-          <img src="assets/images/usa no left turn.jpg" alt="one way" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-
-      <div class="sign-card" data-category="road" data-name="children crossing road sign red traingle">
-        <a href="give-way-sign.html">
-          <img src="assets/images/children crossing road sign red traingle.jpg" alt="road Sign" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-      <div class="sign-card" data-category="road" data-category="warning" data-name="yellow diamond narrows warning sign set left side narrows both side narrows and right side narrows ">
-        <a href="/products/road-signs/yellow-diamond-narrows-sign-set.html">
-          <img src="assets/images/yellow diamond road narrows.jpg" alt="yellow yellow diamond narrows sign set " loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-      <div class="sign-card" data-category="road" data-category="warning" data-name="dead end road sign yellow diamond warning sign">
-        <a href="/products/road-signs/dead-end-road-sign.html">
-          <img src="assets/images/dead end road sign.jpg" alt="dead end road sign" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-      <div class="sign-card" data-category="road" data-name="Give Way Sign Vector download EPS, SVG, JPG and PNG">
-        <a href="give-way-sign.html">
-          <img src="assets/images/Give Way Sign.jpg" alt="road Sign" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-      <div class="sign-card" data-category="road" data-name="japanese traffic speed limit signs bundle 30 40 50 60 70 80">
-        <a href="give-way-sign.html">
-          <img src="assets/images/japanese traffic speed limit signs bundle 30 40 50 60 70 80.jpg" alt="road Sign" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-      <div class="sign-card" data-category="road" data-name="circular parking zone sign  white p on blue background">
-        <a href="products/road-signs/Parking-Sign-Circular-Parking-Zone-Sign-White-P-on-Blue-Background.html">
-          <img src="assets/images/Circular Parking Zone Sign  White P on Blue Background.jpg" alt="road Sign" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-      <div class="sign-card" data-category="road" data-name="no left and no right turn red circle road signs without slash vector ">
-        <a href="give-way-sign.html">
-          <img src="assets/images/no left and no right turn red circle road signs without slash vector.jpg" alt="road Sign" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-      <div class="sign-card" data-category="industrial" data-name="biohazard authorized personnel only sign.jpg">
-        <a href="give-way-sign.html">
-          <img src="assets/images/biohazard authorized personnel only sign.jpg" alt="road Sign" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-       <div class="sign-card" data-category="safety" data-name="Wear Face Mask Sign Hospital Clinic Blue Circle">
-        <a href="give-way-sign.html">
-          <img src="/assets/images/Wear Face Mask Sign Hospital Clinic Blue Circle.jpg" alt="safety Sign" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-      <div class="sign-card" data-category="prohibition" data-name="No Mobile Phone Sign Vertical and Square Prohibition Safety Notice.jpg">
-        <a href="give-way-sign.html">
-          <img src="assets/images/No Mobile Phone Sign Vertical and Square Prohibition Safety Notice.jpg" alt="road Sign" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-      <div class="sign-card" data-category="road" data-name="children crossing road sign red traingle">
-        <a href="give-way-sign.html">
-          <img src="assets/images/children crossing road sign red traingle.jpg" alt="road Sign" loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-      <div class="sign-card" data-category="road" data-name="uae Arabic Road Narrows Warning Sign  Red Triangle Traffic Safety Symbol Vector">
-        <a href="/products/road-signs/arabic-road-narrows-warning-sign.html">
-          <img src="assets/images/arabic road narrows warning sign red triangle traffic safety symbol vector.jpg" alt="Arabic Road Narrows Sign " loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-
-      <div class="sign-card" data-category="road" data-name="Speed Limit Signs Set-30 40 50 60 70 80 km/h ">
-        <a href="/products/road-signs/speed-limit-signs.html">
-          <img src="assets/images/speed limits signs bundle.jpg" alt="Speed Limit Signs Set " loading="lazy">
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-       <div class="sign-card" data-category="road" data-name="usa no u turn.jpg">
-        <a href="/products/road-signs/speed-limit-signs.html">
-          <img src="/assets/images/usa no u turn.jpg"  alt="Speed Limit Sign "loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-        <div class="sign-card" data-category="road" data-name="keep left R4-8">
-        <a href="/products/road-signs/speed-limit-signs.html">
-         <img src="/assets/images/keep left R4-8.jpg"  alt="Speed Limit Sign " loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-       <div class="sign-card" data-category="road" data-name="keep left R4-8a">
-        <a href="/products/road-signs/speed-limit-signs.html">
-         <img src="/assets/images/keep left R4-8a.jpg"  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-          <div class="sign-card" data-category="road" data-name="keep left R4-8b">
-        <a href="/products/road-signs/speed-limit-signs.html">
-          <img src="/assets/images/keep left R4-8b.jpg"  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-
-        <div class="sign-card" data-category="road" data-name="no parking tow away zone">
-        <a href="/products/road-signs/speed-limit-signs.html">
-          <img src="/assets/images/no parking tow away zone.jpg"  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-      
-        <div class="sign-card" data-category="road" data-name="no stopping any time">
-        <a href="/products/road-signs/speed-limit-signs.html">
-           <img src="/assets/images/no stopping any time 18 into 24 in.jpg"  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-      
-        <div class="sign-card" data-category="road" data-name="left lane must turn left R3-7L">
-        <a href="/products/road-signs/speed-limit-signs.html">
-           <img src="/assets/images/left lane must turn left R3-7L.jpg"  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-      
-     <div class="sign-card" data-category="road" data-name="no parking">
-        <a href="/products/road-signs/speed-limit-signs.html">
-            <img src="/assets/images/usa no parking 12 in.jpg"  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-       <div class="sign-card" data-category="road" data-name="left turn only R3-5">
-        <a href="/products/road-signs/speed-limit-signs.html">
-           <img src="/assets/images/left turn only R3-5.jpg"  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-        <div class="sign-card" data-category="road" data-name="right turn only R3-5">
-        <a href="/products/road-signs/speed-limit-signs.html">
-            <img src="/assets/images/right turn only R3-5.jpg"  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-       <div class="sign-card" data-category="road" data-name="right lane must turn right R3-7R">
-        <a href="/products/road-signs/speed-limit-signs.html">
-             <img src="/assets/images/right lane must turn right R3-7R.jpg"  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-      <div class="sign-card" data-category="road" data-name="Two-Way Left Turn Only R3-9a">
-        <a href="/products/road-signs/speed-limit-signs.html">
-             <img src="/assets/images/Two-Way Left Turn Only R3-9a.jpg"  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-       <div class="sign-card" data-category="road" data-name="Two-Way Left Turn Only R3-9b">
-        <a href="/products/road-signs/speed-limit-signs.html">
-             <img src="/assets/images/Two Way Left Turn Only R3 9b.jpg"  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-       <div class="sign-card" data-category="road" data-name="keep right r4-7">
-        <a href="/products/road-signs/speed-limit-signs.html">
-             <img src="/assets/images/keep right r4-7.jpg""  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-       <div class="sign-card" data-category="road" data-name="keep right r4-7a">
-        <a href="/products/road-signs/speed-limit-signs.html">
-             <img src="/assets/images/keep right r4-7a.jpg""  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-
-       <div class="sign-card" data-category="road" data-name="keep right r4-7b">
-        <a href="/products/road-signs/speed-limit-signs.html">
-             <img src="/assets/images/keep right r4-7b.jpg""  alt="Speed Limit Sign" loading="lazy"> 
-          <div class="overlay">View Details</div>
-        </a>
-      </div>
-      
-      <!-- Duplicate the sign-card divs for all your preview images -->
-
-
-
-      
-    </div>
-  </main>
-
-  <!-- LOAD FOOTER -->
-<div id="footer"></div>
 <script>
-  fetch("footer.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("footer").innerHTML = data);
-</script>
-
-  
-<script>
-  // === ELEMENTS ===
-const galleryItems = document.querySelectorAll('.sign-card');
-const filterButtons = document.querySelectorAll('.filter-btn');
-const searchInput = document.getElementById('searchInput');
-
-// === URL PARAMETERS (from homepage) ===
-const params = new URLSearchParams(window.location.search);
-const searchParam = params.get('search') ? params.get('search').toLowerCase() : '';
-const categoryParam = params.get('category') ? params.get('category').toLowerCase() : 'all';
-
-// === INITIALIZE SEARCH FIELD ===
-if (searchParam) searchInput.value = searchParam;
-
-// === HELPER FUNCTION: singularize words for search ===
-function singularize(word) {
-  if (word.endsWith('s')) return word.slice(0, -1);
-  return word;
-}
-
-/* ===== SEARCH TITLE FUNCTION ===== */
-function updateSearchTitle(category, query) {
-  const title = document.getElementById("searchTitle");
-  const catText = category !== 'all' ? category + " signs" : "";
-  const qText = query ? query : "";
-
-  if (!catText && !qText) {
-    title.textContent = "";
-    return;
-  }
-
-  if (catText && qText) {
-    title.textContent = `Showing results for "${qText}" in ${catText}`;
-    return;
-  }
-
-  if (catText && !qText) {
-    title.textContent = `Category: ${catText}`;
-    return;
-  }
-
-  if (!catText && qText) {
-    title.textContent = `Search results for "${qText}"`;
-    return;
-  }
-}
-
-// === SMART FILTER FUNCTION ===
-function filterGallery(category, query) {
-  const searchWords = query
-    .trim()
-    .toLowerCase()
-    .split(/\s+/)
-    .map(word => singularize(word))
-    .filter(Boolean);
-
-  let visibleCount = 0;
-
-  galleryItems.forEach(item => {
-    const name = singularize(item.dataset.name.toLowerCase());
-    const itemCategory = singularize(item.dataset.category.toLowerCase());
-
-    // Category match
-    const categoryMatch = category === 'all' || itemCategory === category || itemCategory.includes(category);
-
-    // Search match
-    const searchMatch = searchWords.length === 0 || searchWords.every(word => name.includes(word) || itemCategory.includes(word));
-
-    if (categoryMatch && searchMatch) {
-      item.style.display = 'block';
-      visibleCount++;
-    } else {
-      item.style.display = 'none';
-    }
-  });
-
-  // === No Results Message ===
-  let noResults = document.getElementById('noResults');
-  if (!noResults) {
-    noResults = document.createElement('p');
-    noResults.id = 'noResults';
-    noResults.textContent = 'No signs found matching your search.';
-    noResults.style.color = '#6b7280';
-    noResults.style.textAlign = 'center';
-    noResults.style.marginTop = '30px';
-    noResults.style.fontSize = '18px';
-    document.querySelector('.signs-gallery').after(noResults);
-  }
-  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-
-  // update the search title whenever filtering finishes
-  updateSearchTitle(category, query.trim());
-}
-
-// === HIGHLIGHT ACTIVE BUTTON ===
-function setActiveButton(category) {
-  filterButtons.forEach(btn => {
-    if (btn.dataset.filter.trim().toLowerCase() === category) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
-  });
-}
-
-// === INITIAL LOAD ===
-setActiveButton(categoryParam);
-filterGallery(categoryParam, searchParam);
-
-// === EVENT LISTENERS ===
-
-// Filter buttons
-filterButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const category = btn.dataset.filter.toLowerCase().trim();
-    setActiveButton(category);
-    filterGallery(category, searchInput.value);
-  });
-});
-
-// Search input
-searchInput.addEventListener('input', () => {
-  const activeCategory = document.querySelector('.filter-btn.active').dataset.filter.toLowerCase().trim();
-  filterGallery(activeCategory, searchInput.value);
-});
-
-// ENTER KEY TRIGGER SEARCH
-searchInput.addEventListener('keypress', e => {
-  if (e.key === 'Enter') {
-    const activeCategory = document.querySelector('.filter-btn.active').dataset.filter.toLowerCase().trim();
-    filterGallery(activeCategory, searchInput.value);
-  }
-});
-</script>
-  <script>
 function toggleMenu() {
   document.getElementById("mobileNav").classList.toggle("open");
 }
+</script>
+<!-- HERO -->
+<section class="hero">
 
-// === TYPO-TOLERANT SEARCH + HIGHLIGHT ===
-function filterGallery(category, query) {
-  const searchWords = query
-    .trim()
-    .toLowerCase()
-    .split(/\s+/)
-    .map(word => singularize(word))
-    .filter(Boolean);
+  <!-- SEARCH BAR -->
+  <div class="search-container">
 
-  function fuzzyMatch(word, target) {
-    target = target.toLowerCase();
-    if (target.includes(word)) return true;
-    if (target.startsWith(word.slice(0, 2))) return true;
-    let diff = 0;
-    for (let i = 0; i < Math.max(word.length, target.length); i++) {
-      if (word[i] !== target[i]) diff++;
-      if (diff > 1) return false;
-    }
-    return diff <= 1;
-  }
+    <div class="search-box">
 
-  let visibleCount = 0;
+      <!-- CATEGORY -->
+<div class="category">
+  <span class="icon">🖼️</span>
+  <select id="categorySelect">
+    <option value="all">All images</option>
+    <option value="road">Road Signs</option>
+    <option value="warning">Warning Signs</option>
+    <option value="safety">Safety Signs</option>
+    <option value="industrial">Industrial Signs</option>
+  </select>
+</div>
 
-  galleryItems.forEach(item => {
-    const name = singularize(item.dataset.name.toLowerCase());
-    const itemCategory = singularize(item.dataset.category.toLowerCase());
+<!-- SEARCH INPUT -->
+<input type="text" id="searchInput" placeholder="Search for road signs, speed limit, warning...">
+      <!-- SEARCH BUTTON -->
+      <button class="search-btn">
+        🔍
+      </button>
 
-    // Category match
-    const categoryMatch = category === 'all' || itemCategory === category || itemCategory.includes(category);
+    </div>
 
-    // Multi-word fuzzy search
-    const searchMatch = searchWords.length === 0 || searchWords.every(sw => {
-      const itemWords = (name + " " + itemCategory).split(/\s+/);
-      return itemWords.some(iw => fuzzyMatch(sw, iw));
-    });
+  </div>
 
-    // Show / Hide item
-    if (categoryMatch && searchMatch) {
-      item.style.display = 'block';
-      visibleCount++;
+  <!-- TITLE -->
+  <div class="hero-text">
+    <h1>Royalty-free vector signs</h1>
+    <p>Professional road, safety & industrial sign vectors. EPS, SVG & PDF ready for print.</p>
+  </div>
 
-      // === HIGHLIGHT MATCHING WORDS ===
-      let highlightedName = item.dataset.name;
-      searchWords.forEach(sw => {
-        const regex = new RegExp(sw, 'ig'); // case-insensitive
-        highlightedName = highlightedName.replace(regex, match => `<span style="background-color: #ffeb3b;">${match}</span>`);
-      });
+</section>
 
-      // Add highlighted title overlay (optional)
-      const overlay = item.querySelector('.overlay');
-      overlay.innerHTML = `View Details<br><small style="color: #fff;">${highlightedName}</small>`;
-    } else {
-      item.style.display = 'none';
-    }
+<h2 class="results-title" id="resultsTitle"></h2>
+
+<!-- GALLERY -->
+<main class="gallery-wrapper">
+  <div class="signs-gallery" id="gallery">
+
+    <!-- CARD -->
+    <div class="sign-card" data-category="road" data-name="Road Narrow Sign Set Left, Right and Both Side Road Warning Signs">
+  <div class="thumb">
+    <img src="assets/images/road narrows sign warning traffic symbol.jpg" alt="Road Narrow Sign Set">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Road Narrow Sign Set</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="USA Speed Limit Sign Set">
+  <div class="thumb">
+    <img src="assets/images/usa speed limit sign set.jpg" alt="USA Speed Limit Sign Set">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>USA Speed Limit Sign Set</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="USA Stop Sign Red Octagon">
+  <div class="thumb">
+    <img src="assets/images/stop sign usa.jpg" alt="USA Stop Sign Red Octagon">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>USA Stop Sign Red Octagon</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Yield Sign USA">
+  <div class="thumb">
+    <img src="assets/images/yield sign usa.jpg" alt="Yield Sign USA">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Yield Sign USA</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Wrong Way USA Sign">
+  <div class="thumb">
+    <img src="assets/images/wrong way usa sign.jpg" alt="Wrong Way USA Sign">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Wrong Way USA Sign</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="One Way USA Road Sign Horizontal">
+  <div class="thumb">
+    <img src="assets/images/one way usa sign horizontol.jpg" alt="One Way USA Road Sign Horizontal">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>One Way Horizontal</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="One Way USA Road Sign Vertical">
+  <div class="thumb">
+    <img src="assets/images/usa one way vertical.jpg" alt="One Way USA Road Sign Vertical">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>One Way Vertical</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="No Left Turn">
+  <div class="thumb">
+    <img src="assets/images/usa no left turn.jpg" alt="No Left Turn">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>No Left Turn</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Children Crossing Road Sign Red Triangle">
+  <div class="thumb">
+    <img src="assets/images/children crossing road sign red traingle.jpg" alt="Children Crossing">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Children Crossing</span>
+</div>
+
+<div class="sign-card" data-category="warning" data-name="Yellow Diamond Narrows Warning Sign Set">
+  <div class="thumb">
+    <img src="assets/images/yellow diamond road narrows.jpg" alt="Yellow Diamond Narrows Warning Sign Set">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Yellow Diamond Narrows Warning</span>
+</div>
+
+<div class="sign-card" data-category="warning" data-name="Dead End Road Sign Yellow Diamond">
+  <div class="thumb">
+    <img src="assets/images/dead end road sign.jpg" alt="Dead End Road Sign">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Dead End Road Sign</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Give Way Sign Vector Download">
+  <div class="thumb">
+    <img src="assets/images/Give Way Sign.jpg" alt="Give Way Sign">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Give Way Sign</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Japanese Traffic Speed Limit Signs Bundle">
+  <div class="thumb">
+    <img src="assets/images/japanese traffic speed limit signs bundle 30 40 50 60 70 80.jpg" alt="Japanese Traffic Speed Limit Signs Bundle">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Japanese Speed Limit Bundle</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Circular Parking Zone Sign White P on Blue">
+  <div class="thumb">
+    <img src="assets/images/Circular Parking Zone Sign  White P on Blue Background.jpg" alt="Circular Parking Zone Sign">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Circular Parking Zone</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="No Left and No Right Turn">
+  <div class="thumb">
+    <img src="assets/images/no left and no right turn red circle road signs without slash vector.jpg" alt="No Left and No Right Turn">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>No Left & No Right Turn</span>
+</div>
+
+<div class="sign-card" data-category="industrial" data-name="Biohazard Authorized Personnel Only Sign">
+  <div class="thumb">
+    <img src="assets/images/biohazard authorized personnel only sign.jpg" alt="Biohazard Authorized Personnel Only Sign">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Biohazard Sign</span>
+</div>
+
+<div class="sign-card" data-category="safety" data-name="Wear Face Mask Sign Hospital Clinic Blue Circle">
+  <div class="thumb">
+    <img src="assets/images/Wear Face Mask Sign Hospital Clinic Blue Circle.jpg" alt="Wear Face Mask Sign">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Wear Face Mask Sign</span>
+</div>
+
+<div class="sign-card" data-category="prohibition" data-name="No Mobile Phone Sign Vertical and Square">
+  <div class="thumb">
+    <img src="assets/images/No Mobile Phone Sign Vertical and Square Prohibition Safety Notice.jpg" alt="No Mobile Phone Sign">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>No Mobile Phone Sign</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="UAE Arabic Road Narrows Warning Sign Red Triangle">
+  <div class="thumb">
+    <img src="assets/images/arabic road narrows warning sign red triangle traffic safety symbol vector.jpg" alt="Arabic Road Narrows Sign">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Arabic Road Narrows Sign</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Speed Limit Signs Set 30 40 50 60 70 80 km/h">
+  <div class="thumb">
+    <img src="assets/images/speed limits signs bundle.jpg" alt="Speed Limit Signs Set">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Speed Limit Signs Set</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="USA No U Turn">
+  <div class="thumb">
+    <img src="assets/images/usa no u turn.jpg" alt="USA No U Turn">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>USA No U Turn</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Keep Left R4-8">
+  <div class="thumb">
+    <img src="assets/images/keep left R4-8.jpg" alt="Keep Left R4-8">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Keep Left R4-8</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Keep Left R4-8a">
+  <div class="thumb">
+    <img src="assets/images/keep left R4-8a.jpg" alt="Keep Left R4-8a">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Keep Left R4-8a</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Keep Left R4-8b">
+  <div class="thumb">
+    <img src="assets/images/keep left R4-8b.jpg" alt="Keep Left R4-8b">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Keep Left R4-8b</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="No Parking Tow Away Zone">
+  <div class="thumb">
+    <img src="assets/images/no parking tow away zone.jpg" alt="No Parking Tow Away Zone">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>No Parking Tow Away Zone</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="No Stopping Any Time">
+  <div class="thumb">
+    <img src="assets/images/no stopping any time 18 into 24 in.jpg" alt="No Stopping Any Time">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>No Stopping Any Time</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Left Lane Must Turn Left R3-7L">
+  <div class="thumb">
+    <img src="assets/images/left lane must turn left R3-7L.jpg" alt="Left Lane Must Turn Left">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Left Lane Must Turn Left</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="No Parking">
+  <div class="thumb">
+    <img src="assets/images/usa no parking 12 in.jpg" alt="No Parking">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>No Parking</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Left Turn Only R3-5">
+  <div class="thumb">
+    <img src="assets/images/left turn only R3-5.jpg" alt="Left Turn Only">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Left Turn Only</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Right Turn Only R3-5">
+  <div class="thumb">
+    <img src="assets/images/right turn only R3-5.jpg" alt="Right Turn Only">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Right Turn Only</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Right Lane Must Turn Right R3-7R">
+  <div class="thumb">
+    <img src="assets/images/right lane must turn right R3-7R.jpg" alt="Right Lane Must Turn Right">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Right Lane Must Turn Right</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Two-Way Left Turn Only R3-9a">
+  <div class="thumb">
+    <img src="assets/images/Two-Way Left Turn Only R3-9a.jpg" alt="Two-Way Left Turn Only">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Two-Way Left Turn Only R3-9a</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Two-Way Left Turn Only R3-9b">
+  <div class="thumb">
+    <img src="assets/images/Two Way Left Turn Only R3 9b.jpg" alt="Two-Way Left Turn Only">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Two-Way Left Turn Only R3-9b</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Keep Right R4-7">
+  <div class="thumb">
+    <img src="assets/images/keep right r4-7.jpg" alt="Keep Right R4-7">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Keep Right R4-7</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Keep Right R4-7a">
+  <div class="thumb">
+    <img src="assets/images/keep right r4-7a.jpg" alt="Keep Right R4-7a">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Keep Right R4-7a</span>
+</div>
+
+<div class="sign-card" data-category="road" data-name="Keep Right R4-7b">
+  <div class="thumb">
+    <img src="assets/images/keep right r4-7b.jpg" alt="Keep Right R4-7b">
+    <div class="overlay">View Details</div>
+  </div>
+  <span>Keep Right R4-7b</span>
+</div>
+
+
+</main>
+
+<script>
+const cards = document.querySelectorAll('.sign-card');
+const searchInput = document.getElementById('searchInput');
+const categorySelect = document.getElementById('categorySelect');
+const resultsTitle = document.getElementById('resultsTitle');
+
+function filterGallery() {
+  const query = searchInput.value.toLowerCase();
+  const category = categorySelect.value;
+  let count = 0;
+
+  cards.forEach(card => {
+    const name = card.dataset.name.toLowerCase();
+    const cat = card.dataset.category;
+
+    const match =
+      (category === 'all' || cat === category) &&
+      name.includes(query);
+
+    card.style.display = match ? 'inline-block' : 'none';
+    if (match) count++;
   });
 
-  // === No Results Message ===
-  let noResults = document.getElementById('noResults');
-  if (!noResults) {
-    noResults = document.createElement('p');
-    noResults.id = 'noResults';
-    noResults.textContent = 'No signs found matching your search.';
-    noResults.style.color = '#6b7280';
-    noResults.style.textAlign = 'center';
-    noResults.style.marginTop = '30px';
-    noResults.style.fontSize = '18px';
-    document.querySelector('.signs-gallery').after(noResults);
-  }
-  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-
-  // Update search title
-  updateSearchTitle(category, query.trim());
+  resultsTitle.textContent =
+    count > 0 ? `Showing ${count} results` : 'No results found';
 }
+
+searchInput.addEventListener('input', filterGallery);
+categorySelect.addEventListener('change', filterGallery);
+
+// Initial count
+filterGallery();
 </script>
+
 </body>
 </html>
