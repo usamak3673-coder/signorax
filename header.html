@@ -84,7 +84,6 @@
 </header>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-
   // Mobile menu toggle
   const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
   const mobileNav = document.getElementById('mobileNav');
@@ -96,11 +95,10 @@ document.addEventListener("DOMContentLoaded", function() {
   // Mobile dropdown toggle
   document.querySelectorAll('.mobile-drop-link').forEach(button => {
     button.addEventListener('click', (e) => {
-      e.preventDefault(); // prevent default action
+      e.preventDefault(); // prevent default navigation
       const parent = e.target.closest('.mobile-dropdown');
       parent.classList.toggle('open');
     });
   });
-
 });
 </script>
