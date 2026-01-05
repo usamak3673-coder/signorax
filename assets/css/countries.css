@@ -146,14 +146,6 @@ a { text-decoration: none; color: inherit; }
   content: "";
   position: absolute;
   inset: 0;
- background: linear-gradient(
-    135deg,
-    rgba(178, 34, 52, 0.6) 0%,      /* Soft Red */
-    rgba(178, 34, 52, 0.6) 35%, 
-    rgba(60, 59, 110, 0.6) 35%,     /* Soft Blue */
-    rgba(60, 59, 110, 0.6) 70%, 
-    rgba(255, 255, 255, 0.0) 100%   /* White fades out smoothly */
-);
   z-index: 0;
 }
 
@@ -252,6 +244,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 600;
 
 }
+
 
 
 
