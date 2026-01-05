@@ -147,10 +147,13 @@ a { text-decoration: none; color: inherit; }
   position: absolute;
   inset: 0;
  background: linear-gradient(
-        to right,
-        rgba(178, 34, 52, 0.7),   /* Red */
-        rgba(255, 255, 255, 0.7), /* White */
-        rgba(60, 59, 110, 0.7)    /* Blue */
+        135deg,
+        rgba(178, 34, 52, 0.7) 0%,    /* Red */
+        rgba(178, 34, 52, 0.7) 33%,
+        rgba(255, 255, 255, 0.6) 33%,
+        rgba(255, 255, 255, 0.6) 66%,
+        rgba(60, 59, 110, 0.7) 66%,
+        rgba(60, 59, 110, 0.7) 100%   /* Blue */
     );
   z-index: 0;
 }
@@ -250,6 +253,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 600;
 
 }
+
 
 
 
