@@ -21,18 +21,12 @@ body {
 }
 a { text-decoration: none; color: inherit; }
 
-/* =========================
-   HERO SECTION (FIXED)
-========================= */
 .hero {
-  max-width: 1250px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 48px 20px 32px;
 }
 
-/* =========================
-   SEARCH BAR
-========================= */
 .search-container {
   display: flex;
   justify-content: center;
@@ -43,20 +37,18 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   width: 100%;
   max-width: 1100px;
-  background: #fff;
+  background: var(--card);
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   overflow: hidden;
 }
 
-/* CATEGORY */
 .category {
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 0 14px;
   border-right: 1px solid #e5e7eb;
-  background: #fff;
 }
 
 .category .icon {
@@ -72,7 +64,6 @@ a { text-decoration: none; color: inherit; }
   cursor: pointer;
 }
 
-/* SEARCH INPUT */
 .search-box input {
   flex: 1;
   border: none;
@@ -82,27 +73,21 @@ a { text-decoration: none; color: inherit; }
 }
 
 .search-box input::placeholder {
-  color: #9ca3af;
+  color: var(--muted);
 }
 
-/* SEARCH BUTTON */
 .search-btn {
   width: 56px;
-  height: 100%;
   border: none;
   background: #f9fafb;
   font-size: 18px;
   cursor: pointer;
-  transition: background 0.2s ease;
 }
 
 .search-btn:hover {
   background: #f3f4f6;
 }
 
-/* =========================
-   HERO TEXT
-========================= */
 .hero-text {
   margin-top: 28px;
   text-align: center;
@@ -111,20 +96,16 @@ a { text-decoration: none; color: inherit; }
 .hero-text h1 {
   font-size: 26px;
   font-weight: 700;
-  color: #111827;
+  color: var(--text);
   margin-bottom: 6px;
 }
 
 .hero-text p {
   font-size: 15px;
-  color: #6b7280;
+  color: var(--muted);
   max-width: 720px;
   margin: 0 auto;
 }
-
-/* =========================
-   MOBILE
-========================= */
 @media (max-width: 768px) {
   .search-box {
     flex-direction: column;
@@ -240,6 +221,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 600;
 
 }
+
 
 
 
