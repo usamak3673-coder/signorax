@@ -66,10 +66,11 @@ function toggleMenu() {
       <div class="country-category">
         <span class="country-icon">🖼️</span>
         <select id="countryCategorySelect">
-          <option value="all">All Category</option>
-          <option value="road">Regulatory Signs</option>
-          <option value="warning">Informational & Guide Signs</option>
-        </select>
+  <option value="all">All Categories</option>
+  <option value="regulatory">Regulatory Signs</option>
+  <option value="warning">Warning Signs</option>
+  <option value="informational">Informational & Guide Signs</option>
+</select>
       </div>
 
       <!-- SEARCH INPUT -->
@@ -317,98 +318,92 @@ function toggleMenu() {
   </p>
 </footer>
 <script>
-    const searchInput = document.getElementById('signSearch');
-    const categorySelect = document.getElementById('categoryFilter');
-    const allCards = document.querySelectorAll('.sign-card');
+/* =========================
+   ELEMENTS
+========================= */
+const searchInput = document.getElementById("countrySearchInput");
+const categorySelect = document.getElementById("countryCategorySelect");
+const searchBtn = document.querySelector(".country-search-btn");
+const allCards = document.querySelectorAll(".sign-card");
 
-    // Levenshtein Distance function
-    function editDistance(s1, s2) {
-        const costs = [];
-        for (let i = 0; i <= s1.length; i++) {
-            let lastValue = i;
-            for (let j = 0; j <= s2.length; j++) {
-                if (i === 0) costs[j] = j;
-                else {
-                    if (j > 0) {
-                        let newValue = costs[j - 1];
-                        if (s1.charAt(i - 1) !== s2.charAt(j - 1))
-                            newValue = Math.min(Math.min(newValue, lastValue), costs[j]) + 1;
-                        costs[j - 1] = lastValue;
-                        lastValue = newValue;
-                    }
-                }
-            }
-            if (i > 0) costs[s2.length] = lastValue;
-        }
-        return costs[s2.length];
+/* =========================
+   EDIT DISTANCE (SPELLING)
+========================= */
+function editDistance(a, b) {
+  const dp = Array.from({ length: a.length + 1 }, () =>
+    Array(b.length + 1).fill(0)
+  );
+
+  for (let i = 0; i <= a.length; i++) dp[i][0] = i;
+  for (let j = 0; j <= b.length; j++) dp[0][j] = j;
+
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      dp[i][j] =
+        a[i - 1] === b[j - 1]
+          ? dp[i - 1][j - 1]
+          : Math.min(
+              dp[i - 1][j] + 1,
+              dp[i][j - 1] + 1,
+              dp[i - 1][j - 1] + 1
+            );
     }
-
-    // Similarity function
-    function similarity(s1, s2) {
-        s1 = s1.toLowerCase();
-        s2 = s2.toLowerCase();
-        if (s1 === s2) return 1;
-        let longer = s1.length > s2.length ? s1 : s2;
-        let shorter = s1.length > s2.length ? s2 : s1;
-        let longerLength = longer.length;
-        if (longerLength === 0) return 1.0;
-        let editDist = editDistance(longer, shorter);
-        return (longerLength - editDist) / longerLength;
-    }
-
-    function filterSigns() {
-        const searchValue = searchInput.value.toLowerCase();
-        const categoryValue = categorySelect.value;
-
-        allCards.forEach(card => {
-            const name = card.dataset.name.toLowerCase();
-            const category = card.dataset.category;
-
-            const matchesCategory = categoryValue === 'all' || categoryValue === category;
-            const matchesSearch = similarity(searchValue, name) >= 0.5 || name.includes(searchValue);
-
-            if (matchesSearch && matchesCategory) {
-                card.style.display = '';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
-
-    searchInput.addEventListener('input', filterSigns);
-    categorySelect.addEventListener('change', filterSigns);
-
-    /* ===== SEARCH TITLE FUNCTION ===== */
-function updateSearchTitle(category, query) {
-  const title = document.getElementById("searchTitle");
-  const catText = category !== 'all' ? category + " signs" : "";
-  const qText = query ? query : "";
-
-  if (!catText && !qText) {
-    title.textContent = "";
-    return;
   }
-
-  if (catText && qText) {
-    title.textContent = `Showing results for "${qText}" in ${catText}`;
-    return;
-  }
-
-  if (catText && !qText) {
-    title.textContent = `Category: ${catText}`;
-    return;
-  }
-
-  if (!catText && qText) {
-    title.textContent = `Search results for "${qText}"`;
-    return;
-  }
+  return dp[a.length][b.length];
 }
 
+/* =========================
+   SIMILARITY (TYPO FRIENDLY)
+========================= */
+function similarity(a, b) {
+  a = a.toLowerCase();
+  b = b.toLowerCase();
+  const longer = a.length > b.length ? a : b;
+  const shorter = a.length > b.length ? b : a;
+  if (longer.length === 0) return 1;
+  return (longer.length - editDistance(longer, shorter)) / longer.length;
+}
+
+/* =========================
+   FILTER FUNCTION
+========================= */
+function filterSigns() {
+  const query = searchInput.value.trim().toLowerCase();
+  const selectedCategory = categorySelect.value;
+
+  allCards.forEach(card => {
+    const name = card.dataset.name.toLowerCase();
+    const category = card.dataset.category;
+
+    const categoryMatch =
+      selectedCategory === "all" || category === selectedCategory;
+
+    const searchMatch =
+      query === "" ||
+      name.includes(query) ||
+      similarity(query, name) >= 0.5;
+
+    card.style.display =
+      categoryMatch && searchMatch ? "flex" : "none";
+  });
+}
+
+/* =========================
+   EVENTS
+========================= */
+searchInput.addEventListener("input", filterSigns);
+categorySelect.addEventListener("change", filterSigns);
+searchBtn.addEventListener("click", filterSigns);
+
+/* ENTER KEY SUPPORT */
+searchInput.addEventListener("keydown", e => {
+  if (e.key === "Enter") filterSigns();
+});
 </script>
 
 </body>
 </html>
+
 
 
 
