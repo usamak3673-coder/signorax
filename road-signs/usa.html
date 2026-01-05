@@ -55,40 +55,41 @@ function toggleMenu() {
   document.getElementById("mobileNav").classList.toggle("open");
 }
 </script>
-<!-- HERO SECTION -->
-<!-- HERO -->
-<section class="hero">
+<section class="country-hero">
 
   <!-- SEARCH BAR -->
-  <div class="search-container">
+  <div class="country-search-container">
 
-    <div class="search-box">
+    <div class="country-search-box">
 
       <!-- CATEGORY -->
-<div class="category">
-  <span class="icon">🖼️</span>
-  <select id="categorySelect">
-    <option value="all">All Category</option>
-    <option value="road">Road Signs</option>
-    <option value="warning">Warning Signs</option>
-    <option value="safety">Safety Signs</option>
-    <option value="industrial">Industrial Signs</option>
-  </select>
-</div>
+      <div class="country-category">
+        <span class="country-icon">🖼️</span>
+        <select id="countryCategorySelect">
+          <option value="all">All Category</option>
+          <option value="road">Road Signs</option>
+          <option value="warning">Warning Signs</option>
+          <option value="safety">Safety Signs</option>
+          <option value="industrial">Industrial Signs</option>
+        </select>
+      </div>
 
-<!-- SEARCH INPUT -->
-<input type="text" id="searchInput" placeholder="Search for road signs, speed limit, warning...">
+      <!-- SEARCH INPUT -->
+      <input
+        type="text"
+        id="countrySearchInput"
+        placeholder="Search for road signs, speed limit, warning..."
+      >
+
       <!-- SEARCH BUTTON -->
-      <button class="search-btn">
-        🔍
-      </button>
+      <button class="country-search-btn">🔍</button>
 
     </div>
 
   </div>
 
   <!-- TITLE -->
-  <div class="hero-text">
+  <div class="country-hero-text">
     <h1>Royalty-free vector signs</h1>
     <p>Professional road, safety & industrial sign vectors. EPS, SVG & PDF ready for print.</p>
   </div>
@@ -410,6 +411,7 @@ function updateSearchTitle(category, query) {
 
 </body>
 </html>
+
 
 
 
