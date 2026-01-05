@@ -135,7 +135,7 @@ a { text-decoration: none; color: inherit; }
 ========================= */
 .country-hero {
   position: relative;
-  background-image: url("/assets/images/usa-flag-bg.png");
+  background-image: url("/assets/images/usa-flag-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -248,6 +248,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 600;
 
 }
+
 
 
 
