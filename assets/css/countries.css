@@ -147,9 +147,8 @@ a { text-decoration: none; color: inherit; }
   position: absolute;
   inset: 0;
  background: linear-gradient(
-        to right,
    135deg,
-          rgba(178, 34, 52, 0.85) 0%,    /* Red */
+   rgba(178, 34, 52, 0.85) 0%,    /* Red */
         rgba(178, 34, 52, 0.85) 33%, 
         rgba(60, 59, 110, 0.85) 33%,   /* Blue */
         rgba(60, 59, 110, 0.85) 66%, 
@@ -253,6 +252,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 600;
 
 }
+
 
 
 
