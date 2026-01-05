@@ -22,38 +22,34 @@ body {
 a { text-decoration: none; color: inherit; }
 
 /* =========================
-   HERO SECTION
+   HERO SECTION (FIXED)
 ========================= */
 .hero {
-  padding: 40px 20px 24px;
   max-width: 1250px;
   margin: 0 auto;
+  padding: 48px 20px 32px;
 }
 
 /* =========================
-   SEARCH CONTAINER
+   SEARCH BAR
 ========================= */
 .search-container {
   display: flex;
   justify-content: center;
 }
 
-/* =========================
-   SEARCH BOX
-========================= */
 .search-box {
   display: flex;
+  align-items: center;
   width: 100%;
   max-width: 1100px;
   background: #fff;
-  border: 1px solid #d1d5db;
+  border: 1px solid #e5e7eb;
   border-radius: 10px;
   overflow: hidden;
 }
 
-/* =========================
-   CATEGORY SELECT
-========================= */
+/* CATEGORY */
 .category {
   display: flex;
   align-items: center;
@@ -70,15 +66,13 @@ a { text-decoration: none; color: inherit; }
 .category select {
   border: none;
   outline: none;
+  background: transparent;
   font-size: 14px;
   font-weight: 500;
-  background: transparent;
   cursor: pointer;
 }
 
-/* =========================
-   SEARCH INPUT
-========================= */
+/* SEARCH INPUT */
 .search-box input {
   flex: 1;
   border: none;
@@ -91,11 +85,10 @@ a { text-decoration: none; color: inherit; }
   color: #9ca3af;
 }
 
-/* =========================
-   SEARCH BUTTON
-========================= */
+/* SEARCH BUTTON */
 .search-btn {
   width: 56px;
+  height: 100%;
   border: none;
   background: #f9fafb;
   font-size: 18px;
@@ -111,15 +104,15 @@ a { text-decoration: none; color: inherit; }
    HERO TEXT
 ========================= */
 .hero-text {
-  margin-top: 26px;
+  margin-top: 28px;
   text-align: center;
 }
 
 .hero-text h1 {
   font-size: 26px;
   font-weight: 700;
-  margin-bottom: 6px;
   color: #111827;
+  margin-bottom: 6px;
 }
 
 .hero-text p {
@@ -130,7 +123,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* =========================
-   MOBILE RESPONSIVE
+   MOBILE
 ========================= */
 @media (max-width: 768px) {
   .search-box {
@@ -138,14 +131,15 @@ a { text-decoration: none; color: inherit; }
   }
 
   .category {
+    width: 100%;
     border-right: none;
     border-bottom: 1px solid #e5e7eb;
-    padding: 10px 14px;
+    padding: 12px;
   }
 
   .search-btn {
     width: 100%;
-    padding: 14px 0;
+    height: 48px;
   }
 
   .hero-text h1 {
@@ -156,6 +150,7 @@ a { text-decoration: none; color: inherit; }
     font-size: 14px;
   }
 }
+
 /* ===== GRID LAYOUT ===== */
 .sign-grid {
   display: grid;
@@ -245,6 +240,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 600;
 
 }
+
 
 
 
