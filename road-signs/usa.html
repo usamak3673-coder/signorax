@@ -56,26 +56,43 @@ function toggleMenu() {
 }
 </script>
 <!-- HERO SECTION -->
-<!-- HERO SECTION -->
-<section class="usa-hero">
-    <div class="container hero-content">
-        <h1>USA Road Signs (MUTCD Standard)</h1>
-        <p>Discover all regulatory, warning, and informational road signs used in the United States, designed according to MUTCD standards. Browse previews and access individual sign pages for download.</p>
-        
-        <!-- SEARCH & CATEGORY -->
-        <div class="search-filter">
-            <select id="categoryFilter">
-                <option value="all">All Categories</option>
-                <option value="regulatory">Regulatory</option>
-                <option value="warning">Warning</option>
-                <option value="informational">Informational</option>
-            </select>
-            <input type="text" id="signSearch" placeholder="Search signs...">
-            <button type="button" class="search-icon">🔍</button>
-        </div>
-        <!-- SEARCH TITLE -->
-    <h2 id="searchTitle"></h2>
+<!-- HERO -->
+<section class="hero">
+
+  <!-- SEARCH BAR -->
+  <div class="search-container">
+
+    <div class="search-box">
+
+      <!-- CATEGORY -->
+<div class="category">
+  <span class="icon">🖼️</span>
+  <select id="categorySelect">
+    <option value="all">All Category</option>
+    <option value="road">Road Signs</option>
+    <option value="warning">Warning Signs</option>
+    <option value="safety">Safety Signs</option>
+    <option value="industrial">Industrial Signs</option>
+  </select>
+</div>
+
+<!-- SEARCH INPUT -->
+<input type="text" id="searchInput" placeholder="Search for road signs, speed limit, warning...">
+      <!-- SEARCH BUTTON -->
+      <button class="search-btn">
+        🔍
+      </button>
+
     </div>
+
+  </div>
+
+  <!-- TITLE -->
+  <div class="hero-text">
+    <h1>Royalty-free vector signs</h1>
+    <p>Professional road, safety & industrial sign vectors. EPS, SVG & PDF ready for print.</p>
+  </div>
+
 </section>
 
 <!-- SIGNS GRID -->
@@ -393,6 +410,7 @@ function updateSearchTitle(category, query) {
 
 </body>
 </html>
+
 
 
 
