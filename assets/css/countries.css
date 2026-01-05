@@ -130,6 +130,34 @@ a { text-decoration: none; color: inherit; }
     height: 48px;
   }
 }
+/* =========================
+   USA FLAG BACKGROUND (ADD-ON)
+========================= */
+.country-hero {
+  position: relative;
+  background-image: url("/assets/images/usa-flag-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay for readability */
+.country-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.65)
+  );
+  z-index: 0;
+}
+
+/* Keep content above overlay */
+.country-hero > * {
+  position: relative;
+  z-index: 1;
+}
 
 /* ===== GRID LAYOUT ===== */
 .sign-grid {
@@ -220,6 +248,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 600;
 
 }
+
 
 
 
