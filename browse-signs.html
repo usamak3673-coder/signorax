@@ -794,8 +794,56 @@ const searchInput = document.getElementById('searchInput');
 const categorySelect = document.getElementById('categorySelect');
 const resultsTitle = document.getElementById('resultsTitle');
 
+// Flexible multi-word fuzzy match
+function smartMatch(text, query) {
+  text = text.toLowerCase();
+  query = query.toLowerCase().trim();
+  if (!query) return true; // empty query matches all
+
+  const textWords = text.split(/\s+/);
+  const queryWords = query.split(/\s+/);
+
+  // Count how many query words match any word in the text
+  let matchCount = 0;
+  queryWords.forEach(qWord => {
+    if (textWords.some(tWord => {
+      if (tWord.includes(qWord)) return true; // exact/partial
+      const distance = levenshteinDistance(tWord, qWord);
+      const len = Math.max(tWord.length, qWord.length);
+      const similarity = 1 - distance / len;
+      return similarity >= 0.5; // 50% similarity threshold
+    })) {
+      matchCount++;
+    }
+  });
+
+  // Require at least 60% of query words to match
+  return (matchCount / queryWords.length) >= 0.6;
+}
+
+// Levenshtein distance function
+function levenshteinDistance(a, b) {
+  const matrix = Array.from({ length: b.length + 1 }, (_, i) => [i]);
+  for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+
+  for (let i = 1; i <= b.length; i++) {
+    for (let j = 1; j <= a.length; j++) {
+      if (b[i - 1] === a[j - 1]) {
+        matrix[i][j] = matrix[i - 1][j - 1];
+      } else {
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j] + 1,
+          matrix[i][j - 1] + 1,
+          matrix[i - 1][j - 1] + 1
+        );
+      }
+    }
+  }
+  return matrix[b.length][a.length];
+}
+
 function filterGallery() {
-  const query = searchInput.value.toLowerCase();
+  const query = searchInput.value.trim().toLowerCase();
   const category = categorySelect.value;
   let count = 0;
 
@@ -803,9 +851,10 @@ function filterGallery() {
     const name = card.dataset.name.toLowerCase();
     const cat = card.dataset.category;
 
-    const match =
-      (category === 'all' || cat === category) &&
-      name.includes(query);
+    const categoryMatch = category === 'all' || cat === category;
+    const textMatch = smartMatch(name, query);
+
+    const match = categoryMatch && textMatch;
 
     card.style.display = match ? 'inline-block' : 'none';
     if (match) count++;
