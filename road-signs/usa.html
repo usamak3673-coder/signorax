@@ -374,6 +374,33 @@ function similarity(a, b) {
 }
 
 /* =========================
+   FLEXIBLE MULTI-WORD MATCH
+========================= */
+function smartMatch(text, query) {
+  text = text.toLowerCase();
+  query = query.toLowerCase().trim();
+  if (!query) return true;
+
+  const textWords = text.split(/\s+/);
+  const queryWords = query.split(/\s+/);
+
+  let matchCount = 0;
+  queryWords.forEach(qWord => {
+    if (
+      textWords.some(tWord => {
+        if (tWord.includes(qWord)) return true; // partial match
+        return similarity(tWord, qWord) >= 0.5; // typo tolerance
+      })
+    ) {
+      matchCount++;
+    }
+  });
+
+  // Require at least 60% of the typed words to match
+  return matchCount / queryWords.length >= 0.6;
+}
+
+/* =========================
    FILTER FUNCTION
 ========================= */
 function filterSigns() {
@@ -387,10 +414,7 @@ function filterSigns() {
     const categoryMatch =
       selectedCategory === "all" || category === selectedCategory;
 
-    const searchMatch =
-      query === "" ||
-      name.includes(query) ||
-      similarity(query, name) >= 0.5;
+    const searchMatch = smartMatch(name, query);
 
     card.style.display =
       categoryMatch && searchMatch ? "flex" : "none";
@@ -408,10 +432,15 @@ searchBtn.addEventListener("click", filterSigns);
 searchInput.addEventListener("keydown", e => {
   if (e.key === "Enter") filterSigns();
 });
+
+/* INITIAL FILTER */
+filterSigns();
 </script>
+
 
 </body>
 </html>
+
 
 
 
