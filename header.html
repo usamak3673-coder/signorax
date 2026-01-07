@@ -78,7 +78,11 @@
     <a href="login.html">Log In</a>
   </div>
 </header>
-
+<script>
+function toggleMenu() {
+  document.getElementById("mobileNav").classList.toggle("open");
+}
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const menuIcon = document.querySelector(".mobile-menu-icon");
