@@ -26,10 +26,42 @@
   <!-- HEADER -->
 <div id="header"></div>
 <script>
-  fetch("./header.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("header").innerHTML = data);
+fetch("./header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
+    // MOBILE MENU FUNCTIONALITY
+    const menuIcon = document.querySelector(".mobile-menu-icon");
+    const mobileNav = document.getElementById("mobileNav");
+    const dropLinks = document.querySelectorAll(".mobile-drop-link");
+
+    // Toggle mobile nav
+    menuIcon.addEventListener("click", () => {
+      mobileNav.classList.toggle("open");
+    });
+
+    // Toggle mobile dropdowns
+    dropLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        const parent = link.parentElement;
+        parent.classList.toggle("open");
+      });
+    });
+
+    // Click outside to close mobile menu
+    document.addEventListener("click", (e) => {
+      if (!mobileNav.contains(e.target) && !menuIcon.contains(e.target)) {
+        mobileNav.classList.remove("open");
+        // Close any open dropdowns
+        dropLinks.forEach(link => {
+          link.parentElement.classList.remove("open");
+        });
+      }
+    });
+  });
 </script>
+
   
    <!-- ================= HERO ================= -->
 <section class="hero">
