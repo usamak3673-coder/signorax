@@ -22,23 +22,293 @@
         /* ===== CONTAINER ===== */
         .container { max-width: 1200px; margin: auto; padding: 0 24px; }
 
-        /* ===== HEADER ===== */
-        .top-header { background: #fff; border-bottom: 1px solid #eee; }
-        .header-inner {
-            height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .logo { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; color: #111; }
-        .logo span:last-child { color: #ff6a00; margin-left: 4px; }
-        .nav a { margin: 0 14px; font-size: 15px; font-weight: 500; color: #222; }
-        .header-actions a { margin-left: 14px; font-size: 14px; font-weight: 500; }
-        .signup { background: #ff6a00; color: #fff; padding: 10px 18px; border-radius: 8px; }
-        .mobile-menu-icon { display: none; font-size: 26px; cursor: pointer; }
-        .mobile-nav { display: none; flex-direction: column; background: #111; }
-        .mobile-nav a { padding: 14px 20px; color: #eee; border-top: 1px solid #222; }
-        .mobile-nav.open { display: flex; }
+       /* ===== HEADER BASE ===== */
+.top-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.container {
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.header-inner {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===== LOGO ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: 'Montserrat','Poppins',sans-serif;
+  text-decoration: none;
+}
+
+.logo-main { color: #111; }
+
+.logo-accent {
+  color: #ff6a00;
+  position: relative;
+  padding-left: 8px;
+}
+
+.logo-accent::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 60%;
+  background: #e5e7eb;
+  transform: translateY(-50%);
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav a {
+  margin: 0 14px;
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #222;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #ff6a00;
+  transition: width .25s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== DROPDOWN ===== */
+.nav-dropdown {
+  position: relative;
+}
+
+.drop-link {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: #fff;
+  display: none;
+  gap: 40px;
+  padding: 24px;
+  min-width: 460px;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.08);
+  z-index: 999;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dropdown-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.dropdown-menu a {
+  font-size: 14px;
+  color: #111;
+}
+
+.dropdown-menu a:hover {
+  color: #ff6a00;
+}
+
+.view-all {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+/* ===== HEADER ACTIONS ===== */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.plans, .login {
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #111;
+  background: #f3f4f6;
+  font-weight: 500;
+  transition: background .2s ease;
+}
+
+.plans:hover,
+.login:hover {
+  background: #e5e7eb;
+}
+
+.signup {
+  background: #ff6a00;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup:hover {
+  background: #e85f00;
+}
+/* =========================
+   MOBILE MENU ICON
+========================= */
+.mobile-menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+/* MOBILE NAV */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #0d0d0d;
+  width: 100%;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  z-index: 999;
+}
+
+.mobile-nav.open {
+  display: flex;
+  animation: slideDown 0.25s ease forwards;
+}
+
+/* MOBILE DROPDOWN */
+.mobile-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-dropdown-menu {
+  display: none;
+  flex-direction: column;
+  background: #161616;
+}
+
+.mobile-dropdown.open .mobile-dropdown-menu {
+  display: flex;
+}
+
+/* ARROW */
+.mobile-drop-link {
+  position: relative; /* fix arrow */
+  cursor: pointer;
+}
+
+.mobile-drop-link::after {
+  content: "▸";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-dropdown.open .mobile-drop-link::after {
+  transform: rotate(90deg);
+}
+
+/* LINKS */
+.mobile-nav a,
+.mobile-drop-link {
+  padding: 14px 20px;
+  color: #e6e6e6;
+  font-size: 16px;
+  text-decoration: none;
+  border-top: 1px solid #1c1c1c;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  width: 100%;
+}
+
+.mobile-nav a:hover,
+.mobile-drop-link:hover {
+  color: #ff6a00;
+}
+
+/* DROPDOWN TITLES */
+.mobile-dropdown-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  padding: 10px 20px 6px;
+}
+
+/* DROPDOWN LINKS */
+.mobile-dropdown-menu a {
+  padding: 12px 28px;
+  font-size: 15px;
+  border-top: 1px solid #222;
+}
+
+/* ANIMATION */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* MEDIA */
+@media (max-width: 992px) {
+  .nav,
+  .header-actions {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+}
+
+/* IMPORTANT: make top-header relative for absolute mobile nav */
+.top-header {
+  position: relative;
+}
 
         /* ===== CONTACT SECTION ===== */
         .contact-wrapper {
