@@ -315,44 +315,107 @@ a { text-decoration: none; }
 .top-header {
   position: relative;
 }
-/* ===== LICENSE WRAPPER ===== */
+/* =====================
+   LICENSE WRAPPER
+===================== */
 .license-wrapper {
-  background: #fff;
+  background: #ffffff;
   max-width: 880px;
   margin: 70px auto;
   padding: 56px;
   border-radius: 18px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.06);
 }
 
+/* =====================
+   HEADINGS
+===================== */
 .license-wrapper h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  color: #111;
 }
+
 .license-wrapper h2 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 22px;
-  margin-top: 42px;
+  font-size: 21px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 12px;
   color: #ff6a00;
 }
+
+/* =====================
+   TEXT
+===================== */
 .license-wrapper p,
 .license-wrapper li {
   font-size: 16px;
-  color: #444;
-}
-.license-wrapper ul {
-  padding-left: 22px;
+  line-height: 1.7;
+  color: #4b5563;
 }
 
-.note {
-  background: #fff3ea;
-  border-left: 5px solid #ff6a00;
-  padding: 18px;
-  border-radius: 10px;
-  margin: 36px 0;
+.license-wrapper p {
+  margin-bottom: 16px;
 }
+
+/* =====================
+   LISTS
+===================== */
+.license-wrapper ul {
+  padding-left: 22px;
+  margin: 14px 0 20px;
+}
+
+.license-wrapper li {
+  margin-bottom: 8px;
+}
+
+/* =====================
+   NOTE / CALLOUT
+===================== */
+.note {
+  background: #fff7ed;
+  border-left: 4px solid #ff6a00;
+  padding: 18px 20px;
+  border-radius: 12px;
+  margin: 36px 0;
+  font-size: 15.5px;
+  color: #92400e;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .license-wrapper {
+    margin: 40px 16px;
+    padding: 36px 24px;
+  }
+
+  .license-wrapper h1 {
+    font-size: 28px;
+  }
+
+  .license-wrapper h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .license-wrapper {
+    padding: 28px 20px;
+  }
+
+  .license-wrapper p,
+  .license-wrapper li {
+    font-size: 15px;
+  }
+}
+
 
 /* ================= FOOTER ================= */
 .pro-footer {
