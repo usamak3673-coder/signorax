@@ -326,6 +326,25 @@ h1,h2,h3,h4,h5,h6 {
     z-index: 999;
   }
 }
+/* =========================
+   MOBILE DROPDOWN CLICK FIX
+   (CSS ONLY – NO DESIGN CHANGE)
+========================= */
+
+/* Fix mobile button interaction */
+.mobile-drop-link {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border-radius: 0;
+  pointer-events: auto;
+}
+
+/* Ensure dropdown can receive interaction */
+.mobile-dropdown,
+.mobile-dropdown-menu {
+  pointer-events: auto;
+}
 @media (max-width:768px) {
   .search-box {
     flex-direction: column; /* stack select + input + button */
