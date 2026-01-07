@@ -348,11 +348,10 @@ h1,h2,h3,h4,h5,h6 {
   text-align:center;
   justify-content:center;
   padding:0 20px;
-   /* Replace gradient with image */
-  background: url('/assets/images/hero-image.jpg') no-repeat center center;
-  background-size: cover; /* Make it cover entire hero */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
+  background: radial-gradient(circle at top center, 
+              #1a1f28 0%,   /* dark blue-gray */
+              #0e1116 50%,  /* almost black */
+              #000000 100%); /* pure black */
 }
 
 
