@@ -353,11 +353,8 @@ h1,h2,h3,h4,h5,h6 {
   background-size: cover; /* Make it cover entire hero */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
+}
 
-}
-.hero {
- background: rgba(0,0,0,0.5); /* semi-transparent dark overlay */
-}
 
 .hero-content h1 { font-size:36px; font-weight:700; color:#fff; margin:0 0 20px; }
 .hero-content p { font-size:18px; color:#fff; margin:0 0 32px; }
