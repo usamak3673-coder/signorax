@@ -8,78 +8,136 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-/* ===== BASE ===== */
-* { box-sizing: border-box; }
+/* =====================
+   BASE
+===================== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
-  background: #0f1115; /* footer background */
+  background: #0f1115; /* footer dark */
   color: #e5e7eb;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* ===== PAGE WRAPPER ===== */
+/* =====================
+   PAGE WRAPPER
+===================== */
 .contact-page {
   width: 100%;
   padding: 24px 12px;
 }
 
-/* ===== CONTACT BOX ===== */
+/* =====================
+   CONTACT BOX
+===================== */
 .contact-box {
-  max-width: 480px;            /* slightly narrower */
+  max-width: 480px;
   margin: auto;
   background: #141821;
   border: 1px solid #1f232b;
   border-radius: 14px;
-  padding: 30px;               /* reduced padding */
+  padding: 30px;
   box-shadow: 0 25px 60px rgba(0,0,0,0.45);
 }
 
-/* ===== HEADER ===== */
+/* =====================
+   HEADER
+===================== */
 .contact-box h1 {
-  font-size: 24px;             /* smaller title */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
   margin-bottom: 4px;
+  color: #ffffff;
 }
 
 .contact-box p {
   font-size: 14px;
-  margin-bottom: 20px;         /* tighter */
+  color: #9aa0a6;
+  margin-bottom: 20px;
 }
 
-/* ===== FORM ===== */
+/* =====================
+   FORM
+===================== */
 .contact-form label {
+  display: block;
   font-size: 13.5px;
+  font-weight: 500;
   margin-bottom: 4px;
+  color: #d1d5db;
 }
 
 .contact-form input,
 .contact-form textarea {
+  width: 100%;
   padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #2a2f3a;
+  background: #0f1115;
+  color: #ffffff;
   font-size: 14.5px;
-  margin-bottom: 14px;         /* less vertical spacing */
+  margin-bottom: 14px;
+  font-family: 'Open Sans', sans-serif;
 }
 
-/* Shorter textarea */
 .contact-form textarea {
   min-height: 100px;
+  resize: vertical;
 }
 
-/* ===== BUTTON ===== */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #7b8088;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #3a4152;
+}
+
+/* =====================
+   BUTTON
+===================== */
 .contact-form button {
+  width: 100%;
   padding: 12px;
+  border-radius: 10px;
+  background: #1f232b;
+  border: 1px solid #2a2f3a;
+  color: #ffffff;
   font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 
-/* ===== FOOT NOTE ===== */
+.contact-form button:hover {
+  background: #2a2f3a;
+  border-color: #3a4152;
+}
+
+/* =====================
+   FOOT NOTE
+===================== */
 .contact-note {
+  text-align: center;
   margin-top: 12px;
   font-size: 12.5px;
+  color: #7b8088;
 }
 
-/* ===== MOBILE ===== */
+/* =====================
+   MOBILE
+===================== */
 @media (max-width: 520px) {
   .contact-box {
     padding: 24px 20px;
@@ -89,6 +147,7 @@ body {
     font-size: 22px;
   }
 }
+
 </style>
 </head>
 
