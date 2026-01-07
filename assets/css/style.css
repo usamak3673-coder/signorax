@@ -200,92 +200,90 @@ h1,h2,h3,h4,h5,h6 {
   background: #e85f00;
 }
 
-/* ===== MOBILE ===== */
+/* =========================
+   MOBILE MENU ICON
+========================= */
 .mobile-menu-icon {
   display: none;
   font-size: 28px;
   cursor: pointer;
+  user-select: none;
 }
 
+/* =========================
+   MOBILE NAV WRAPPER
+========================= */
 .mobile-nav {
   display: none;
   flex-direction: column;
   background: #0d0d0d;
-  border-bottom: 1px solid #222;
-  animation: dropdown .25s ease forwards;
+  border-top: 1px solid #222;
+  width: 100%;
 }
 
-.mobile-nav a {
+/* OPEN STATE */
+.mobile-nav.open {
+  display: flex;
+  animation: slideDown 0.25s ease forwards;
+}
+
+/* =========================
+   MOBILE LINKS
+========================= */
+.mobile-nav a,
+.mobile-drop-link {
   padding: 14px 20px;
-  border-top: 1px solid #1c1c1c;
   color: #e6e6e6;
   font-size: 16px;
   text-decoration: none;
+  border-top: 1px solid #1c1c1c;
+  cursor: pointer;
+  background: transparent;
+  font-family: inherit;
+  text-align: left;
+  width: 100%;
 }
 
-.mobile-nav a:hover {
+/* Hover */
+.mobile-nav a:hover,
+.mobile-drop-link:hover {
   color: #ff6a00;
 }
 
-.mobile-nav.open {
-  display: flex;
+/* =========================
+   REMOVE BUTTON LOOK (CRITICAL)
+========================= */
+.mobile-drop-link {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
 }
 
-@keyframes dropdown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 992px) {
-  .nav, .header-actions {
-    display: none;
-  }
-  .mobile-menu-icon {
-    display: block;
-  }
-}
-/* Mobile Dropdown Base */
+/* =========================
+   MOBILE DROPDOWN
+========================= */
 .mobile-dropdown {
   display: flex;
   flex-direction: column;
 }
 
-.mobile-drop-link {
-  padding: 14px 20px;
-  color: #e6e6e6;
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none;
-  border-top: 1px solid #1c1c1c;
-  position: relative;
-}
-
+/* Arrow */
 .mobile-drop-link::after {
   content: "▸";
   position: absolute;
   right: 20px;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
+/* Dropdown Menu */
 .mobile-dropdown-menu {
   display: none;
   flex-direction: column;
-  background: #1a1a1a;
-  padding-left: 10px;
+  background: #161616;
 }
 
-.mobile-dropdown-menu a {
-  padding: 12px 20px;
-  font-size: 15px;
-  color: #e6e6e6;
-  border-top: 1px solid #222;
-}
-
-.mobile-dropdown-menu a:hover {
-  color: #ff6a00;
-}
-
+/* Open dropdown */
 .mobile-dropdown.open .mobile-dropdown-menu {
   display: flex;
 }
@@ -294,57 +292,61 @@ h1,h2,h3,h4,h5,h6 {
   transform: rotate(90deg);
 }
 
+/* =========================
+   DROPDOWN GROUP TITLES
+========================= */
 .mobile-dropdown-title {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: #999;
   text-transform: uppercase;
   padding: 10px 20px 6px;
 }
-/* =========================
-   MOBILE DROPDOWN FIX
-   (NO DESIGN CHANGE)
-========================= */
 
-/* 1️⃣ RESET BUTTON DEFAULT STYLES */
-.mobile-drop-link {
-  background: transparent;
-  border: none;
-  width: 100%;
-  text-align: left;
-  font-family: inherit;
-  line-height: normal;
+/* =========================
+   DROPDOWN LINKS
+========================= */
+.mobile-dropdown-menu a {
+  padding: 12px 28px;
+  font-size: 15px;
+  border-top: 1px solid #222;
 }
 
-/* 2️⃣ FIX MOBILE NAV POSITION */
+/* =========================
+   MOBILE POSITIONING
+========================= */
 @media (max-width: 992px) {
+  .nav,
+  .header-actions {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
   .mobile-nav {
     position: absolute;
-    top: 72px; /* matches header height */
+    top: 72px; /* header height */
     left: 0;
-    width: 100%;
     z-index: 999;
   }
 }
+
 /* =========================
-   MOBILE DROPDOWN CLICK FIX
-   (CSS ONLY – NO DESIGN CHANGE)
+   ANIMATION
 ========================= */
-
-/* Fix mobile button interaction */
-.mobile-drop-link {
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: transparent;
-  border-radius: 0;
-  pointer-events: auto;
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Ensure dropdown can receive interaction */
-.mobile-dropdown,
-.mobile-dropdown-menu {
-  pointer-events: auto;
-}
 @media (max-width:768px) {
   .search-box {
     flex-direction: column; /* stack select + input + button */
