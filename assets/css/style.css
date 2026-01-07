@@ -318,60 +318,125 @@ h1,h2,h3,h4,h5,h6 {
   position: relative;
 }
 
-@media (max-width:768px) {
-  .search-box {
-    flex-direction: column; /* stack select + input + button */
-    align-items: stretch;
-    max-width: 90%;
-    margin: 15px auto;
-    padding: 6px;
-  }
+.hero {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  background: linear-gradient(135deg, #0f1b2a 0%, #1c2538 50%, #0a0d14 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Overlay for depth */
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 0;
+}
+
+/* Vector pattern - subtle, repeated */
+.hero-pattern {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.ibb.co/2dC3s6v/vector-pattern.png'); /* subtle transparent vector pattern */
+  background-repeat: repeat;
+  background-size: 200px;
+  opacity: 0.08; /* very subtle */
+  z-index: 0;
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Glow behind heading */
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  position: relative;
+}
+.hero-content h1::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255,107,0,0.25) 0%, transparent 70%);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+/* Highlight */
+.hero-content .highlight-download {
+  color: #ff6b00; 
+}
+
+/* Subtitle */
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+}
+
+/* Search bar */
+.search-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+.search-box select,
+.search-box input {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+.search-box select { min-width: 180px; }
+.search-box input { flex: 1 1 250px; }
+.search-btn {
+  background: #ff6b00;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.search-btn:hover { background: #e65a00; }
+
+/* Popular tags */
+.popular { margin-top: 15px; font-size: 16px; color: #ccc; }
+.popular span { margin-right: 8px; }
+.popular a { color: #ff6b00; margin-right: 10px; text-decoration: none; transition: color 0.3s; }
+.popular a:hover { color: #ffa14d; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 32px; }
+  .hero-content p { font-size: 16px; }
   .search-box select,
   .search-box input,
-  .search-btn {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    margin: 4px 0;
-  }
-  .search-btn {
-    background:#ff6a00;
-    color:#fff;
-    border-radius:6px;
-  }
+  .search-btn { width: 100%; }
 }
-/* ===== HERO ===== */
-.hero {
-  min-height:520px;
-  display:flex;
-  align-items:center;
-  text-align:center;
-  justify-content:center;
-  padding:0 20px;
- background: linear-gradient(135deg, 
-              #0d1b2a 0%,    /* deep navy */
-              #1a2a3d 50%,   /* muted slate blue */
-              #0b1a20 100%); /* dark teal/black */
-}
-
-
-.hero-content h1 { font-size:36px; font-weight:700; color:#fff; margin:0 0 20px; }
-.hero-content p { font-size:18px; color:#fff; margin:0 0 32px; }
-
-/* ===== SEARCH ===== */
-.search-box {
-  background:#fff;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  padding:8px;
-  max-width:720px;
-  margin:20px auto;
-}
-.search-box select,input { border:none; outline:none; font-family:'Montserrat','Poppins',sans-serif; font-size:15px; padding:12px; }
-.search-box input { flex:1; }
-.search-btn { background:none; border:none; font-size:18px; padding:12px; cursor:pointer; }
-
 /* ===== CATEGORY ===== */
 .category-section { padding:60px 0; text-align:center; background:#fff; }
 .section-title { font-size:28px; font-weight:700; margin-bottom:40px; }
