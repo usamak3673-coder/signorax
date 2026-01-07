@@ -580,50 +580,110 @@ a { text-decoration: none; color: inherit; }
 
 <body>
 
-  <!-- ================= HEADER ================= -->
 <header class="top-header">
   <div class="container header-inner">
-    <!-- Logo -->
+
+    <!-- LOGO -->
     <a href="/" class="logo">
       <span class="logo-main">Signora</span>
       <span class="logo-accent">X</span>
     </a>
 
-    <!-- Desktop Navigation -->
+    <!-- DESKTOP NAV -->
     <nav class="nav">
       <a href="index.html">Home</a>
-      <a href="browse-signs.html">Browse Signs</a>
-      <a href="road-signs/usa.html">Countries</a>
-      <a href="contact-us.html">Contact</a>
+
+      <div class="nav-dropdown">
+        <a href="#" class="drop-link">Road Signs</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-group">
+            <span class="dropdown-title">By Country</span>
+            <a href="road-signs/usa.html">USA</a>
+            <a href="road-signs/uk.html">UK</a>
+            <a href="road-signs/canada.html">Canada</a>
+            <a href="road-signs/australia.html">Australia</a>
+            <a href="road-signs/eu.html">EU</a>
+            <a href="countries.html" class="view-all">View All</a>
+          </div>
+          <div class="dropdown-group">
+            <span class="dropdown-title">By Category</span>
+            <a href="categories/regulatory.html">Regulatory</a>
+            <a href="categories/warning.html">Warning</a>
+            <a href="categories/guide.html">Guide</a>
+            <a href="categories/work-zone.html">Work Zone</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="browse-signs.html">Browse</a>
       <a href="blog/">Blog</a>
+      <a href="contact-us.html">Contact</a>
     </nav>
 
-    <!-- Header Actions -->
+    <!-- HEADER ACTIONS -->
     <div class="header-actions">
-      <a href="#" class="plans">Plans</a>
-      <a href="#" class="signup">Sign Up</a>
-      <a href="#" class="login">Log In</a>
+      <a href="plans.html" class="plans">Plans</a>
+      <a href="signup.html" class="signup">Sign Up</a>
+      <a href="login.html" class="login">Log In</a>
     </div>
 
-    <!-- Mobile Menu Icon -->
-    <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
+    <!-- MOBILE ICON -->
+    <div class="mobile-menu-icon" aria-label="Open menu">☰</div>
   </div>
 
-  <!-- Mobile Menu -->
+  <!-- MOBILE NAV -->
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html">Home</a>
-    <a href="browse-signs.html">Browse Signs</a>
-    <a href="about/">About</a>
-    <a href="contact/">Contact</a>
+
+    <div class="mobile-dropdown">
+      <span class="mobile-drop-link">Road Signs</span>
+      <div class="mobile-dropdown-menu">
+        <span class="mobile-dropdown-title">By Country</span>
+        <a href="road-signs/usa.html">USA</a>
+        <a href="road-signs/uk.html">UK</a>
+        <a href="road-signs/canada.html">Canada</a>
+        <a href="road-signs/australia.html">Australia</a>
+        <a href="road-signs/eu.html">EU</a>
+        <a href="countries.html" class="view-all">View All</a>
+
+        <span class="mobile-dropdown-title">By Category</span>
+        <a href="categories/regulatory.html">Regulatory</a>
+        <a href="categories/warning.html">Warning</a>
+        <a href="categories/guide.html">Guide</a>
+        <a href="categories/work-zone.html">Work Zone</a>
+      </div>
+    </div>
+
+    <a href="browse-signs.html">Browse</a>
     <a href="blog/">Blog</a>
-    <a href="account.html">Log In</a>
+    <a href="contact-us.html">Contact</a>
+    <a href="login.html">Log In</a>
   </div>
 </header>
-
 <script>
 function toggleMenu() {
   document.getElementById("mobileNav").classList.toggle("open");
 }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menuIcon = document.querySelector(".mobile-menu-icon");
+  const mobileNav = document.getElementById("mobileNav");
+  const dropLinks = document.querySelectorAll(".mobile-drop-link");
+
+  // Toggle mobile nav
+  menuIcon.addEventListener("click", () => {
+    mobileNav.classList.toggle("open");
+  });
+
+  // Toggle dropdowns inside mobile nav
+  dropLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      const parent = link.parentElement;
+      parent.classList.toggle("open");
+    });
+  });
+});
 </script>
 <!-- HERO -->
 <section class="hero">
