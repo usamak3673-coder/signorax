@@ -199,7 +199,15 @@ h1,h2,h3,h4,h5,h6 {
 .signup:hover {
   background: #e85f00;
 }
-
+/* =========================
+   MOBILE MENU ICON
+========================= */
+.mobile-menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
 /* MOBILE NAV */
 .mobile-nav {
   display: none;
