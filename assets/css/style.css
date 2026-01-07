@@ -364,7 +364,54 @@ h1,h2,h3,h4,h5,h6 {
   width: 100%;
   animation: fadeInUp 1s ease forwards;
 }
+/* Wrapper for select */
+.select-wrap {
+  position: relative;
+  min-width: 170px;
+}
 
+/* Select */
+.select-wrap select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 100%;
+  padding: 13px 42px 13px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Focus */
+.select-wrap select:focus {
+  outline: none;
+  border-color: rgba(255, 122, 31, 0.6);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* Arrow icon */
+.select-wrap::after {
+  content: "▾";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+/* Dropdown options (limited styling) */
+.select-wrap select option {
+  background: #0f172a; /* dark panel */
+  color: #ffffff;
+  font-size: 14px;
+}
 /* Heading */
 .hero-content h1 {
   font-size: 52px;
