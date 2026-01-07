@@ -583,7 +583,7 @@ h1,h2,h3,h4,h5,h6 {
   padding:70px 20px;
   text-align:center;
   color:#fff;
-  background: radial-gradient(ellipse at top, #262626 0%, #0f0f0f 40%, #000 100%);
+ background: radial-gradient(circle at top right, #1e2a3a, #0a101a 80%);
 }
 .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; margin-top:40px; }
 .why-card {
@@ -615,7 +615,7 @@ h1,h2,h3,h4,h5,h6 {
 .blog-read { font-size:15px; font-weight:400; color:#042ff1; }
 
 /* ===== FOOTER ===== */
-.pro-footer { padding:60px 20px; border-top:1px solid #222; background:radial-gradient(ellipse at top,#262626 0%,#0f0f0f 40%,#000 100%); color:#bfbfbf; }
+.pro-footer { padding:60px 20px; border-top:1px solid #222; background: radial-gradient(circle at top right, #1e2a3a, #0a101a 80%); color:#bfbfbf; }
 .footer-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; max-width:1200px; margin: auto; }
 .footer-logo { color:#fff; font-size:28px; font-weight:700; margin-bottom:12px; }
 .footer-col h4 { font-size:18px; font-weight:600; margin-bottom:15px; color:#fff; }
