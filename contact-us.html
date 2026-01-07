@@ -1,692 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | SignoraX</title>
-    <meta name="description" content="Contact SignoraX for licensing, support, or general inquiries related to traffic, safety, and industrial signs.">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | SignoraX</title>
 
-    <style>
-        /* ===== GLOBAL ===== */
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            font-family: 'Open Sans', Arial, sans-serif;
-            background: #f7f7f8;
-            color: #222;
-            line-height: 1.7;
-        }
-        a { text-decoration: none; }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-        /* ===== CONTAINER ===== */
-        .container { max-width: 1200px; margin: auto; padding: 0 24px; }
-
-       /* ===== HEADER BASE ===== */
-.top-header {
-  background: #fff;
-  border-bottom: 1px solid #eee;
+<style>
+/* ===== BASE ===== */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  background: #0f1115; /* footer background */
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.container {
-  max-width: 1250px;
+/* ===== PAGE WRAPPER ===== */
+.contact-page {
+  width: 100%;
+  padding: 40px 16px;
+}
+
+/* ===== CONTACT BOX ===== */
+.contact-box {
+  max-width: 520px;
   margin: auto;
-  padding: 0 20px;
-}
-
-.header-inner {
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* ===== LOGO ===== */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 22px;
-  font-weight: 700;
-  font-family: 'Montserrat','Poppins',sans-serif;
-  text-decoration: none;
-}
-
-.logo-main { color: #111; }
-
-.logo-accent {
-  color: #ff6a00;
-  position: relative;
-  padding-left: 8px;
-}
-
-.logo-accent::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 1px;
-  height: 60%;
-  background: #e5e7eb;
-  transform: translateY(-50%);
-}
-
-/* ===== NAVIGATION ===== */
-.nav {
-  display: flex;
-  align-items: center;
-}
-
-.nav a {
-  margin: 0 14px;
-  font-family: 'Montserrat',sans-serif;
-  font-weight: 500;
-  font-size: 15px;
-  color: #222;
-  text-decoration: none;
-  position: relative;
-}
-
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: #ff6a00;
-  transition: width .25s ease;
-}
-
-.nav a:hover::after {
-  width: 100%;
-}
-
-/* ===== DROPDOWN ===== */
-.nav-dropdown {
-  position: relative;
-}
-
-.drop-link {
-  cursor: pointer;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 120%;
-  left: 0;
-  background: #fff;
-  display: none;
-  gap: 40px;
-  padding: 24px;
-  min-width: 460px;
-  border-radius: 10px;
-  box-shadow: 0 20px 40px rgba(0,0,0,.08);
-  z-index: 999;
-}
-
-.nav-dropdown:hover .dropdown-menu {
-  display: flex;
-}
-
-.dropdown-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.dropdown-title {
-  font-size: 12px;
-  font-weight: 600;
-  color: #6b7280;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-.dropdown-menu a {
-  font-size: 14px;
-  color: #111;
-}
-
-.dropdown-menu a:hover {
-  color: #ff6a00;
-}
-
-.view-all {
-  margin-top: 8px;
-  font-weight: 600;
-}
-
-/* ===== HEADER ACTIONS ===== */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.plans, .login {
-  padding: 8px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-  color: #111;
-  background: #f3f4f6;
-  font-weight: 500;
-  transition: background .2s ease;
-}
-
-.plans:hover,
-.login:hover {
-  background: #e5e7eb;
-}
-
-.signup {
-  background: #ff6a00;
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.signup:hover {
-  background: #e85f00;
-}
-/* =========================
-   MOBILE MENU ICON
-========================= */
-.mobile-menu-icon {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  user-select: none;
-}
-/* MOBILE NAV */
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  background: #0d0d0d;
-  width: 100%;
-  position: absolute;
-  top: 72px;
-  left: 0;
-  z-index: 999;
-}
-
-.mobile-nav.open {
-  display: flex;
-  animation: slideDown 0.25s ease forwards;
-}
-
-/* MOBILE DROPDOWN */
-.mobile-dropdown {
-  display: flex;
-  flex-direction: column;
-}
-
-.mobile-dropdown-menu {
-  display: none;
-  flex-direction: column;
-  background: #161616;
-}
-
-.mobile-dropdown.open .mobile-dropdown-menu {
-  display: flex;
-}
-
-/* ARROW */
-.mobile-drop-link {
-  position: relative; /* fix arrow */
-  cursor: pointer;
-}
-
-.mobile-drop-link::after {
-  content: "▸";
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.3s ease;
-}
-
-.mobile-dropdown.open .mobile-drop-link::after {
-  transform: rotate(90deg);
-}
-
-/* LINKS */
-.mobile-nav a,
-.mobile-drop-link {
-  padding: 14px 20px;
-  color: #e6e6e6;
-  font-size: 16px;
-  text-decoration: none;
-  border-top: 1px solid #1c1c1c;
-  cursor: pointer;
-  font-family: inherit;
-  text-align: left;
-  width: 100%;
-}
-
-.mobile-nav a:hover,
-.mobile-drop-link:hover {
-  color: #ff6a00;
-}
-
-/* DROPDOWN TITLES */
-.mobile-dropdown-title {
-  font-size: 12px;
-  font-weight: 600;
-  color: #999;
-  text-transform: uppercase;
-  padding: 10px 20px 6px;
-}
-
-/* DROPDOWN LINKS */
-.mobile-dropdown-menu a {
-  padding: 12px 28px;
-  font-size: 15px;
-  border-top: 1px solid #222;
-}
-
-/* ANIMATION */
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* MEDIA */
-@media (max-width: 992px) {
-  .nav,
-  .header-actions {
-    display: none;
-  }
-
-  .mobile-menu-icon {
-    display: block;
-  }
-}
-
-/* IMPORTANT: make top-header relative for absolute mobile nav */
-.top-header {
-  position: relative;
-}
-
-        /* ===== CONTACT SECTION ===== */
-        .contact-wrapper {
-            max-width: 950px;
-            margin: 70px auto;
-            background: #fff;
-            padding: 60px;
-            border-radius: 18px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
-        }
-        .contact-header h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-        .contact-header p { font-size: 17px; color: #555; }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        /* ===== CONTACT INFO ===== */
-        .contact-info h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 22px;
-            margin-bottom: 14px;
-            color: #ff6a00;
-        }
-        .contact-info p { margin-bottom: 16px; color: #444; }
-        .contact-info strong { color: #111; }
-
-        /* ===== FORM ===== */
-        .contact-form label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 6px; }
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 14px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-            font-size: 15px;
-            margin-bottom: 18px;
-            font-family: 'Open Sans', sans-serif;
-        }
-        .contact-form textarea { resize: vertical; min-height: 140px; }
-        .contact-form button {
-            background: #ff6a00;
-            color: #fff;
-            border: none;
-            padding: 14px 22px;
-            border-radius: 10px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        .contact-form button:hover { background: #e55f00; }
-
-        /* ================= FOOTER ================= */
-.pro-footer {
-  position: relative;
-  padding: 70px 20px 30px;
-  background: #0f1115; /* professional dark gray */
-  color: #b3b3b3;
-  border-top: 1px solid #1f232b;
-  font-family: 'Inter', sans-serif;
-}
-
-/* Footer container */
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Logo / Brand */
-.footer-logo {
-  font-size: 26px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 14px;
-}
-
-.footer-col p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #9aa0a6;
-}
-
-/* Column titles */
-.footer-col h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 18px;
-  color: #ffffff;
-}
-
-/* Links */
-.footer-col a {
-  display: block;
-  margin: 8px 0;
-  font-size: 14.5px;
-  color: #9aa0a6;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.footer-col a:hover {
-  color: #ffffff;
-}
-
-/* Newsletter input */
-.footer-input {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 8px;
-  border: 1px solid #2a2f3a;
   background: #141821;
-  color: #ffffff;
-  font-size: 14.5px;
+  border: 1px solid #1f232b;
+  border-radius: 16px;
+  padding: 42px;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.45);
 }
 
-.footer-input::placeholder {
+/* ===== HEADER ===== */
+.contact-box h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.contact-box p {
+  font-size: 15px;
+  color: #9aa0a6;
+  margin-bottom: 30px;
+}
+
+/* ===== FORM ===== */
+.contact-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #d1d5db;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #2a2f3a;
+  background: #0f1115;
+  color: #ffffff;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
   color: #7b8088;
 }
 
-.footer-input:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
   outline: none;
   border-color: #3a4152;
 }
 
-/* Button */
-.footer-btn {
+/* ===== BUTTON ===== */
+.contact-form button {
   width: 100%;
-  margin-top: 12px;
-  padding: 12px 16px;
+  padding: 14px;
+  border-radius: 10px;
   background: #1f232b;
-  color: #ffffff;
-  border-radius: 8px;
   border: 1px solid #2a2f3a;
-  cursor: pointer;
-  font-size: 14px;
+  color: #ffffff;
+  font-size: 15px;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  cursor: pointer;
   transition: background 0.25s ease, border-color 0.25s ease;
 }
 
-.footer-btn:hover {
+.contact-form button:hover {
   background: #2a2f3a;
   border-color: #3a4152;
 }
 
-/* Copyright */
-.footer-copy {
+/* ===== SMALL FOOT NOTE ===== */
+.contact-note {
   text-align: center;
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 1px solid #1f232b;
-  font-size: 13.5px;
+  margin-top: 18px;
+  font-size: 13px;
   color: #7b8088;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+/* ===== MOBILE ===== */
+@media (max-width: 520px) {
+  .contact-box {
+    padding: 30px 22px;
+  }
+
+  .contact-box h1 {
+    font-size: 24px;
   }
 }
-
-@media (max-width: 600px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-col a {
-    margin: 6px 0;
-  }
-
-  .footer-btn {
-    text-transform: none;
-    letter-spacing: 0;
-  }
-}
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .nav { display: none; }
-            .mobile-menu-icon { display: block; }
-
-            /* CONTACT FIX */
-            .contact-grid { grid-template-columns: 1fr; gap: 30px; }
-            .contact-wrapper { padding: 40px 24px; }
-        }
-
-        @media (max-width: 600px) {
-            .contact-wrapper { padding: 32px 20px; margin: 30px auto; }
-            .contact-header h1 { font-size: 28px; }
-            .contact-header p { font-size: 15px; }
-            .contact-form button { width: 100%; }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .footer-col a:hover { transform: none; }
-            .footer-logo { margin-bottom: 20px; }
-        }
-
-        @media (max-width: 480px) {
-            .contact-wrapper { padding: 28px 16px; }
-            .contact-header h1 { font-size: 24px; }
-            .contact-header p { font-size: 14px; }
-        }
-
-    </style>
+</style>
 </head>
+
 <body>
-    
-<header class="top-header">
-  <div class="container header-inner">
 
-    <!-- LOGO -->
-    <a href="/" class="logo">
-      <span class="logo-main">Signora</span>
-      <span class="logo-accent">X</span>
-    </a>
+<div class="contact-page">
+  <div class="contact-box">
 
-    <!-- DESKTOP NAV -->
-    <nav class="nav">
-      <a href="index.html">Home</a>
+    <h1>Contact Us</h1>
+    <p>Questions about licensing, usage rights, or sign collections? Send us a message.</p>
 
-      <div class="nav-dropdown">
-        <a href="#" class="drop-link">Road Signs</a>
-        <div class="dropdown-menu">
-          <div class="dropdown-group">
-            <span class="dropdown-title">By Country</span>
-            <a href="road-signs/usa.html">USA</a>
-            <a href="road-signs/uk.html">UK</a>
-            <a href="road-signs/canada.html">Canada</a>
-            <a href="road-signs/australia.html">Australia</a>
-            <a href="road-signs/eu.html">EU</a>
-            <a href="countries.html" class="view-all">View All</a>
-          </div>
-          <div class="dropdown-group">
-            <span class="dropdown-title">By Category</span>
-            <a href="categories/regulatory.html">Regulatory</a>
-            <a href="categories/warning.html">Warning</a>
-            <a href="categories/guide.html">Guide</a>
-            <a href="categories/work-zone.html">Work Zone</a>
-          </div>
-        </div>
-      </div>
+    <form class="contact-form">
+      <label>Full Name</label>
+      <input type="text" placeholder="Your name" required>
 
-      <a href="browse-signs.html">Browse</a>
-      <a href="blog/">Blog</a>
-      <a href="contact-us.html">Contact</a>
-    </nav>
+      <label>Email Address</label>
+      <input type="email" placeholder="you@example.com" required>
 
-    <!-- HEADER ACTIONS -->
-    <div class="header-actions">
-      <a href="plans.html" class="plans">Plans</a>
-      <a href="signup.html" class="signup">Sign Up</a>
-      <a href="login.html" class="login">Log In</a>
+      <label>Message</label>
+      <textarea placeholder="How can we help you?" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-note">
+      We usually reply within 24–48 hours.
     </div>
 
-    <!-- MOBILE ICON -->
-    <div class="mobile-menu-icon" aria-label="Open menu">☰</div>
   </div>
-
-  <!-- MOBILE NAV -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">Home</a>
-
-    <div class="mobile-dropdown">
-      <span class="mobile-drop-link">Road Signs</span>
-      <div class="mobile-dropdown-menu">
-        <span class="mobile-dropdown-title">By Country</span>
-        <a href="road-signs/usa.html">USA</a>
-        <a href="road-signs/uk.html">UK</a>
-        <a href="road-signs/canada.html">Canada</a>
-        <a href="road-signs/australia.html">Australia</a>
-        <a href="road-signs/eu.html">EU</a>
-        <a href="countries.html" class="view-all">View All</a>
-
-        <span class="mobile-dropdown-title">By Category</span>
-        <a href="categories/regulatory.html">Regulatory</a>
-        <a href="categories/warning.html">Warning</a>
-        <a href="categories/guide.html">Guide</a>
-        <a href="categories/work-zone.html">Work Zone</a>
-      </div>
-    </div>
-
-    <a href="browse-signs.html">Browse</a>
-    <a href="blog/">Blog</a>
-    <a href="contact-us.html">Contact</a>
-    <a href="login.html">Log In</a>
-  </div>
-</header>
-<script>
-function toggleMenu() {
-  document.getElementById("mobileNav").classList.toggle("open");
-}
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const menuIcon = document.querySelector(".mobile-menu-icon");
-  const mobileNav = document.getElementById("mobileNav");
-  const dropLinks = document.querySelectorAll(".mobile-drop-link");
-
-  // Toggle mobile nav
-  menuIcon.addEventListener("click", () => {
-    mobileNav.classList.toggle("open");
-  });
-
-  // Toggle dropdowns inside mobile nav
-  dropLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-      const parent = link.parentElement;
-      parent.classList.toggle("open");
-    });
-  });
-});
-</script>
-
-    <!-- ===== CONTACT CONTENT ===== -->
-    <div class="container">
-        <div class="contact-wrapper">
-            <div class="contact-header">
-                <h1>Contact Us</h1>
-                <p>Have questions about licensing, usage rights, or sign collections? We’re here to help.</p>
-            </div>
-            <div class="contact-grid">
-                <!-- Contact Info -->
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <p>For licensing, partnerships, or support inquiries, reach out using the form or email us directly.</p>
-                    <p><strong>Email:</strong> contact@signorax.com</p>
-                    <p><strong>Response Time:</strong> Within 24–48 hours</p>
-                </div>
-
-                <!-- Contact Form -->
-                <form class="contact-form">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Your name" required>
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="you@example.com" required>
-                    <label for="message">Message</label>
-                    <textarea id="message" placeholder="How can we help you?" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="pro-footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h3 class="footer-logo">SignoraX</h3>
-                <p>All sign vectors are original artworks recreated from publicly available standards. Not official government publications.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Explore</h4>
-                <a href="browse-signs.html">Browse All Signs</a>
-                <a href="license-and-usage-rights.html/">License & Usage Rights</a>
-                <a href="contact-us.html">Contact</a>
-                <a href="categories/">Categories</a>
-            </div>
-            <div class="footer-col">
-                <h4>Stay Updated</h4>
-                <p>Get updates on new sign collections.</p>
-                <input type="email" placeholder="Enter your email" class="footer-input">
-                <button class="footer-btn">Subscribe</button>
-            </div>
-        </div>
-        <p class="footer-copy">© 2025 SignoraX. All rights reserved.</p>
-    </footer>
+</div>
 
 </body>
 </html>
