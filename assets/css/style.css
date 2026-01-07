@@ -593,20 +593,21 @@ h1,h2,h3,h4,h5,h6 {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* Icon */
+/* Icon container */
 .cat-icon {
-  height: 120px;
-  border-radius: 10px;
+  height: 140px;              /* was 120px */
+  border-radius: 12px;
   background: #f9fafb;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
+/* Icon image */
 .cat-icon img {
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 90%;             /* was 80% */
+  max-height: 90%;
   object-fit: contain;
 }
 
