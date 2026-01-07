@@ -87,16 +87,21 @@
   </div>
 </header>
 <script>
-const menuBtn = document.getElementById("mobileMenu");
-const mobileNav = document.getElementById("mobileNav");
+document.addEventListener("DOMContentLoaded", () => {
 
-menuBtn.addEventListener("click", () => {
-  mobileNav.classList.toggle("open");
-});
+  const menuIcon = document.querySelector(".mobile-menu-icon");
+  const mobileNav = document.getElementById("mobileNav");
+  const dropLinks = document.querySelectorAll(".mobile-drop-link");
 
-document.querySelectorAll(".mobile-drop-link").forEach(link => {
-  link.addEventListener("click", () => {
-    link.parentElement.classList.toggle("open");
+  menuIcon.addEventListener("click", () => {
+    mobileNav.classList.toggle("open");
   });
+
+  dropLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      link.parentElement.classList.toggle("open");
+    });
+  });
+
 });
 </script>
