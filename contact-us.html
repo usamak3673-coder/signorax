@@ -24,106 +24,69 @@ body {
 /* ===== PAGE WRAPPER ===== */
 .contact-page {
   width: 100%;
-  padding: 40px 16px;
+  padding: 24px 12px;
 }
 
 /* ===== CONTACT BOX ===== */
 .contact-box {
-  max-width: 520px;
+  max-width: 480px;            /* slightly narrower */
   margin: auto;
   background: #141821;
   border: 1px solid #1f232b;
-  border-radius: 16px;
-  padding: 42px;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+  border-radius: 14px;
+  padding: 30px;               /* reduced padding */
+  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
 }
 
 /* ===== HEADER ===== */
 .contact-box h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 28px;
-  margin-bottom: 6px;
-  color: #ffffff;
+  font-size: 24px;             /* smaller title */
+  margin-bottom: 4px;
 }
 
 .contact-box p {
-  font-size: 15px;
-  color: #9aa0a6;
-  margin-bottom: 30px;
+  font-size: 14px;
+  margin-bottom: 20px;         /* tighter */
 }
 
 /* ===== FORM ===== */
 .contact-form label {
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 6px;
-  color: #d1d5db;
+  font-size: 13.5px;
+  margin-bottom: 4px;
 }
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #2a2f3a;
-  background: #0f1115;
-  color: #ffffff;
-  font-size: 15px;
-  margin-bottom: 18px;
+  padding: 12px;
+  font-size: 14.5px;
+  margin-bottom: 14px;         /* less vertical spacing */
 }
 
+/* Shorter textarea */
 .contact-form textarea {
-  min-height: 130px;
-  resize: vertical;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #7b8088;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #3a4152;
+  min-height: 100px;
 }
 
 /* ===== BUTTON ===== */
 .contact-form button {
-  width: 100%;
-  padding: 14px;
-  border-radius: 10px;
-  background: #1f232b;
-  border: 1px solid #2a2f3a;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.25s ease, border-color 0.25s ease;
+  padding: 12px;
+  font-size: 14.5px;
 }
 
-.contact-form button:hover {
-  background: #2a2f3a;
-  border-color: #3a4152;
-}
-
-/* ===== SMALL FOOT NOTE ===== */
+/* ===== FOOT NOTE ===== */
 .contact-note {
-  text-align: center;
-  margin-top: 18px;
-  font-size: 13px;
-  color: #7b8088;
+  margin-top: 12px;
+  font-size: 12.5px;
 }
 
 /* ===== MOBILE ===== */
 @media (max-width: 520px) {
   .contact-box {
-    padding: 30px 22px;
+    padding: 24px 20px;
   }
 
   .contact-box h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 </style>
