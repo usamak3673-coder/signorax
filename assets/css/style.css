@@ -348,10 +348,12 @@ h1,h2,h3,h4,h5,h6 {
   text-align:center;
   justify-content:center;
   padding:0 20px;
-background: radial-gradient(circle at top center, 
-            #0d2626 0%,   /* dark teal */
-            #081818 50%,  /* very dark teal/gray */
-            #000000 100%); */
+ background: radial-gradient(circle at top center, 
+              #0f1b2a 0%,    /* deep navy-blue */
+              #1c2538 40%,   /* muted slate-blue */
+              #111826 70%,   /* very dark blue-gray */
+              #0a0d14 100%); /* near-black */
+
 }
 
 
