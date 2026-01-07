@@ -348,11 +348,10 @@ h1,h2,h3,h4,h5,h6 {
   text-align:center;
   justify-content:center;
   padding:0 20px;
-  background: linear-gradient(135deg,
-              #0b0c10 0%,    /* black */
-              #1f2937 50%,   /* dark slate */
-              #432818 100%); /* dark brown hint */
-
+ background: linear-gradient(135deg, 
+              #0d1b2a 0%,    /* deep navy */
+              #1a2a3d 50%,   /* muted slate blue */
+              #0b1a20 100%); /* dark teal/black */
 }
 
 
