@@ -210,111 +210,50 @@ h1,h2,h3,h4,h5,h6 {
   user-select: none;
 }
 
-/* =========================
-   MOBILE NAV WRAPPER
-========================= */
+/* ===== MOBILE NAV FIX ===== */
 .mobile-nav {
   display: none;
   flex-direction: column;
   background: #0d0d0d;
-  border-top: 1px solid #222;
   width: 100%;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  z-index: 999;
 }
 
-/* OPEN STATE */
 .mobile-nav.open {
   display: flex;
   animation: slideDown 0.25s ease forwards;
 }
 
-/* =========================
-   MOBILE LINKS
-========================= */
-.mobile-nav a,
-.mobile-drop-link {
-  padding: 14px 20px;
-  color: #e6e6e6;
-  font-size: 16px;
-  text-decoration: none;
-  border-top: 1px solid #1c1c1c;
-  cursor: pointer;
-  background: transparent;
-  font-family: inherit;
-  text-align: left;
-  width: 100%;
-}
-
-/* Hover */
-.mobile-nav a:hover,
-.mobile-drop-link:hover {
-  color: #ff6a00;
-}
-
-/* =========================
-   REMOVE BUTTON LOOK (CRITICAL)
-========================= */
-.mobile-drop-link {
-  appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  outline: none;
-}
-
-/* =========================
-   MOBILE DROPDOWN
-========================= */
-.mobile-dropdown {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Arrow */
-.mobile-drop-link::after {
-  content: "▸";
-  position: absolute;
-  right: 20px;
-  transition: transform 0.3s ease;
-}
-
-/* Dropdown Menu */
 .mobile-dropdown-menu {
   display: none;
   flex-direction: column;
   background: #161616;
 }
 
-/* Open dropdown */
 .mobile-dropdown.open .mobile-dropdown-menu {
   display: flex;
+}
+
+.mobile-drop-link::after {
+  content: "▸";
+  float: right;
+  transition: transform 0.3s ease;
 }
 
 .mobile-dropdown.open .mobile-drop-link::after {
   transform: rotate(90deg);
 }
 
-/* =========================
-   DROPDOWN GROUP TITLES
-========================= */
-.mobile-dropdown-title {
-  font-size: 12px;
-  font-weight: 600;
-  color: #999;
-  text-transform: uppercase;
-  padding: 10px 20px 6px;
+/* Slide down animation */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* =========================
-   DROPDOWN LINKS
-========================= */
-.mobile-dropdown-menu a {
-  padding: 12px 28px;
-  font-size: 15px;
-  border-top: 1px solid #222;
-}
-
-/* =========================
-   MOBILE POSITIONING
-========================= */
+/* Responsive */
 @media (max-width: 992px) {
   .nav,
   .header-actions {
@@ -324,28 +263,8 @@ h1,h2,h3,h4,h5,h6 {
   .mobile-menu-icon {
     display: block;
   }
-
-  .mobile-nav {
-    position: absolute;
-    top: 72px; /* header height */
-    left: 0;
-    z-index: 999;
-  }
 }
 
-/* =========================
-   ANIMATION
-========================= */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 @media (max-width:768px) {
   .search-box {
