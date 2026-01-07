@@ -22,123 +22,19 @@ body {
 a { text-decoration: none; color: inherit; }
 
 /* =====================
-   COUNTRY HERO (CLONE)
+   COUNTRY HERO
 ===================== */
-.country-hero {
-  padding: 40px 20px 20px;
-  max-width: 1250px;
-  margin: auto;
-}
-
-/* SEARCH CONTAINER */
-.country-search-container {
-  display: flex;
-  justify-content: center;
-}
-
-/* SEARCH BOX */
-.country-search-box {
-  display: flex;
-  width: 100%;
-  max-width: 1100px;
-  border: 1px solid #d1d1d1;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #fff;
-}
-
-/* CATEGORY */
-.country-category {
-  display: flex;
-  align-items: center;
-  padding: 0 12px;
-  border-right: 1px solid #d1d1d1;
-  background: #fff;
-}
-
-.country-icon {
-  margin-right: 6px;
-  font-size: 18px;
-}
-
-.country-category select {
-  border: none;
-  outline: none;
-  font-size: 14px;
-  cursor: pointer;
-  background: transparent;
-}
-
-/* SEARCH INPUT */
-.country-search-box input {
-  flex: 1;
-  border: none;
-  padding: 16px;
-  font-size: 15px;
-  outline: none;
-}
-
-/* SEARCH BUTTON */
-.country-search-btn {
-  width: 56px;
-  background: #F9FAFB;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-/* HERO TEXT */
-.country-hero-text {
-  margin-top: 28px;
-}
-
-.country-hero-text h1 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.country-hero-text p {
-  font-size: 15px;
-  color: #555;
-}
-
-/* =====================
-   MOBILE (SAME BEHAVIOR)
-===================== */
-@media (max-width: 768px) {
-  .country-search-box {
-    flex-direction: column;
-    border-radius: 8px;
-  }
-
-  .country-category {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #d1d1d1;
-    padding: 12px;
-  }
-
-  .country-search-box input {
-    width: 100%;
-    padding: 14px;
-    font-size: 15px;
-  }
-
-  .country-search-btn {
-    width: 100%;
-    height: 48px;
-  }
-}
-/* =========================
-   USA FLAG BACKGROUND (ADD-ON)
-========================= */
 .country-hero {
   position: relative;
+  padding: 56px 20px 32px;
+  max-width: 1250px;
+  margin: auto;
   background-image: url("/assets/images/usa-flag-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 /* Dark overlay for readability */
@@ -146,12 +42,12 @@ a { text-decoration: none; color: inherit; }
   content: "";
   position: absolute;
   inset: 0;
-   background: radial-gradient(
-        circle at center,
-        rgba(178, 34, 52, 0.85) 0%,    /* Deep Red center */
-        rgba(28, 60, 112, 0.85) 60%,   /* Navy Blue mid */
-         rgba(28, 60, 112, 0.85) 100%  /* Off-white fade at edges */
-    );
+  background: radial-gradient(
+    circle at center,
+    rgba(178, 34, 52, 0.75) 0%,
+    rgba(28, 60, 112, 0.85) 60%,
+    rgba(15, 23, 42, 0.95) 100%
+  );
   z-index: 0;
 }
 
@@ -161,6 +57,135 @@ a { text-decoration: none; color: inherit; }
   z-index: 1;
 }
 
+/* =====================
+   SEARCH CONTAINER
+===================== */
+.country-search-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* SEARCH BOX */
+.country-search-box {
+  display: flex;
+  width: 100%;
+  max-width: 1050px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* CATEGORY */
+.country-category {
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  border-right: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.country-icon {
+  margin-right: 8px;
+  font-size: 18px;
+  color: #374151;
+}
+
+.country-category select {
+  border: none;
+  outline: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  color: #111827;
+}
+
+/* SEARCH INPUT */
+.country-search-box input {
+  flex: 1;
+  border: none;
+  padding: 16px;
+  font-size: 15px;
+  outline: none;
+  color: #111827;
+}
+
+.country-search-box input::placeholder {
+  color: #6b7280;
+}
+
+/* SEARCH BUTTON */
+.country-search-btn {
+  width: 56px;
+  background: #f9fafb;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #374151;
+  transition: background 0.2s ease;
+}
+
+.country-search-btn:hover {
+  background: #f3f4f6;
+}
+
+/* =====================
+   HERO TEXT
+===================== */
+.country-hero-text {
+  margin-top: 32px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.country-hero-text h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.country-hero-text p {
+  font-size: 15.5px;
+  color: #e5e7eb;
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 768px) {
+  .country-hero {
+    padding: 44px 16px 28px;
+    border-radius: 12px;
+  }
+
+  .country-search-box {
+    flex-direction: column;
+    border-radius: 12px;
+  }
+
+  .country-category {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px 14px;
+  }
+
+  .country-search-box input {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .country-search-btn {
+    width: 100%;
+    height: 48px;
+  }
+
+  .country-hero-text h1 {
+    font-size: 24px;
+  }
+}
 /* ===== GRID LAYOUT ===== */
 .sign-grid {
   display: grid;
@@ -250,6 +275,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 600;
 
 }
+
 
 
 
