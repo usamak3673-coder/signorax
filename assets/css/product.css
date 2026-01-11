@@ -162,16 +162,16 @@ img {
 /* PRICE */
 .price {
   font-family: 'Montserrat', sans-serif;
-  font-size: 26px;
-  font-weight: 500;
-  color: #61861b;
+  font-size: 28px;
+  font-weight: 600;
+  color: #8cc71d;
   margin: 10px 0 6px;
 }
 
 .price small {
   display: block;
   font-size: 13px;
-  color: #3c3d3f;
+  color: #000000;
   margin-top: 4px;
   font-weight: 200;
 }
