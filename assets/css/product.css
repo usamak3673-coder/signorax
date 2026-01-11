@@ -163,7 +163,7 @@ img {
 .price {
   font-family: 'Montserrat', sans-serif;
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 700;
   color: #4a9c48;
   margin: 10px 0 6px;
 }
@@ -171,7 +171,7 @@ img {
 .price small {
   display: block;
   font-size: 13px;
-  color: #2706e0;
+  color: #1d1c1f;
   margin-top: 4px;
   font-weight: 500;
 }
@@ -198,7 +198,7 @@ img {
 
 /* PRIMARY BUTTON */
 .panel-btn.primary {
-  background: linear-gradient(135deg, #e97e04, hsl(36, 96%, 50%));
+  background: #E96729;
   color: #ffffff;
   border: none;
 }
