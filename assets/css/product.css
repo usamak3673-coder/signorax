@@ -164,14 +164,14 @@ img {
   font-family: 'Montserrat', sans-serif;
   font-size: 28px;
   font-weight: 600;
-  color: #4ec509;
+  color: #4a9c48;
   margin: 10px 0 6px;
 }
 
 .price small {
   display: block;
   font-size: 13px;
-  color: #000000;
+  color: #2706e0;
   margin-top: 4px;
   font-weight: 500;
 }
@@ -198,7 +198,7 @@ img {
 
 /* PRIMARY BUTTON */
 .panel-btn.primary {
-  background: linear-gradient(135deg, #e97e04, #000000);
+  background: linear-gradient(135deg, #e97e04, hsl(36, 96%, 50%));
   color: #ffffff;
   border: none;
 }
@@ -210,7 +210,7 @@ img {
 
 /* OUTLINE BUTTON */
 .panel-btn.outline {
-  background:#07b910;
+  background:#4A9C48;
   border: 1px solid var(--border);
   color: white;
 }
