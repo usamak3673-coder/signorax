@@ -50,4 +50,20 @@
     <loc>https://signorax.vercel.app/products/road-signs/wrong-way-sign-r5-1a.html</loc>
      <priority>0.8</priority>
  </url>   
+    <url>
+    <loc>https://signorax.vercel.app/products/road-signs/no-right-turn-sign-r3-1-mutcd.html</loc>
+     <priority>0.8</priority>
+ </url>   
+ <url>
+    <loc>https://signorax.vercel.app/products/road-signs/no-left-turn-sign-r3-2-mutcd.html</loc>
+     <priority>0.8</priority>
+ </url> 
+ <url>
+    <loc>https://signorax.vercel.app/products/road-signs/one-way-sign-R6-2.html</loc>
+     <priority>0.8</priority>
+ </url>   
+ <url>
+    <loc>https://signorax.vercel.app/products/road-signs/one-way-sign-r6-1l-r.html</loc>
+     <priority>0.8</priority>
+ </url>   
 </urlset>
