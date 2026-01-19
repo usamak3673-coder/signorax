@@ -567,23 +567,19 @@ document.addEventListener("DOMContentLoaded", () => {
               c.height = img.height;
               ctx.drawImage(img, 0, 0);
 
-              const text = "SIGNORAX • PREVIEW ONLY";
-              const fontSize = Math.max(img.width / 20, 26);
+              const text = "SIGNORAX";
+              const fontSize = Math.max(img.width / 6, 60);
 
-              ctx.font = "700 " + fontSize + "px Arial";
-              ctx.fillStyle = "rgba(255,255,255,0.22)";
+              ctx.font = "800 " + fontSize + "px Arial";
+              ctx.fillStyle = "rgba(255,255,255,0.35)";
               ctx.textAlign = "center";
               ctx.textBaseline = "middle";
 
-              // GRID WATERMARK (NO STRIPES)
-              const stepX = fontSize * 4;
-              const stepY = fontSize * 4;
+              // DIAGONAL (ONE BIG TEXT)
+              ctx.translate(c.width / 2, c.height / 2);
+              ctx.rotate(-Math.PI / 4);
 
-              for (let x = stepX / 2; x < c.width; x += stepX) {
-                for (let y = stepY / 2; y < c.height; y += stepY) {
-                  ctx.fillText(text, x, y);
-                }
-              }
+              ctx.fillText(text, 0, 0);
             };
           <\/script>
         </body>
@@ -602,6 +598,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
