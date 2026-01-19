@@ -520,9 +520,65 @@ searchInput.addEventListener("keydown", e => {
 filterSigns();
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".sign-card img");
+
+  images.forEach(img => {
+    img.setAttribute("draggable", "false");
+    img.addEventListener("contextmenu", e => e.preventDefault());
+
+    if (img.complete) {
+      watermark(img);
+    } else {
+      img.onload = () => watermark(img);
+    }
+  });
+
+  function watermark(img) {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const w = img.naturalWidth;
+    const h = img.naturalHeight;
+
+    canvas.width = w;
+    canvas.height = h;
+
+    // Draw image
+    ctx.drawImage(img, 0, 0, w, h);
+
+    // Watermark settings
+    const text = "SIGNORAX • PREVIEW ONLY";
+    const fontSize = Math.max(w / 14, 32);
+
+    ctx.font = `bold ${fontSize}px Arial`;
+    ctx.fillStyle = "rgba(255,255,255,0.22)";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    // Repeating diagonal watermark
+    ctx.save();
+    ctx.translate(w / 2, h / 2);
+    ctx.rotate(-Math.PI / 4);
+
+    const step = fontSize * 3;
+    for (let x = -w; x < w; x += step) {
+      for (let y = -h; y < h; y += step) {
+        ctx.fillText(text, x, y);
+      }
+    }
+    ctx.restore();
+
+    // Replace original image
+    img.src = canvas.toDataURL("image/jpeg", 0.72);
+  }
+});
+</script>
 
 </body>
 </html>
+
 
 
 
