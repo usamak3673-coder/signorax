@@ -521,63 +521,62 @@ filterSigns();
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll(".sign-card img");
+(function () {
+  // Check if page is opened as image or direct access
+  if (
+    document.images.length === 1 &&
+    document.body.children.length === 1
+  ) {
+    const img = document.images[0];
 
-  images.forEach(img => {
-    img.setAttribute("draggable", "false");
-    img.addEventListener("contextmenu", e => e.preventDefault());
-
-    if (img.complete) {
-      watermark(img);
+    if (!img.complete) {
+      img.onload = () => applyWatermark(img);
     } else {
-      img.onload = () => watermark(img);
+      applyWatermark(img);
     }
-  });
 
-  function watermark(img) {
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
+    function applyWatermark(img) {
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
 
-    const w = img.naturalWidth;
-    const h = img.naturalHeight;
+      const w = img.naturalWidth;
+      const h = img.naturalHeight;
 
-    canvas.width = w;
-    canvas.height = h;
+      canvas.width = w;
+      canvas.height = h;
 
-    // Draw image
-    ctx.drawImage(img, 0, 0, w, h);
+      ctx.drawImage(img, 0, 0, w, h);
 
-    // Watermark settings
-    const text = "SIGNORAX • PREVIEW ONLY";
-    const fontSize = Math.max(w / 14, 32);
+      const text = "SIGNORAX • PREVIEW ONLY";
+      const fontSize = Math.max(w / 14, 32);
 
-    ctx.font = `bold ${fontSize}px Arial`;
-    ctx.fillStyle = "rgba(255,255,255,0.22)";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
+      ctx.font = `bold ${fontSize}px Arial`;
+      ctx.fillStyle = "rgba(255,255,255,0.25)";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
 
-    // Repeating diagonal watermark
-    ctx.save();
-    ctx.translate(w / 2, h / 2);
-    ctx.rotate(-Math.PI / 4);
+      ctx.save();
+      ctx.translate(w / 2, h / 2);
+      ctx.rotate(-Math.PI / 4);
 
-    const step = fontSize * 3;
-    for (let x = -w; x < w; x += step) {
-      for (let y = -h; y < h; y += step) {
-        ctx.fillText(text, x, y);
+      const step = fontSize * 3;
+      for (let x = -w; x < w; x += step) {
+        for (let y = -h; y < h; y += step) {
+          ctx.fillText(text, x, y);
+        }
       }
-    }
-    ctx.restore();
+      ctx.restore();
 
-    // Replace original image
-    img.src = canvas.toDataURL("image/jpeg", 0.72);
+      img.src = canvas.toDataURL("image/jpeg", 0.75);
+    }
   }
-});
+})();
 </script>
+
 
 </body>
 </html>
+
 
 
 
