@@ -524,7 +524,8 @@ filterSigns();
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".sign-card img").forEach(img => {
 
-    img.addEventListener("click", e => {
+    // BLOCK default open image in new tab
+    img.addEventListener("contextmenu", e => {
       e.preventDefault();
 
       const src = img.src;
@@ -554,16 +555,13 @@ document.addEventListener("DOMContentLoaded", () => {
           <canvas id="c"></canvas>
           <script>
             const img = new Image();
-            img.crossOrigin = "anonymous";
             img.src = "${src}";
-
             img.onload = () => {
               const c = document.getElementById("c");
               const ctx = c.getContext("2d");
 
               c.width = img.width;
               c.height = img.height;
-
               ctx.drawImage(img, 0, 0);
 
               const text = "SIGNORAX • PREVIEW ONLY";
@@ -590,15 +588,16 @@ document.addEventListener("DOMContentLoaded", () => {
       `);
     });
 
-    // Block right-click
-    img.addEventListener("contextmenu", e => e.preventDefault());
+    img.setAttribute("draggable", "false");
   });
 });
 </script>
 
 
+
 </body>
 </html>
+
 
 
 
