@@ -524,7 +524,6 @@ filterSigns();
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".sign-card img").forEach(img => {
 
-    // BLOCK default open image in new tab
     img.addEventListener("contextmenu", e => {
       e.preventDefault();
 
@@ -535,7 +534,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <!DOCTYPE html>
         <html>
         <head>
-          <title>Preview – SignoraX</title>
+          <title>Protected Preview – SignoraX</title>
           <style>
             body {
               margin: 0;
@@ -565,7 +564,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ctx.drawImage(img, 0, 0);
 
               const text = "SIGNORAX • PREVIEW ONLY";
-              const fontSize = Math.max(img.width / 14, 32);
+              const fontSize = Math.max(img.width / 14, 28);
 
               ctx.font = "bold " + fontSize + "px Arial";
               ctx.fillStyle = "rgba(255,255,255,0.25)";
@@ -597,6 +596,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
