@@ -568,20 +568,20 @@ document.addEventListener("DOMContentLoaded", () => {
               ctx.drawImage(img, 0, 0);
 
               const text = "SIGNORAX • PREVIEW ONLY";
-              const fontSize = Math.max(img.width / 18, 26);
+              const fontSize = Math.max(img.width / 18, 28);
 
-              // CLEAN & DARKER WATERMARK (LIKE SHUTTERSTOCK)
-              ctx.font = "600 " + fontSize + "px Arial";
-              ctx.fillStyle = "rgba(255,255,255,0.55)";
+              ctx.font = "700 " + fontSize + "px Arial";
+              ctx.fillStyle = "rgba(255,255,255,0.22)";
               ctx.textAlign = "center";
               ctx.textBaseline = "middle";
 
-              // Rotate watermark
+              // Rotate watermark (diagonal)
               ctx.translate(c.width / 2, c.height / 2);
               ctx.rotate(-Math.PI / 4);
 
-              // Watermark pattern
+              // Watermark grid spacing
               const step = fontSize * 3.2;
+
               for (let x = -c.width; x < c.width; x += step) {
                 for (let y = -c.height; y < c.height; y += step) {
                   ctx.fillText(text, x, y);
@@ -601,8 +601,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
 </body>
 </html>
+
 
 
 
