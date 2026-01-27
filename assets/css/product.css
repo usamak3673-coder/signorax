@@ -218,7 +218,55 @@ img {
 .panel-btn.outline:hover {
   background: #000000;
 }
+.pricing-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0;
+}
 
+.price-option {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #fafafa;
+}
+
+.price-option:hover {
+  border-color: #000;
+}
+
+.complete-pack {
+  border: 2px solid #000;
+  padding: 14px;
+  border-radius: 8px;
+  margin: 18px 0;
+  background: #fffdf5;
+}
+
+.complete-pack h3 {
+  margin-top: 0;
+}
+
+.best-value {
+  font-weight: bold;
+  font-size: 14px;
+}
+.value-copy,
+.value-copy-buy {
+  margin: 10px 0 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #222;
+}
+
+.value-copy p,
+.value-copy-buy p {
+  margin: 6px 0;
+}
 
 /* =========================================================
    RESPONSIVE
