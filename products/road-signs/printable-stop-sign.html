@@ -268,35 +268,49 @@ Note: This is a digital product. No physical item will be shipped.
        <li><strong>Sign Dimensions:</strong> 30 in × 30 in (true MUTCD scale)</li>
       </ul>
 
-      <!-- PRICE -->
-     <h2>Get All Formats for Just</h2>
-<div class="price">
-  $1.99
-  <small>Premium download includes all formats: EPS, SVG, PDF, PNG & JPG</small>
+      <h2>Choose Download Option</h2>
+
+<div class="pricing-options">
+
+  <label class="price-option">
+    <input type="radio" name="format" value="jpg">
+    <span>JPG & PNG</span>
+    <strong>$1.99</strong>
+  </label>
+
+
+  <label class="price-option">
+    <input type="radio" name="format" value="pdf">
+    <span>PDF (Print-ready)</span>
+    <strong>$9</strong>
+  </label>
+
+  <label class="price-option">
+    <input type="radio" name="format" value="svg">
+    <span>SVG (Scalable Vector)</span>
+    <strong>$11</strong>
+  </label>
+
+  <label class="price-option">
+    <input type="radio" name="format" value="eps">
+    <span>EPS (Editable Master)</span>
+    <strong>$15</strong>
+  </label>
+
 </div>
 
-<!-- DOWNLOAD BUTTON -->
+<div class="complete-pack">
+  <label class="price-option">
+    <input type="radio" name="format" value="complete" checked>
+    <span>⭐ Complete Pack</span>
+    <strong>$29</strong>
+  </label>
+</div>
 <div class="download-buttons">
-  <a class="panel-btn primary" href="https://signorax.gumroad.com/l/vcvoca?wanted=true">
-    Download All Formats
+  <a class="panel-btn primary" href="https://signorax.gumroad.com/l/vnhggy?wanted=true">
+    Buy & Download Instantly
   </a>
-  <a class="panel-btn outline" 
-   href="/assets/images/stop sign usa.jpg" 
-   download>
-   Download Free JPG
-</a>
 </div>
-
-      <!-- FEATURES -->
-      <h2>What’s Included (Premium Download)</h2>
-      <ul>
-        <li>EPS (editable vector)</li>
-    <li>SVG (web & print ready)</li>
-    <li>PDF (instant printing)</li>
-    <li>High-resolution, clean lines</li>
-    <li>Accurate R1-1 proportions</li>
-      </ul>
-    </div>
   </aside>
 </main>
 <!-- FAQ Section -->
@@ -453,8 +467,35 @@ printable-stop-sign</script>
       document.getElementById("footer").innerHTML = "<p>Footer could not load.</p>";
     });
 </script>
+  <script>
+const gumroadBase = "https://signorax.gumroad.com/l/vnhggy";
+const variantMap = {
+  jpg: "JPG",
+  png: "PNG",
+  pdf: "PDF",
+  svg: "SVG",
+  eps: "EPS",
+  complete: "Complete Pack"
+};
+
+const buyBtn = document.querySelector(".panel-btn.primary");
+const radios = document.querySelectorAll("input[name='format']");
+
+function updateBuyLink() {
+  const selected = document.querySelector("input[name='format']:checked").value;
+  buyBtn.href = `${gumroadBase}?option=${encodeURIComponent(variantMap[selected])}`;
+}
+
+radios.forEach(radio => {
+  radio.addEventListener("change", updateBuyLink);
+});
+
+updateBuyLink();
+</script>
+
 </body>
 </html>
+
 
 
 
