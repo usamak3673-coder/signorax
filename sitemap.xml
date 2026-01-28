@@ -4,82 +4,82 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://signorax.vercel.app/</loc>
+    <loc>https://signvectors.com/</loc>
     <priority>1.0</priority>
   </url>
 
   <!-- Other Pages -->
   <url>
-    <loc>https://signorax.vercel.app/browse-signs.html</loc>
+    <loc>https://signvectors.com/browse-signs.html</loc>
     <priority>1.0</priority>
   </url>
  <url>
-    <loc>https://signorax.vercel.app/products/road-signs/speed-limit-signs.html</loc>
+    <loc>https://signvectors.com/products/road-signs/speed-limit-signs.html</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://signorax.vercel.app/blog/why-don't-american-speed-limit-signs-have-unit.html</loc>
+    <loc>https://signvectors.com/blog/why-don't-american-speed-limit-signs-have-unit.html</loc>
     <priority>0.7</priority>
   </url>
  <url>
-    <loc>https://signorax.vercel.app/products/road-signs/Parking-Sign-Circular-Parking-Zone-Sign-White-P-on-Blue-Background.html</loc>
+    <loc>https://signvectors.com/products/road-signs/Parking-Sign-Circular-Parking-Zone-Sign-White-P-on-Blue-Background.html</loc>
     <priority>0.8</priority>
  </url>
 
  <url>
-    <loc>https://signorax.vercel.app/products/road-signs/dead-end-road-sign.html</loc>
+    <loc>https://signvectors.com/products/road-signs/dead-end-road-sign.html</loc>
     <priority>0.8</priority>
  </url>
   <url>
-    <loc>https://signorax.vercel.app/products/road-signs/road-narrows-sign-set-download.html</loc>
+    <loc>https://signvectors.com/products/road-signs/road-narrows-sign-set-download.html</loc>
     <priority>0.8</priority>
  </url>     
   <url>
-    <loc>https://signorax.vercel.app/road-signs/usa.html</loc>
+    <loc>https://signvectors.com/road-signs/usa.html</loc>
     <priority>0.8</priority>
  </url>     
   <url>
-    <loc>https://signorax.vercel.app/products/road-signs/printable-stop-sign.html</loc>
+    <loc>https://signvectors.com/products/road-signs/printable-stop-sign.html</loc>
      <priority>0.8</priority>
  </url>   
         <url>
-    <loc>https://signorax.vercel.app/products/road-signs/do-not-enter-r5-1.html</loc>
+    <loc>https://signvectors.com/products/road-signs/do-not-enter-r5-1.html</loc>
      <priority>0.8</priority>
  </url>   
           <url>
-    <loc>https://signorax.vercel.app/products/road-signs/wrong-way-sign-r5-1a.html</loc>
+    <loc>https://signvectors.com/products/road-signs/wrong-way-sign-r5-1a.html</loc>
      <priority>0.8</priority>
  </url>   
     <url>
-    <loc>https://signorax.vercel.app/products/road-signs/no-right-turn-sign-r3-1-mutcd.html</loc>
+    <loc>https://signvectors.com/products/road-signs/no-right-turn-sign-r3-1-mutcd.html</loc>
      <priority>0.8</priority>
  </url>   
  <url>
-    <loc>https://signorax.vercel.app/products/road-signs/no-left-turn-sign-r3-2-mutcd.html</loc>
+    <loc>https://signvectors.com/products/road-signs/no-left-turn-sign-r3-2-mutcd.html</loc>
      <priority>0.8</priority>
  </url> 
  <url>
-    <loc>https://signorax.vercel.app/products/road-signs/one-way-sign-R6-2.html</loc>
+    <loc>https://signvectors.com/products/road-signs/one-way-sign-R6-2.html</loc>
      <priority>0.8</priority>
  </url>   
  <url>
-    <loc>https://signorax.vercel.app/products/road-signs/one-way-sign-r6-1l-r.html</loc>
+    <loc>https://signvectors.com/products/road-signs/one-way-sign-r6-1l-r.html</loc>
      <priority>0.8</priority>
  </url>   
   <url>
-    <loc>https://signorax.vercel.app/products/road-signs/no-u-turn-sign-r3-4-mutcd.html</loc>
+    <loc>https://signvectors.com/products/road-signs/no-u-turn-sign-r3-4-mutcd.html</loc>
      <priority>0.8</priority>
  </url>
   <url>
-    <loc>https://signorax.vercel.app/products/road-signs/keep-left-sign-r4-8.html</loc>
+    <loc>https://signvectors.com/products/road-signs/keep-left-sign-r4-8.html</loc>
      <priority>0.8</priority>
  </url>  
       <url>
-    <loc>https://signorax.vercel.app/products/road-signs/keep-left-sign-r4-8a.html</loc>
+    <loc>https://signvectors.com/products/road-signs/keep-left-sign-r4-8a.html</loc>
      <priority>0.8</priority>
  </url>    
       <url>
-    <loc>https://signorax.vercel.app/products/road-signs/keep-left-sign-r4-8b.html</loc>
+    <loc>https://signvectors.com/products/road-signs/keep-left-sign-r4-8b.html</loc>
      <priority>0.8</priority>
  </url>    
 </urlset
