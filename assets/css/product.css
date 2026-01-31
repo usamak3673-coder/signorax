@@ -267,6 +267,55 @@ img {
 .value-copy-buy p {
   margin: 6px 0;
 }
+.size-select {
+  margin-bottom: 20px;
+}
+
+.size-select label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.size-select select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.complete-pack-select {
+  margin: 15px 0;
+}
+
+.complete-pack-select select {
+  padding: 8px 12px;
+  font-size: 15px;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 5px;
+}
+
+.download-buttons {
+  margin-top: 10px;
+}
+
+.panel-btn.primary {
+  background-color: #f37906;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s;
+}
+
+.panel-btn.primary:hover {
+  background-color: #ff4f3a;
+}
 
 /* ====== SPEC TABLE STYLES ====== */
 .spec-table {
